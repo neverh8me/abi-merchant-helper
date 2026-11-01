@@ -1680,11 +1680,13 @@ function readFeed(G, grid, now) {
 }
 
 // Local diagnostics (diag/ in the app folder, never sent anywhere): what the purchase reading saw and decided.
-// Off by default; turned on once by opening the page with ?diag=1 (?diag=0 turns it off).
-const DIAG = location.protocol.startsWith('http') && (() => {
+// Off by default; turned on by opening the page once with ?diag=1 (?diag=0 turns it off) or by a diag.on file
+// in the app folder.
+let DIAG = location.protocol.startsWith('http') && (() => {
   const q = new URLSearchParams(location.search).get('diag');
   try { if (q !== null) localStorage.setItem('abi-mh-diag-v1', q === '1' ? '1' : ''); return localStorage.getItem('abi-mh-diag-v1') === '1'; } catch { return q === '1'; }
 })();
+if (!DIAG && location.protocol.startsWith('http')) fetch('diag.on', { cache: 'no-store' }).then(r => { if (r.ok) DIAG = true; }).catch(() => {});
 function diag(msg) {
   if (DIAG) fetch('api/diag', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: String(msg) }).catch(() => {});
 }
