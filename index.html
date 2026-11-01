@@ -311,7 +311,9 @@ const PURCHASES_KEY = 'abi-mh-purchases-v2'; // v1 had records from the nickname
 const OLD_PURCHASE_KEYS = ['abi-mh-purchases-v1', 'abi-mh-nick-v1'];
 const PRIOR_N = 20;          // the merchant data weighs as much as this many own purchases (more: learns slower)
 const FEED_MS = 1000;        // how often to look at the "… obtained [item]" line above the grid
-const FEED_TOP = 1.15, FEED_BOTTOM = 0.6; // where it is: a band above the top of the list, in cells
+// Where it is, in cells above the top of the list: one header row ("Mysterious Supplies …") above the list, or
+// right above it when that header is part of the scrolled list. Both bands are read, one line each.
+const FEED_BANDS = [[1.15, 0.6], [0.6, 0]];
 const BUY_MATCH = 0.01;      // the line amount and the tooltip price match with this precision
 const BALANCE_LEFT = 0.4;    // the "Owned" balance is right of this share of the list width
 const BALANCE_BELOW = 2.6;   // and no lower than this many cells below the list
@@ -1655,7 +1657,11 @@ function readFeed(G, grid, now) {
   if (feedBusy || now - feedAt < FEED_MS || typeof Ocr === 'undefined' || !viewport) return;
   feedAt = now;
   const x = Math.max(0, Math.round(grid.x0)), w = Math.round(Math.min(grid.cols * P, G.w - x));
-  const y = Math.max(0, Math.round(viewport.y - P * FEED_TOP)), h = Math.round(viewport.y - P * FEED_BOTTOM) - y;
+  const bands = FEED_BANDS.map(([top, bottom]) => {
+    const y = Math.max(0, Math.round(viewport.y - P * top));
+    return { x, y, w, h: Math.round(viewport.y - P * bottom) - y };
+  });
+  const y = bands[0].y, h = bands[bands.length - 1].y + bands[bands.length - 1].h - y; // both bands: to notice a change
   // the balance is in the right half below the list
   const bx = Math.round(grid.x0 + grid.cols * P * BALANCE_LEFT), bw = Math.round(Math.min(grid.x0 + grid.cols * P + P * 0.3, G.w) - bx);
   const by = Math.round(viewport.y + viewport.h), bh = Math.round(Math.min(G.h, by + P * BALANCE_BELOW) - by);
@@ -1674,7 +1680,15 @@ function readFeed(G, grid, now) {
   // the balance first: the purchase line and the balance drop usually appear together
   if (fs) diagFrame('feed');
   (bs ? read(balR).then(t => { const v = Ocr.parseBalance(t); diag(`balance area ${bx},${by} ${bw}x${bh}: "${t.trim()}" -> ${v}`); if (v) onBalance(v); }) : Promise.resolve())
-    .then(() => fs ? read(feedR).then(t => { const f = Ocr.parseFeed(t); diag(`feed area ${x},${y} ${w}x${h}: "${t.trim()}" -> ${JSON.stringify(f)}`); if (f) onFeed(f); }) : null)
+    .then(async () => {
+      if (!fs) return;
+      for (const r of bands) {
+        const t = await Ocr.read(Ocr.tipCanvas(fullCanvas, r.x, r.y, r.w, r.h, P), 'feed');
+        const f = Ocr.parseFeed(t);
+        diag(`feed area ${r.x},${r.y} ${r.w}x${r.h}: "${t.trim()}" -> ${JSON.stringify(f)}`);
+        if (f) { onFeed(f); break; }
+      }
+    })
     .catch(e => { feedSig = balanceSig = null; diag('feed/balance read failed: ' + (e && e.message || e)); })
     .finally(() => { feedBusy = false; processFeed(); });
 }

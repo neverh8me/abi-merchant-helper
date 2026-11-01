@@ -28,14 +28,18 @@ const Ocr = (() => {
   // Separate readers in their own threads: cargo labels (there are many of them) and the price tooltip
   // (it is needed right away while the cursor is on the cargo, so it does not wait behind the labels)
   const lanes = {};
+  // The purchase line is read as a single text line (page segmentation 7): otherwise at low resolution it may be
+  // split into columns and read out of order.
+  const LANE_PARAMS = { feed: { tessedit_pageseg_mode: '7' } };
 
   function lane(name) {
     if (!lanes[name]) {
+      const worker = Tesseract.createWorker('eng', 1, {
+        workerPath: 'lib/tesseract/worker.min.js', corePath: 'lib/tesseract/', langPath: 'lib/tesseract',
+        gzip: true, workerBlobURL: false,
+      });
       lanes[name] = {
-        worker: Tesseract.createWorker('eng', 1, {
-          workerPath: 'lib/tesseract/worker.min.js', corePath: 'lib/tesseract/', langPath: 'lib/tesseract',
-          gzip: true, workerBlobURL: false,
-        }),
+        worker: LANE_PARAMS[name] ? worker.then(async w => { await w.setParameters(LANE_PARAMS[name]); return w; }) : worker,
         queue: Promise.resolve(),
       };
     }
@@ -44,7 +48,7 @@ const Ocr = (() => {
 
   // Start all readers at once (after "Start catching"): otherwise the first price or the first labels
   // would also wait for the start-up (~0.4 s). Labels are read by two readers in parallel.
-  function start() { return Promise.all(['label', 'label2', 'tip'].map(n => lane(n).worker)); }
+  function start() { return Promise.all(['label', 'label2', 'tip', 'feed'].map(n => lane(n).worker)); }
 
   function read(canvas, name = 'label') {
     return readData(canvas, name).then(data => data.text);
