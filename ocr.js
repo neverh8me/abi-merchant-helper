@@ -83,6 +83,29 @@ const Ocr = (() => {
     return c;
   }
 
+  // Purchase line: grey text, but the item name is in its rarity colour (red, gold, purple…) on a grey panel,
+  // which turns grey in a plain grayscale. The brightest channel keeps any coloured text as light as white;
+  // then the panel is stretched to white and the text to black.
+  function feedCanvas(src, x, y, w, h, P) {
+    const k = tipScale(P);
+    const c = document.createElement('canvas');
+    c.width = Math.round(w * k); c.height = Math.round(h * k);
+    c.ocrScale = k;
+    const ctx = c.getContext('2d', { willReadFrequently: true });
+    ctx.drawImage(src, x, y, w, h, 0, 0, c.width, c.height);
+    const img = ctx.getImageData(0, 0, c.width, c.height), d = img.data, n = c.width * c.height;
+    const v = new Uint8Array(n);
+    for (let i = 0; i < n; i++) v[i] = Math.max(d[i * 4], d[i * 4 + 1], d[i * 4 + 2]);
+    const sorted = Array.from(v).sort((a, b) => a - b);
+    const lo = sorted[n >> 1], hi = Math.max(lo + 40, sorted[Math.floor(n * 0.995)]);
+    for (let i = 0; i < n; i++) {
+      const t = Math.max(0, Math.min(255, Math.round((v[i] - lo) * 255 / (hi - lo))));
+      d[i * 4] = d[i * 4 + 1] = d[i * 4 + 2] = 255 - t;
+    }
+    ctx.putImageData(img, 0, 0);
+    return c;
+  }
+
   // The tooltip itself within a frame patch: the largest solid dark blob with light text. Grey cargo
   // with labels around it is not part of it, so the reader does not mix the price with other labels.
   // Returns { x, y, w, h } in src coordinates or null.
@@ -276,5 +299,5 @@ const Ocr = (() => {
     return dp[a.length][b.length];
   }
 
-  return { start, read, readData, labelCanvas, parseLabel, tipCanvas, findTipBox, parseTip, parseFeed, parseBalance, matchName };
+  return { start, read, readData, labelCanvas, parseLabel, tipCanvas, feedCanvas, findTipBox, parseTip, parseFeed, parseBalance, matchName };
 })();

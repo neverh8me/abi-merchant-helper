@@ -314,11 +314,13 @@ const FEED_MS = 1000;        // how often to look at the "… obtained [item]" l
 // Where it is, in cells above the top of the list: one header row ("Mysterious Supplies …") above the list, or
 // right above it when that header is part of the scrolled list. Both bands are read, one line each.
 const FEED_BANDS = [[1.15, 0.6], [0.6, 0]];
+const FEED_RIGHT_CUT = 0.5;  // the button at the right end of the purchase line, in cells
 const BUY_MATCH = 0.01;      // the line amount and the tooltip price match with this precision
 const BALANCE_LEFT = 0.4;    // the "Owned" balance is right of this share of the list width
 const BALANCE_BELOW = 2.6;   // and no lower than this many cells below the list
 const FEED_WAIT_MS = 30000;  // a feed line waits this long for the balance to confirm it
 const FEED_SAME_MS = 60000;  // the same line (price and similar name) within this window is the same purchase
+const FEED_BEST_MS = 4000;   // a purchase line read without a known item waits this long for a better reading
 const BASE_URL = 'library/purchases.json'; // shared base in the app folder
 const BASE_REMOTE = 'https://raw.githubusercontent.com/neverh8me/abi-merchant-helper/main/library/purchases.json'; // and the freshest one on GitHub
 
@@ -358,7 +360,7 @@ if (!sessionStart) { sessionStart = Date.now(); try { sessionStorage.setItem(SES
 let overlayWin = null, overlayParts = [];    // the overlay window and the elements moved into it
 let purchases = loadJson(PURCHASES_KEY, []); // own purchases: [{ t, soundId, size, label, price, itemId, item, q }]
 let basePurchases = [];      // shared base shipped with the app (library/purchases.json) and refreshed from GitHub
-let balance = null, spent = 0;               // Koen balance below the grid and how much it dropped (not yet explained by purchases)
+let balance = null, spent = 0, spentAt = 0;  // Koen balance below the grid, how much it dropped (not yet explained by purchases) and when
 let balanceSig = null, feedQueue = [], feedDone = []; // feed lines: waiting for balance confirmation / already counted
 let feedBusy = false, feedAt = 0, feedSig = null; // reading of the feed line and the balance
 let libPools = [], itemQ = {}, itemById = new Map(); // merchant pools and items from the library
@@ -1657,9 +1659,10 @@ function readFeed(G, grid, now) {
   if (feedBusy || now - feedAt < FEED_MS || typeof Ocr === 'undefined' || !viewport) return;
   feedAt = now;
   const x = Math.max(0, Math.round(grid.x0)), w = Math.round(Math.min(grid.cols * P, G.w - x));
+  // without the button at the right end of the line: it is read as stray letters after the item name
   const bands = FEED_BANDS.map(([top, bottom]) => {
     const y = Math.max(0, Math.round(viewport.y - P * top));
-    return { x, y, w, h: Math.round(viewport.y - P * bottom) - y };
+    return { x, y, w: Math.round(w - P * FEED_RIGHT_CUT), h: Math.round(viewport.y - P * bottom) - y };
   });
   const y = bands[0].y, h = bands[bands.length - 1].y + bands[bands.length - 1].h - y; // both bands: to notice a change
   // the balance is in the right half below the list
@@ -1683,9 +1686,15 @@ function readFeed(G, grid, now) {
     .then(async () => {
       if (!fs) return;
       for (const r of bands) {
-        const t = await Ocr.read(Ocr.tipCanvas(fullCanvas, r.x, r.y, r.w, r.h, P), 'feed');
-        const f = Ocr.parseFeed(t);
+        const t = await Ocr.read(Ocr.feedCanvas(fullCanvas, r.x, r.y, r.w, r.h, P), 'feed');
+        let f = Ocr.parseFeed(t);
         diag(`feed area ${r.x},${r.y} ${r.w}x${r.h}: "${t.trim()}" -> ${JSON.stringify(f)}`);
+        // the item was not recognized: the plain grayscale sometimes reads small white names better
+        if (f && !feedItem(f.item)) {
+          const t2 = await Ocr.read(Ocr.tipCanvas(fullCanvas, r.x, r.y, r.w, r.h, P), 'feed'), f2 = Ocr.parseFeed(t2);
+          diag(`feed area again: "${t2.trim()}" -> ${JSON.stringify(f2)}`);
+          if (f2 && f2.price === f.price && feedItem(f2.item)) f = f2;
+        }
         if (f) { onFeed(f); break; }
       }
     })
@@ -1713,29 +1722,63 @@ setInterval(() => {
 
 function onBalance(v) {
   if (balance !== null && v !== balance) diag(`balance ${balance} -> ${v}`);
-  if (balance !== null && v < balance) spent += balance - v;
+  if (balance !== null && v < balance) { spent += balance - v; spentAt = performance.now(); }
   balance = v;
 }
 
 // A feed line waits in the queue until the balance confirms (or refutes) the purchase.
 // The same line read slightly differently ("Rebrut"/"Rebcut") is the same purchase: not added twice.
 function onFeed(feed) {
-  const now = performance.now();
-  const dup = feedQueue.concat(feedDone).some(f => f.price === feed.price && now - f.at < FEED_SAME_MS && Ocr.matchName(f.item, [{ name: feed.item }]));
-  if (!dup) feedQueue.push({ ...feed, at: now });
+  const now = performance.now(), it = feedItem(feed.item);
+  const dup = feedQueue.some(f => f.price === feed.price && (it ? f.it === it : Ocr.matchName(f.item, [{ name: feed.item }])))
+    // a late reading of a line already counted: the same amount and the same item, or an item not read at all
+    || feedDone.some(f => f.price === feed.price && now - f.at < FEED_SAME_MS && (it ? f.it === it : true));
+  if (!dup) feedQueue.push({ ...feed, it, at: now });
 }
 
+// The item named in a feed line, or null when the line was misread
+function feedItem(text) {
+  const m = Ocr.matchName(text, [...itemById.values()].map(x => ({ name: x.nameEn || x.name, it: x })));
+  return m ? m.it : null;
+}
+
+// Own purchases are the lines whose amounts add up to exactly what the balance dropped by: one line, or a few
+// for a cart. Other players' lines (another amount) stay unmatched and expire. The same line is read many times,
+// often garbled: readings with the same amount and item (or no item) are one purchase, and the reading that
+// names an item is the one recorded; a garbled one is taken only if no better reading comes within a few seconds.
 function processFeed() {
   const now = performance.now();
-  for (const f of feedQueue) if (now - f.at >= FEED_WAIT_MS) diag(`feed line dropped, the balance never fell by ${f.price}: ${f.item} (spent=${spent})`);
+  for (const f of feedQueue) if (now - f.at >= FEED_WAIT_MS) diag(`feed line dropped, the balance did not fall by ${f.price}: ${f.item} (spent=${spent})`);
   feedQueue = feedQueue.filter(f => now - f.at < FEED_WAIT_MS);
   feedDone = feedDone.filter(f => now - f.at < FEED_SAME_MS);
-  for (const f of [...feedQueue]) {
-    if (spent < f.price * (1 - BUY_MATCH)) continue; // the balance did not drop by this amount: someone else bought it
-    spent = Math.max(0, spent - f.price);
-    feedQueue.splice(feedQueue.indexOf(f), 1);
-    feedDone.push(f);
-    ownPurchase(f);
+  if (spent && now - spentAt >= FEED_WAIT_MS) { diag(`balance drop of ${spent} matches no purchase line`); spent = 0; }
+  if (!spent || !feedQueue.length) return;
+  const groups = [];
+  for (const f of feedQueue) {
+    const it = f.it !== undefined ? f.it : (f.it = feedItem(f.item));
+    let g = groups.find(g => g.price === f.price && (!it || !g.it || g.it === it));
+    if (!g) groups.push(g = { price: f.price, it: null, lines: [] });
+    g.lines.push(f);
+    if (it && !g.it) g.it = it;
+  }
+  groups.sort((a, b) => Math.max(...b.lines.map(f => f.at)) - Math.max(...a.lines.map(f => f.at))); // the newest line first
+  const near = (sum, v) => Math.abs(sum - v) <= v * BUY_MATCH;
+  let pick = null;
+  for (let size = 1; size <= Math.min(4, groups.length) && !pick; size++) {
+    const walk = (from, chosen, sum) => {
+      if (chosen.length === size) { if (near(sum, spent)) pick = chosen; return; }
+      for (let i = from; i < groups.length && !pick; i++) walk(i + 1, [...chosen, groups[i]], sum + groups[i].price);
+    };
+    walk(0, [], 0);
+  }
+  if (!pick) return;
+  if (pick.some(g => !g.it) && now - spentAt < FEED_BEST_MS) return; // a better reading of the item may still come
+  spent = 0;
+  for (const g of pick) {
+    const best = g.lines.filter(f => f.it === g.it).sort((a, b) => b.at - a.at)[0];
+    feedQueue = feedQueue.filter(f => !g.lines.includes(f));
+    feedDone.push(...g.lines);
+    ownPurchase(best);
   }
 }
 
