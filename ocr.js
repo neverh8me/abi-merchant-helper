@@ -318,7 +318,28 @@ const Ocr = (() => {
       const d = distance(s, target) / Math.max(s.length, target.length) + (s.length < n.length ? 0.01 : 0);
       if (d < bestScore) { bestScore = d; best = el; }
     }
-    return bestScore <= 0.25 ? best : null;
+    return bestScore <= 0.25 ? best : matchWords(text, list);
+  }
+
+  // By words, for names the game shortens or that our translation words differently: "Космич. лаб" is
+  // "Набор «Космическая лаборатория»". Every word read must start a word of the name, in the same order and
+  // one after another (a slip of one letter is allowed in longer words). Taken only if exactly one name fits.
+  function matchWords(text, list) {
+    const words = t => t.toLowerCase().replace(/ё/g, 'е').split(/[^a-z0-9а-я]+/).filter(Boolean);
+    const read = words(text);
+    if (read.length < 2 || read.join('').length < 6) return null;
+    // the last word is often cut by the panel edge and its last letter misread
+    const starts = (r, w, last) => {
+      const head = w.slice(0, r.length);
+      return head === r || ((r.length >= 5 || (last && r.length >= 3)) && head.length === r.length && distance(r, head) <= 1);
+    };
+    const fits = list.filter(el => {
+      const ws = words(el.name);
+      for (let i = 0; i + read.length <= ws.length; i++) if (read.every((r, j) => starts(r, ws[i + j], j === read.length - 1))) return true;
+      return false;
+    });
+    const items = new Set(fits.map(el => el.it || el));
+    return items.size === 1 ? fits[0] : null;
   }
 
   function distance(a, b) {
