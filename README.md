@@ -40,6 +40,7 @@ The app listens to the game's sound when you drag a cargo, and it watches the me
   - the game window only.
 - **One monitor or two.** Pick **Second screen** to keep the page on another monitor, or **Overlay (one monitor)** to get the result card and the map in a small always-on-top window over the game (Chrome or Edge). Put the overlay on the left half of the screen: only the right half, with the merchant, is captured.
 - **UA / ENG / RU** interface.
+- **English or Russian game.** The game language is detected by itself (or picked under the map), so cargo labels, the purchase line and the balance are read in either.
 
 ![Hover popup](docs/screenshot-hover.png)
 
@@ -93,7 +94,7 @@ For each cargo, the price is mapped to the closest merchant pool, and the cargo 
 ## Accuracy notes
 
 - The results are probabilities, not guarantees. Many red and gold items share the same pickup sound. That is why the app shows a percentage instead of a single answer.
-- Tooltip OCR uses English trained data. Prices are read in any game language, but item titles only in English.
+- Text is read in English or Russian, the language of the game. Prices are read in any game language. Some Russian item names are our own translation and may differ from the game, so such an item may be recorded without its name.
 - For more accurate weights, pick your current map in the **Sounds** panel.
 
 ## Credits

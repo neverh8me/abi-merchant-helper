@@ -158,6 +158,7 @@
       <label><span data-i18n="opt.buys">Purchases per raid</span> <select id="buysPerRaid"><option>2</option><option>3</option><option>4</option></select></label>
       <label><span data-i18n="opt.value">Value by</span> <select id="valueBasis"><option value="market" data-i18n="value.market">market price</option><option value="trader" data-i18n="value.trader">trader hand-in</option></select></label>
       <label><input type="checkbox" id="alertOn"> <span data-i18n="opt.alert">Alert on a good cargo</span></label>
+      <label><span data-i18n="opt.gameLang">Game language</span> <select id="gameLang"><option value="auto" data-i18n="gameLang.auto">auto</option><option value="eng">English</option><option value="rus">Русский</option></select></label>
     </div>
     <div id="bestBuys"></div>
     <div id="session"></div>
@@ -304,6 +305,8 @@ const MODE_KEY = 'abi-mh-mode-v1'; // display mode: 'second' (second screen) or 
 const BUYS_KEY = 'abi-mh-buys-v1';  // purchases allowed per raid (2, or up to 4 with a levelled character)
 const VALUE_KEY = 'abi-mh-value-v1'; // item value basis for payback: 'market' or 'trader'
 const ALERT_KEY = 'abi-mh-alert-v1'; // whether a hovered good cargo plays a chime
+const GAME_LANG_KEY = 'abi-mh-gamelang-v1'; // { choice: 'auto'|'eng'|'rus', found: language detected last time }
+const LANG_PROBE = 8;        // label reads in one language without a single known label before auto mode tries the other
 const SESSION_KEY = 'abi-mh-session-v1'; // start of the session summary (sessionStorage: survives a reload of the tab)
 const ALERT_RED = 0.25;                   // a cargo with this red chance is worth an alert even if it does not pay off
 const PAY_GOOD = 1.15, PAY_GAMBLE = 0.9; // expected value vs price: worth it from 115%, a gamble from 90%
@@ -354,6 +357,8 @@ let mode = loadJson(MODE_KEY, 'second');     // display mode, see MODE_KEY
 let buysPerRaid = loadJson(BUYS_KEY, 2);     // see BUYS_KEY
 let valueBasis = loadJson(VALUE_KEY, 'market'); // see VALUE_KEY
 let alertOn = loadJson(ALERT_KEY, true);      // see ALERT_KEY
+let gameLang = loadJson(GAME_LANG_KEY, { choice: 'auto', found: 'eng' }); // see GAME_LANG_KEY
+let langStats = {};          // label reads per game language this session: { eng: { reads, hits } }
 let alerted = new Set();                      // cargo already alerted about (key + price + label), cleared with a new list
 let sessionStart = (() => { try { return +sessionStorage.getItem(SESSION_KEY) || 0; } catch { return 0; } })();
 if (!sessionStart) { sessionStart = Date.now(); try { sessionStorage.setItem(SESSION_KEY, String(sessionStart)); } catch {} }
@@ -1638,17 +1643,43 @@ function cargoHead(rec) {
 function readLabel(rec, x, y, w, h) {
   if (rec.label || rec.labelBusy || (rec.labelTries || 0) >= LABEL_TRIES || typeof Ocr === 'undefined') return;
   rec.labelBusy = true;
-  const crop = Ocr.labelCanvas(fullCanvas, x, y, w, h, P);
+  const crop = Ocr.labelCanvas(fullCanvas, x, y, w, h, P), lang = Ocr.lang();
   readLabel.n = (readLabel.n || 0) + 1;
   Ocr.read(crop, readLabel.n % 2 ? 'label' : 'label2') // two readers in turn: labels appear twice as fast
     .then(text => {
       rec.labelTries = (rec.labelTries || 0) + 1;
       const label = Ocr.parseLabel(text);
       if (label) { rec.label = label; if (document.visibilityState === 'visible') drawMap(); }
+      probeGameLang(lang, !!label);
     })
     .catch(e => { rec.labelTries = LABEL_TRIES; if (!readLabel.failed) log(tr('log.ocrFail', { msg: e.message || e })); readLabel.failed = true; })
     .finally(() => { rec.labelBusy = false; });
 }
+
+// The game language. In auto mode the language found last time is used first; if LANG_PROBE labels in a row
+// are read in it without a single known one, the other language is tried (once per session each way).
+function applyGameLang() {
+  const l = gameLang.choice === 'auto' ? gameLang.found : gameLang.choice;
+  if (typeof Ocr === 'undefined' || Ocr.lang() === l) return;
+  Ocr.setLang(l);
+  for (const rec of cargo.values()) if (!rec.label) rec.labelTries = 0; // read again in the new language
+  feedSig = balanceSig = null;
+}
+
+function probeGameLang(lang, hit) {
+  const s = langStats[lang] || (langStats[lang] = { reads: 0, hits: 0 });
+  s.reads++; if (hit) s.hits++;
+  if (gameLang.choice !== 'auto' || lang !== Ocr.lang()) return;
+  if (hit && gameLang.found !== lang) { gameLang.found = lang; saveGameLang(); }
+  const other = lang === 'eng' ? 'rus' : 'eng', o = langStats[other];
+  if (s.hits || s.reads < LANG_PROBE || (o && o.reads >= LANG_PROBE)) return;
+  gameLang.found = other;
+  saveGameLang();
+  applyGameLang();
+  log(tr('log.gameLang', { lang: other === 'rus' ? 'Русский' : 'English' }));
+}
+
+function saveGameLang() { try { localStorage.setItem(GAME_LANG_KEY, JSON.stringify(gameLang)); } catch {} }
 
 // ---------- Purchases ----------
 // After a purchase the game writes above the grid: "nick spent 200,000 Koen on a mystery cargo and obtained [item]".
@@ -1737,8 +1768,13 @@ function onFeed(feed) {
 }
 
 // The item named in a feed line, or null when the line was misread
+// Items as { name, it } for matching a read name: the English name and the Russian one (the game may be in either)
+function itemNames(list) {
+  return list.flatMap(x => [x.nameEn, x.name].filter((n, i, a) => n && a.indexOf(n) === i).map(name => ({ name, it: x })));
+}
+
 function feedItem(text) {
-  const m = Ocr.matchName(text, [...itemById.values()].map(x => ({ name: x.nameEn || x.name, it: x })));
+  const m = Ocr.matchName(text, itemNames([...itemById.values()]));
   return m ? m.it : null;
 }
 
@@ -1787,7 +1823,7 @@ function ownPurchase({ price, item }) {
   // size is the item's size. Many cargo share a price (200k, 250k…) and 1×1 cargo are not on the map at all,
   // so "the last sound heard" would often be another cargo's sound. Of several fitting cargo with this price
   // the one heard last is taken; if none fits, the hovered cargo of that label is taken without a sound (below).
-  const named = [...itemById.values()].map(x => ({ name: x.nameEn || x.name, it: x }));
+  const named = itemNames([...itemById.values()]);
   const m = Ocr.matchName(item, named), it = m && m.it;
   const fits = (key, res) => {
     const rec = cargo.get(key), s = res && soundById(res.soundId);
@@ -1833,7 +1869,7 @@ function recordPurchase({ soundId, size, label, price, itemText, itemId, key }) 
   const sound = soundId && soundById(soundId);
   let it = itemId != null ? itemById.get(itemId) || (sound && sound.items.find(x => String(x.id) === String(itemId))) : null;
   if (!it && itemText) {
-    const named = list => list.map(x => ({ name: x.nameEn || x.name, it: x }));
+    const named = itemNames;
     const m = (sound && Ocr.matchName(itemText, named(sound.items))) || Ocr.matchName(itemText, named([...itemById.values()]));
     it = m && m.it;
   }
@@ -2569,6 +2605,10 @@ valueSelect.onchange = () => { valueBasis = valueSelect.value; try { localStorag
 const alertBox = $('alertOn');
 alertBox.checked = alertOn;
 alertBox.onchange = () => { alertOn = alertBox.checked; try { localStorage.setItem(ALERT_KEY, JSON.stringify(alertOn)); } catch {} };
+const gameLangBox = $('gameLang');
+gameLangBox.value = ['auto', 'eng', 'rus'].includes(gameLang.choice) ? gameLang.choice : 'auto';
+gameLangBox.onchange = () => { gameLang.choice = gameLangBox.value; langStats = {}; saveGameLang(); applyGameLang(); };
+applyGameLang();
 updateModeUi();
 
 // UI language: on change, everything with text is redrawn

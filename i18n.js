@@ -10,7 +10,7 @@ const I18n = (() => {
       'h.result': 'Результат', 'result.wait': 'Чекаю на звук…',
       'btn.done': 'Готово', 'btn.rescan': 'Шукати заново',
       'pb.good': 'Вигідно', 'pb.gamble': 'Лотерея', 'pb.bad': 'Не окупиться', 'pb.ev': 'у середньому ~{ev} за {price} ({diff})', 'pb.more': 'шанс окупитися {p}',
-      'opt.alert': 'Сигнал на вигідний вантаж', 'session.title': 'Ця сесія', 'session.reset': 'Скинути', 'session.none': 'Покупок ще немає. Купи вантаж під час ловлі — він зʼявиться тут.', 'session.line': 'Куплено {n} за {spent} · червоних: {red} · вартість ~{value}', 'session.last': 'Остання: {item}', 'log.alert': 'Вигідний вантаж: {cargo} — червоний {red}, окупність {diff}',
+      'opt.alert': 'Сигнал на вигідний вантаж', 'opt.gameLang': 'Мова гри', 'gameLang.auto': 'авто', 'log.gameLang': 'Мова гри визначена: {lang}', 'session.title': 'Ця сесія', 'session.reset': 'Скинути', 'session.none': 'Покупок ще немає. Купи вантаж під час ловлі — він зʼявиться тут.', 'session.line': 'Куплено {n} за {spent} · червоних: {red} · вартість ~{value}', 'session.last': 'Остання: {item}', 'log.alert': 'Вигідний вантаж: {cargo} — червоний {red}, окупність {diff}',
       'best.title': 'Найкращі покупки (до {n})', 'opt.buys': 'Покупок за рейд', 'opt.value': 'Вартість', 'value.market': 'ринкова', 'value.trader': 'здача торговцю',
 
       'mode.title': 'Як показувати результат: на другому моніторі чи вікном поверх гри', 'mode.second': 'Другий екран', 'mode.overlay': 'Оверлей (1 монітор)', 'btn.overlay': 'Відкрити оверлей',
@@ -87,7 +87,7 @@ const I18n = (() => {
       'h.result': 'Result', 'result.wait': 'Waiting for a sound…',
       'btn.done': 'Done', 'btn.rescan': 'Scan again',
       'pb.good': 'Worth it', 'pb.gamble': 'A gamble', 'pb.bad': 'Won’t pay off', 'pb.ev': 'on average ~{ev} for {price} ({diff})', 'pb.more': 'chance to pay off {p}',
-      'opt.alert': 'Alert on a good cargo', 'session.title': 'This session', 'session.reset': 'Reset', 'session.none': 'No purchases yet. Buy a cargo while catching and it shows up here.', 'session.line': 'Bought {n} for {spent} · reds: {red} · worth ~{value}', 'session.last': 'Last: {item}', 'log.alert': 'Good cargo: {cargo}, red {red}, payback {diff}',
+      'opt.alert': 'Alert on a good cargo', 'opt.gameLang': 'Game language', 'gameLang.auto': 'auto', 'log.gameLang': 'Game language detected: {lang}', 'session.title': 'This session', 'session.reset': 'Reset', 'session.none': 'No purchases yet. Buy a cargo while catching and it shows up here.', 'session.line': 'Bought {n} for {spent} · reds: {red} · worth ~{value}', 'session.last': 'Last: {item}', 'log.alert': 'Good cargo: {cargo}, red {red}, payback {diff}',
       'best.title': 'Best buys (up to {n})', 'opt.buys': 'Purchases per raid', 'opt.value': 'Value by', 'value.market': 'market price', 'value.trader': 'trader hand-in',
 
       'mode.title': 'Where to show the result: on a second monitor or in a window over the game', 'mode.second': 'Second screen', 'mode.overlay': 'Overlay (one monitor)', 'btn.overlay': 'Open overlay',
@@ -164,7 +164,7 @@ const I18n = (() => {
       'h.result': 'Результат', 'result.wait': 'Жду звук…',
       'btn.done': 'Готово', 'btn.rescan': 'Искать заново',
       'pb.good': 'Выгодно', 'pb.gamble': 'Лотерея', 'pb.bad': 'Не окупится', 'pb.ev': 'в среднем ~{ev} за {price} ({diff})', 'pb.more': 'шанс окупиться {p}',
-      'opt.alert': 'Сигнал на выгодный груз', 'session.title': 'Эта сессия', 'session.reset': 'Сбросить', 'session.none': 'Покупок пока нет. Купи груз во время ловли — он появится здесь.', 'session.line': 'Куплено {n} за {spent} · красных: {red} · стоимость ~{value}', 'session.last': 'Последняя: {item}', 'log.alert': 'Выгодный груз: {cargo} — красный {red}, окупаемость {diff}',
+      'opt.alert': 'Сигнал на выгодный груз', 'opt.gameLang': 'Язык игры', 'gameLang.auto': 'авто', 'log.gameLang': 'Язык игры определён: {lang}', 'session.title': 'Эта сессия', 'session.reset': 'Сбросить', 'session.none': 'Покупок пока нет. Купи груз во время ловли — он появится здесь.', 'session.line': 'Куплено {n} за {spent} · красных: {red} · стоимость ~{value}', 'session.last': 'Последняя: {item}', 'log.alert': 'Выгодный груз: {cargo} — красный {red}, окупаемость {diff}',
       'best.title': 'Лучшие покупки (до {n})', 'opt.buys': 'Покупок за рейд', 'opt.value': 'Стоимость', 'value.market': 'рыночная', 'value.trader': 'сдача торговцу',
 
       'mode.title': 'Как показывать результат: на втором мониторе или окном поверх игры', 'mode.second': 'Второй экран', 'mode.overlay': 'Оверлей (1 монитор)', 'btn.overlay': 'Открыть оверлей',
