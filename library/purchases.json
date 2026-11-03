@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T18:30:58.153Z",
+ "updated": "2026-11-03T20:38:54.144Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -69,6 +69,26 @@
    "price": 70000,
    "itemId": 498060001,
    "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1793657495127,
+   "soundId": "lib:big_wood",
+   "size": "2x3",
+   "label": "Mystery Cargo",
+   "price": 216000,
+   "itemId": 498080025,
+   "item": "Double-Neck Lute",
+   "q": "red"
+  },
+  {
+   "t": 1793660215728,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 280000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
    "q": "gold"
   },
   {
