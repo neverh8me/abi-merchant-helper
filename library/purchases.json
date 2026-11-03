@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T20:38:54.144Z",
+ "updated": "2026-11-03T23:45:02.307Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -100,6 +100,66 @@
    "itemId": 408030028,
    "item": "Vector Processor",
    "q": "gold"
+  },
+  {
+   "t": 1793739978618,
+   "soundId": "lib:med_comp",
+   "size": "2x2",
+   "label": "Household Items",
+   "price": 80000,
+   "itemId": 408060043,
+   "item": "Film Stock",
+   "q": "gold"
+  },
+  {
+   "t": 1793739978629,
+   "soundId": "lib:med_statue",
+   "size": "2x2",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 498100002,
+   "item": "K7-L Cipher Machine",
+   "q": "gold"
+  },
+  {
+   "t": 1793740080607,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1793742186517,
+   "soundId": "lib:med_statue",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 498100002,
+   "item": "K7-L Cipher Machine",
+   "q": "gold"
+  },
+  {
+   "t": 1793747030926,
+   "soundId": "lib:electronicdevice",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408100011,
+   "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1793747198743,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x3",
+   "label": "Rare Mystery Cargo",
+   "price": 440000,
+   "itemId": 498100003,
+   "item": "Three-Axis Gyro Controller Prototype",
+   "q": "red"
   }
  ]
 }
