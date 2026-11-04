@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T15:27:31.131Z",
+ "updated": "2026-11-04T18:48:49.539Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -109,6 +109,16 @@
    "price": 550000,
    "itemId": 498070009,
    "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1793736882107,
+   "soundId": "lib:electronicdevice",
+   "size": "1x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
    "q": "gold"
   },
   {
