@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T18:48:49.539Z",
+ "updated": "2026-11-04T20:52:45.759Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -99,6 +99,16 @@
    "price": 70000,
    "itemId": 408030028,
    "item": "Vector Processor",
+   "q": "gold"
+  },
+  {
+   "t": 1793734983767,
+   "soundId": "lib:electronicdevice",
+   "size": "2x2",
+   "label": "Flammables",
+   "price": 70000,
+   "itemId": 408100011,
+   "item": "Antenna",
    "q": "gold"
   },
   {
