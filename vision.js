@@ -11,6 +11,7 @@ const Vision = (() => {
   // plus a margin. Empty slots are ~30 and cargo ~60 on a normal picture, but ~0–7 and ~18 with a dark
   // in-game picture (gamma/brightness), so a fixed threshold misses all cargo there.
   const OCC_MARGIN = 8, OCC_MIN = 10, OCC_MAX = 40;
+  const DETAIL_DIFF = 40, DETAIL_WHITE = 140; // a label pixel: this much brighter than the cell and at least this bright
   const EDGE_REL = 0.6;     // a cargo border is at least this share of the frame's typical border (lines inside revealed cargo ~0.5)
   const EDGE_SAME = 0.9;    // between two cells of the same revealed color, a border must be this strong (inner lines ~0.5–0.6)
   const SAT_MIN = 22;       // a revealed background is this saturated (max−min of RGB): gold ~86, purple ~36, grey cargo ~3
@@ -311,7 +312,8 @@ const Vision = (() => {
       for (let k = 0; k < iw && closed; k++) closed = hLine(c + k, r) && hLine(c + k, r + ih);
       for (let k = 0; k < ih && closed; k++) closed = vLine(c, r + k) && vLine(c + iw, r + k);
       if (!closed) continue;
-      items.push({ c, r, w: iw, h: ih, occ: occupancy(G, X(c), Y(r), X(c + iw) - X(c), Y(r + ih) - Y(r), occT) });
+      const ix = X(c), iy = Y(r), irw = X(c + iw) - ix, irh = Y(r + ih) - iy;
+      items.push({ c, r, w: iw, h: ih, occ: occupancy(G, ix, iy, irw, irh, occT), detail: detail(G, ix, iy, irw, irh) });
     }
     return items;
   }
@@ -468,6 +470,17 @@ const Vision = (() => {
       for (let xx = x + inset; xx < x + rw - inset; xx++) { n++; if (g[yy * w + xx] > t) hit++; }
     }
     return n ? hit / n : 0;
+  }
+
+  // Share of label text in the top band of a cell: white pixels, clearly brighter than the cell background.
+  // A cargo always has its white label at the top; an empty slot has none: it is plain grey (at most with a
+  // dark dot) or half-transparent, and the scene behind it shows through dim.
+  function detail({ w, g }, x, y, rw, rh) {
+    const inset = 3, band = Math.max(6, Math.round(Math.min(rw, rh) * 0.35)), vals = [];
+    for (let yy = y + inset; yy < y + inset + band; yy++) for (let xx = x + inset; xx < x + rw - inset; xx++) vals.push(g[yy * w + xx]);
+    if (!vals.length) return 0;
+    const med = vals.slice().sort((a, b) => a - b)[vals.length >> 1];
+    return vals.filter(v => v > DETAIL_WHITE && v > med + DETAIL_DIFF).length / vals.length;
   }
 
   // Vertical content shift between two small frames: cur(y) ≈ prev(y + d)
