@@ -574,7 +574,9 @@ function startNativeScreen() {
       const m = JSON.parse(e.data);
       if (m.type === 'cursor') { onCursor(m.x, m.y); return; }
       if (m.type !== 'screen') return;
-      frameCropped = !!m.crop;
+      // only a message that tells the crop changes it: the black-screen one from older servers has no crop, and
+      // reading it as "not cropped" cut the frame in half once more, leaving only the right columns of the list
+      if ('crop' in m && !!m.crop !== frameCropped) { frameCropped = !!m.crop; if (P) resetScan(); }
       if (m.black) log(tr('log.black'));
       if (m.state === 'nogame') log(tr('log.nogame'));
       else if (m.state === 'minimized') log(tr('log.minimized'));

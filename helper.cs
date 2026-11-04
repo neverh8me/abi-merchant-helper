@@ -553,7 +553,7 @@ namespace AbiEar
                         if (black != wasBlack)
                         {
                             wasBlack = black;
-                            var msg = Encoding.UTF8.GetBytes("{\"type\":\"screen\",\"black\":" + (black ? "true" : "false") + "}");
+                            var msg = Encoding.UTF8.GetBytes("{\"type\":\"screen\",\"black\":" + (black ? "true" : "false") + ",\"crop\":" + MERCHANT_SIDE.ToString(System.Globalization.CultureInfo.InvariantCulture) + "}");
                             foreach (var ws in list) Send(ws, msg, WebSocketMessageType.Text);
                         }
                     }
