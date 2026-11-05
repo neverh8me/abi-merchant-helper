@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T03:50:12.544Z",
+ "updated": "2026-11-05T14:06:14.923Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -199,6 +199,16 @@
    "price": 270000,
    "itemId": 498060001,
    "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1793811985913,
+   "soundId": "lib:small_metal_crisp",
+   "size": "1x2",
+   "label": "Paper",
+   "price": 13500,
+   "itemId": 498090001,
+   "item": "Voss' Journal",
    "q": "gold"
   },
   {
