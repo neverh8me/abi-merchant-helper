@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T20:52:45.759Z",
+ "updated": "2026-11-05T03:50:12.544Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -200,6 +200,16 @@
    "itemId": 498060001,
    "item": "Space Lab Toybox",
    "q": "gold"
+  },
+  {
+   "t": 1793839771677,
+   "soundId": "lib:med_statue",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
   }
  ]
 }
