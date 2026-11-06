@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T16:49:05.770Z",
+ "updated": "2026-11-06T21:43:50.906Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -399,6 +399,26 @@
    "price": 250000,
    "itemId": 408080030,
    "item": "Gold Cup",
+   "q": "gold"
+  },
+  {
+   "t": 1793987745776,
+   "soundId": "lib:med_metal_crisp",
+   "size": "2x3",
+   "label": "Rare Mystery Cargo",
+   "price": 440000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1793989461019,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080014,
+   "item": "Porcelain",
    "q": "gold"
   }
  ]
