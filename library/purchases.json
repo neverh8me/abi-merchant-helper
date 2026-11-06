@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T16:34:25.544Z",
+ "updated": "2026-11-06T16:49:05.770Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -289,6 +289,16 @@
    "price": 250000,
    "itemId": 498070009,
    "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1793829115749,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 470000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
    "q": "gold"
   },
   {
