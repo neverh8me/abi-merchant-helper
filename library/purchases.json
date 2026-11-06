@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T21:06:15.452Z",
+ "updated": "2026-11-06T03:33:02.426Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -300,6 +300,26 @@
    "itemId": 408080038,
    "item": "Plaster Sculpture",
    "q": "purple"
+  },
+  {
+   "t": 1793925520576,
+   "soundId": "lib:electronicdevice",
+   "size": "2x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408100011,
+   "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1793925542802,
+   "soundId": "lib:acc_statue",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080001,
+   "item": "Gold Cheetah Statue",
+   "q": "gold"
   }
  ]
 }
