@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T14:46:34.169Z",
+ "updated": "2026-11-07T15:58:16.922Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -410,6 +410,16 @@
    "itemId": 408080030,
    "item": "Gold Cup",
    "q": "gold"
+  },
+  {
+   "t": 1793975678712,
+   "soundId": "lib:med_statue",
+   "size": "2x3",
+   "label": "Energy Items",
+   "price": 270000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
   },
   {
    "t": 1793983223178,
