@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T16:11:50.824Z",
+ "updated": "2026-11-07T16:30:19.661Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -460,6 +460,16 @@
    "itemId": 408080014,
    "item": "Porcelain",
    "q": "gold"
+  },
+  {
+   "t": 1794054425271,
+   "soundId": "lib:med_statue",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
   }
  ]
 }
