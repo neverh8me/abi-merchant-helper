@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T21:43:50.906Z",
+ "updated": "2026-11-07T07:57:04.099Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -399,6 +399,16 @@
    "price": 250000,
    "itemId": 408080030,
    "item": "Gold Cup",
+   "q": "gold"
+  },
+  {
+   "t": 1793983223178,
+   "soundId": null,
+   "size": "1x1",
+   "label": "Mystery Cargo",
+   "price": 40000,
+   "itemId": 498010003,
+   "item": "Magnesium Flint",
    "q": "gold"
   },
   {
