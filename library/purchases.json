@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T20:56:32.118Z",
+ "updated": "2026-11-08T02:40:18.041Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -490,6 +490,26 @@
    "itemId": 408080038,
    "item": "Plaster Sculpture",
    "q": "purple"
+  },
+  {
+   "t": 1794068018956,
+   "soundId": null,
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 498090001,
+   "item": "Voss' Journal",
+   "q": "gold"
+  },
+  {
+   "t": 1794068022968,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080014,
+   "item": "Porcelain",
+   "q": "gold"
   },
   {
    "t": 1794069126549,
