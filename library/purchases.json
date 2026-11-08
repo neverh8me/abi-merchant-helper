@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T17:28:51.232Z",
+ "updated": "2026-11-08T19:48:01.222Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -279,6 +279,16 @@
    "price": 13500,
    "itemId": 498090001,
    "item": "Voss' Journal",
+   "q": "gold"
+  },
+  {
+   "t": 1793818206676,
+   "soundId": "lib:electronicdevice",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
    "q": "gold"
   },
   {
