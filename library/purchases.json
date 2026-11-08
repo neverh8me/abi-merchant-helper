@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T15:57:11.447Z",
+ "updated": "2026-11-08T17:28:51.232Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -360,6 +360,16 @@
    "itemId": 408090002,
    "item": "Hardcover",
    "q": "blue"
+  },
+  {
+   "t": 1793908851226,
+   "soundId": null,
+   "size": "2x2",
+   "label": "Uncommon Military Items",
+   "price": 250000,
+   "itemId": 408120020,
+   "item": "Laser Pointer Module",
+   "q": "gold"
   },
   {
    "t": 1793925120510,
