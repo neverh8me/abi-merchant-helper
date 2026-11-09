@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T16:32:32.063Z",
+ "updated": "2026-11-09T16:51:22.904Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -649,6 +649,26 @@
    "price": 250000,
    "itemId": 408140024,
    "item": "Laptop Computer",
+   "q": "gold"
+  },
+  {
+   "t": 1794174357471,
+   "soundId": "lib:med_metal_crisp",
+   "size": "2x3",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1794174378866,
+   "soundId": "lib:med_statue",
+   "size": "1x1",
+   "label": "Uncommon Mystery Cargo",
+   "price": 168000,
+   "itemId": 498070013,
+   "item": "Mutated Tissue Mass",
    "q": "gold"
   },
   {
