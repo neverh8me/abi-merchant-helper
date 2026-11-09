@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T09:54:02.019Z",
+ "updated": "2026-11-09T11:49:18.752Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -619,6 +619,16 @@
    "price": 56000,
    "itemId": 408100011,
    "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1794222394025,
+   "soundId": "lib:coin",
+   "size": "1x1",
+   "label": "Mystery Cargo",
+   "price": 40000,
+   "itemId": 408080013,
+   "item": "Gold Bracelet",
    "q": "gold"
   }
  ]
