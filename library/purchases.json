@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T04:28:48.475Z",
+ "updated": "2026-11-09T09:54:02.019Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -609,6 +609,16 @@
    "price": 56000,
    "itemId": 498120003,
    "item": "T-147 Individual Communication Device",
+   "q": "gold"
+  },
+  {
+   "t": 1794150365870,
+   "soundId": "lib:electronicdevice",
+   "size": "2x2",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408100011,
+   "item": "Antenna",
    "q": "gold"
   }
  ]
