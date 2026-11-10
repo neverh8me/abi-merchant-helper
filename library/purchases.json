@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T02:47:00.964Z",
+ "updated": "2026-11-10T03:48:32.861Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -769,6 +769,16 @@
    "price": 250000,
    "itemId": 408080030,
    "item": "Gold Cup",
+   "q": "gold"
+  },
+  {
+   "t": 1794192226905,
+   "soundId": "lib:small_metal_crisp",
+   "size": "1x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070003,
+   "item": "Blood Glucose Meter Set",
    "q": "gold"
   },
   {
