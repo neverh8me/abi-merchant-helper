@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T15:43:39.661Z",
+ "updated": "2026-11-11T17:39:10.064Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -900,6 +900,16 @@
    "itemId": 408120017,
    "item": "Leveler",
    "q": "gold"
+  },
+  {
+   "t": 1794413614170,
+   "soundId": "lib:med_statue",
+   "size": "2x3",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
   }
  ]
 }
