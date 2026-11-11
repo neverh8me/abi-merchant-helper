@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T13:07:59.737Z",
+ "updated": "2026-11-11T15:43:39.661Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -859,6 +859,16 @@
    "price": 250000,
    "itemId": 408140024,
    "item": "Laptop Computer",
+   "q": "gold"
+  },
+  {
+   "t": 1794245856947,
+   "soundId": "lib:med_statue",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080030,
+   "item": "Gold Cup",
    "q": "gold"
   },
   {
