@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T17:45:17.917Z",
+ "updated": "2026-11-11T19:05:07.411Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -890,6 +890,26 @@
    "itemId": 408120017,
    "item": "Leveler",
    "q": "gold"
+  },
+  {
+   "t": 1794277300899,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070002,
+   "item": "EEG",
+   "q": "red"
+  },
+  {
+   "t": 1794281164805,
+   "soundId": "lib:electronicdevice",
+   "size": "1x2",
+   "label": "Military Items",
+   "price": 50000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
   },
   {
    "t": 1794360777284,
