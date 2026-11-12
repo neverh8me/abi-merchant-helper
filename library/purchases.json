@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T06:17:01.628Z",
+ "updated": "2026-11-12T06:41:15.706Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -989,6 +989,16 @@
    "price": 376000,
    "itemId": 408080049,
    "item": "Raw Diamond Ore",
+   "q": "gold"
+  },
+  {
+   "t": 1794394182419,
+   "soundId": "lib:electronicdevice",
+   "size": "1x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120017,
+   "item": "Leveler",
    "q": "gold"
   },
   {
