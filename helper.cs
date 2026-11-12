@@ -329,7 +329,8 @@ namespace AbiEar
                 if (sensitive && !OwnOrigin(ctx.Request.Headers["Origin"])) { ctx.Response.StatusCode = 403; ctx.Response.Close(); return; }
                 if (path == "/audio" && ctx.Request.IsWebSocketRequest) { Audio(ctx); return; }
                 if (path == "/screen" && ctx.Request.IsWebSocketRequest) { ScreenSocket(ctx); return; }
-                if (path == "/api/purchases" && ctx.Request.HttpMethod == "POST") { SavePurchases(ctx); return; }
+                if (path == "/api/purchases" && ctx.Request.HttpMethod == "POST") { SaveJson(ctx, "purchases.mine.json", "\"purchases\""); return; }
+                if (path == "/api/userdata" && ctx.Request.HttpMethod == "POST") { SaveJson(ctx, "userdata.json", "\"localStorage\""); return; }
                 if (path == "/api/diag" && ctx.Request.HttpMethod == "POST") { SaveDiag(ctx, false); return; }
                 if (path == "/api/diagframe" && ctx.Request.HttpMethod == "POST") { SaveDiag(ctx, true); return; }
                 ServeFile(ctx, path.TrimStart('/'));
@@ -392,12 +393,13 @@ namespace AbiEar
             res.Close();
         }
 
+        // userdata.json: everything the page keeps in the browser, for the move to the next app (not in git).
         // Own purchases: the page sends their list, we write it to purchases.mine.json (not in git),
         // and sync.ps1 sends the new ones from there to the Worker on launch. The custom header is required:
         // a browser will not send such a request from another site without CORS permission, so no third party can overwrite the file.
-        const int PURCHASES_MAX = 8 * 1024 * 1024;
+        const int PURCHASES_MAX = 32 * 1024 * 1024;
         static readonly object purchasesLock = new object();
-        static void SavePurchases(HttpListenerContext ctx)
+        static void SaveJson(HttpListenerContext ctx, string name, string mustHave)
         {
             var req = ctx.Request;
             var res = ctx.Response;
@@ -405,8 +407,8 @@ namespace AbiEar
             string body;
             using (var reader = new StreamReader(req.InputStream, Encoding.UTF8)) body = reader.ReadToEnd();
             string trimmed = body.TrimStart();
-            if (!trimmed.StartsWith("{") || body.IndexOf("\"purchases\"", StringComparison.Ordinal) < 0) { res.StatusCode = 400; res.Close(); return; }
-            string file = Path.Combine(root, "purchases.mine.json");
+            if (!trimmed.StartsWith("{") || body.IndexOf(mustHave, StringComparison.Ordinal) < 0) { res.StatusCode = 400; res.Close(); return; }
+            string file = Path.Combine(root, name);
             string tmp = file + ".tmp";
             lock (purchasesLock)
             {

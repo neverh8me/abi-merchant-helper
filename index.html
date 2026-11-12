@@ -1956,6 +1956,21 @@ async function syncBase() {
   } catch {} finally { syncBusy = false; if (syncAgain) { syncAgain = false; syncBase(); } }
 }
 
+// Everything the page keeps in the browser (own sounds, profiles, purchases, settings) is mirrored to userdata.json
+// in the app folder: browser storage belongs to this address, and the next app (its own window) reads the file instead.
+let userDataSent = '';
+function mirrorUserData() {
+  if (!location.protocol.startsWith('http')) return;
+  let body;
+  try { body = JSON.stringify({ localStorage: Object.fromEntries(Object.entries(localStorage)) }); } catch { return; }
+  if (body === userDataSent) return;
+  fetch('api/userdata', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Abi-Merchant-Helper': '1' }, body })
+    .then(r => { if (r.ok) userDataSent = body; }).catch(() => {});
+}
+setInterval(mirrorUserData, 30000);
+document.addEventListener('visibilitychange', () => { if (document.hidden) mirrorUserData(); }); // switching to the game
+setTimeout(mirrorUserData, 3000);
+
 function cargoName(key) {
   const rec = cargo.get(key);
   return rec ? `${rec.R + 1 - mapBounds().minR}×${rec.C + 1 - mapBounds().minC}` : key;
