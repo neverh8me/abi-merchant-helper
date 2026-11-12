@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:04:46.580Z",
+ "updated": "2026-11-12T17:06:13.724Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -939,6 +939,16 @@
    "price": 250000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1794329479744,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
    "q": "gold"
   },
   {
