@@ -1927,7 +1927,7 @@ async function loadBase() {
 
 // Own purchases go to a local file (purchases.mine.json via the local server), and from there
 // sync.ps1 sends them to the shared server on the next launch. Without the server (site not via start.bat) this is skipped quietly.
-let syncBusy = false;
+let syncBusy = false, syncAgain = false;
 const SHARE_LABELS = new Set(['', ...Object.values(MYSTERY_TIERS).map(t => t.name), 'Military Items', 'Medical Supplies', 'Computer Parts',
   'Collectibles', 'Instruments', 'Energy Items', 'Household Items', 'Building Materials', 'Electronics', 'Flammables', 'Tools', 'Paper',
   'Rare Collectibles', 'Uncommon Collectibles', 'Rare Medical Supplies', 'Uncommon Military Items']);
@@ -1942,7 +1942,8 @@ function shareable(b) {
 async function syncBase() {
   // before the library is loaded no purchase can be checked (shareable needs the item catalog): writing now
   // would empty the file, so wait — importLibrary calls this again
-  if (syncBusy || !location.protocol.startsWith('http') || !itemById.size) return;
+  if (!location.protocol.startsWith('http') || !itemById.size) return;
+  if (syncBusy) { syncAgain = true; return; } // a purchase during a write (a cart): written right after it
   syncBusy = true;
   // No free text into the shared base: item name from the catalog, label only a known one.
   // This way a nickname or any other piece of a screen line can never get in.
@@ -1952,7 +1953,7 @@ async function syncBase() {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Abi-Merchant-Helper': '1' },
       body: JSON.stringify({ updated: new Date().toISOString(), purchases: mine }, null, 1),
     });
-  } catch {} finally { syncBusy = false; }
+  } catch {} finally { syncBusy = false; if (syncAgain) { syncAgain = false; syncBase(); } }
 }
 
 function cargoName(key) {

@@ -349,7 +349,7 @@ namespace AbiEar
             if (rel.Length == 0) rel = "index.html";
             string file = Path.GetFullPath(Path.Combine(root, rel));
             var res = ctx.Response;
-            if (!file.StartsWith(root, StringComparison.OrdinalIgnoreCase) || !File.Exists(file)) { res.StatusCode = 404; res.Close(); return; }
+            if (!file.StartsWith(root + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase) || !File.Exists(file)) { res.StatusCode = 404; res.Close(); return; }
             string type;
             res.ContentType = types.TryGetValue(Path.GetExtension(file).ToLowerInvariant(), out type) ? type : "application/octet-stream";
             res.Headers["Cache-Control"] = "no-cache";
@@ -396,6 +396,7 @@ namespace AbiEar
         // and sync.ps1 sends the new ones from there to the Worker on launch. The custom header is required:
         // a browser will not send such a request from another site without CORS permission, so no third party can overwrite the file.
         const int PURCHASES_MAX = 8 * 1024 * 1024;
+        static readonly object purchasesLock = new object();
         static void SavePurchases(HttpListenerContext ctx)
         {
             var req = ctx.Request;
@@ -407,9 +408,12 @@ namespace AbiEar
             if (!trimmed.StartsWith("{") || body.IndexOf("\"purchases\"", StringComparison.Ordinal) < 0) { res.StatusCode = 400; res.Close(); return; }
             string file = Path.Combine(root, "purchases.mine.json");
             string tmp = file + ".tmp";
-            File.WriteAllText(tmp, body, new UTF8Encoding(false));
-            if (File.Exists(file)) File.Delete(file);
-            File.Move(tmp, file);
+            lock (purchasesLock)
+            {
+                File.WriteAllText(tmp, body, new UTF8Encoding(false));
+                if (File.Exists(file)) File.Replace(tmp, file, null); // one step: the file is never missing
+                else File.Move(tmp, file);
+            }
             res.StatusCode = 204;
             res.Close();
         }
