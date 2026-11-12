@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T20:28:46.416Z",
+ "updated": "2026-11-12T06:17:01.628Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -959,6 +959,26 @@
    "price": 250000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1794380410009,
+   "soundId": "lib:med_metal_crisp",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1794384828838,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Rare Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
    "q": "gold"
   },
   {
