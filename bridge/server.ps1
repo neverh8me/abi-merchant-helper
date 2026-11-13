@@ -1,3 +1,4 @@
+# ASCII only: Windows PowerShell reads a script without a BOM in the system code page.
 # The move from the PowerShell version (2.x) to the app (3.0). The old updater unpacks this file over the old
 # server.ps1 and runs it, once. It:
 #   1. saves what the page kept in the browser (own sounds, profiles, purchases, settings) to userdata.json;
@@ -20,10 +21,10 @@ if (-not (Test-Path $data)) {
   $page = @'
 <!doctype html><meta charset="utf-8"><title>ABI: Merchant Helper</title>
 <body style="margin:0;height:100vh;display:grid;place-items:center;background:#050507;color:#f5f5f7;font:16px 'Segoe UI',sans-serif">
-<div style="max-width:520px;text-align:center"><h1>ABI: Merchant Helper</h1><p id="m">Moving your sounds, profiles and purchases to the new app…</p></div>
+<div style="max-width:520px;text-align:center"><h1>ABI: Merchant Helper</h1><p id="m">Moving your sounds, profiles and purchases to the new app...</p></div>
 <script>
 fetch('/save', { method: 'POST', body: JSON.stringify({ localStorage: Object.fromEntries(Object.entries(localStorage)) }) })
-  .then(r => { document.getElementById('m').textContent = r.ok ? 'Done. The new app is opening — you can close this tab.' : 'Could not save the data.'; })
+  .then(r => { document.getElementById('m').textContent = r.ok ? 'Done. The new app is opening, you can close this tab.' : 'Could not save the data.'; })
   .catch(() => { document.getElementById('m').textContent = 'Could not save the data.'; });
 </script>
 '@
