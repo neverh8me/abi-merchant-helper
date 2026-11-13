@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T21:25:58.124Z",
+ "updated": "2026-11-13T00:43:03.093Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1089,6 +1089,26 @@
    "price": 70000,
    "itemId": 408100011,
    "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1794498507319,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "Building Materials",
+   "price": 250000,
+   "itemId": 498080002,
+   "item": "Phaethon's Clock",
+   "q": "red"
+  },
+  {
+   "t": 1794504475644,
+   "soundId": "lib:med_statue",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080030,
+   "item": "Gold Cup",
    "q": "gold"
   },
   {
