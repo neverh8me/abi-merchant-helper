@@ -1,2 +1,4 @@
 target/
 gen/schemas/
+shell/daisyui.css
+shell/abi-theme.css

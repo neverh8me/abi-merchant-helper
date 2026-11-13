@@ -1,0 +1,32 @@
+/* The daisyUI theme of ABI: Merchant Helper (dark, after YT Music). Used by the page and by the start screen. */
+[data-theme="abi"] {
+  color-scheme: dark;
+  --color-base-100: #050507;
+  --color-base-200: #111116;
+  --color-base-300: #1d1d24;
+  --color-base-content: #f5f5f7;
+  --color-primary: #f0b429;
+  --color-primary-content: #111111;
+  --color-secondary: #3b82f6;
+  --color-secondary-content: #ffffff;
+  --color-accent: #ff2e4d;
+  --color-accent-content: #ffffff;
+  --color-neutral: #2c2c36;
+  --color-neutral-content: #f5f5f7;
+  --color-info: #93c5fd;
+  --color-info-content: #111111;
+  --color-success: #3ecf8e;
+  --color-success-content: #111111;
+  --color-warning: #f0b429;
+  --color-warning-content: #111111;
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+  --radius-selector: 1rem;
+  --radius-field: 2rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}

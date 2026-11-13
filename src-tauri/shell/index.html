@@ -1,75 +1,55 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="abi">
 <head>
 <meta charset="utf-8">
 <title>ABI: Merchant Helper</title>
+<link rel="stylesheet" href="daisyui.css">
+<link rel="stylesheet" href="abi-theme.css">
 <style>
-  /* The start screen: update, base sync, then the app. The look follows YT Music (github.com/neverh8me/yt-music). */
-  :root {
-    --bg: #050507; --surface: rgba(255, 255, 255, .04); --surface-hover: rgba(255, 255, 255, .08);
-    --stroke: rgba(255, 255, 255, .09); --text: #f5f5f7; --muted: #9a9aa6; --dim: #6c6c78;
-    --accent: #f0b429; --ok: #3ecf8e; --bad: #ff5c6c;
-    --font: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
-  }
-  * { box-sizing: border-box; }
+  /* The start screen: update, base sync, then the app. daisyUI components; only the layout is ours. */
   html, body { height: 100%; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 var(--font); display: flex; flex-direction: column; overflow: hidden; user-select: none; }
-  body::before { content: ""; position: fixed; inset: -20%; z-index: -1; background: radial-gradient(40% 40% at 30% 20%, #f0b42922, transparent 70%), radial-gradient(40% 40% at 75% 80%, #3b82f61c, transparent 70%); filter: blur(40px); }
-  #bar { height: 44px; display: flex; align-items: center; padding: 0 6px 0 16px; gap: 10px; color: var(--muted); font-size: 13px; }
-  #bar b { color: var(--text); font-weight: 600; }
+  body { margin: 0; background: var(--color-base-100); color: var(--color-base-content); display: flex; flex-direction: column; overflow: hidden; user-select: none; font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
+  #bar { display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 16px; font-size: 13px; }
   #bar .grow { flex: 1; align-self: stretch; }
-  .win { display: grid; place-items: center; width: 40px; height: 32px; border: 0; border-radius: 8px; background: none; color: var(--muted); cursor: pointer; }
-  .win svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
-  .win:hover { background: var(--surface-hover); color: var(--text); }
-  .win.close:hover { background: #e5173a; color: #fff; }
+  #close:hover { background: #e5173a; color: #fff; }
   main { flex: 1; display: grid; place-items: center; padding: 24px; }
-  .card { width: min(520px, 100%); background: var(--surface); border: 1px solid var(--stroke); border-radius: 24px; padding: 28px; backdrop-filter: blur(32px) saturate(140%); }
-  h1 { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -.01em; }
-  .sub { color: var(--muted); margin: 4px 0 22px; }
-  ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-  li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; padding: 12px 14px; border: 1px solid var(--stroke); border-radius: 14px; color: var(--dim); transition: border-color .2s, color .2s; }
-  li .dot { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-hover); font-size: 13px; font-weight: 700; }
-  li .name { color: inherit; font-weight: 600; }
-  li .detail { font-size: 12px; color: var(--muted); min-height: 17px; user-select: text; }
-  li.run { border-color: var(--accent); color: var(--text); }
-  li.run .dot { background: var(--accent); color: #111; animation: pulse 1.1s ease-in-out infinite; }
-  li.ok { color: var(--text); } li.ok .dot { background: var(--ok); color: #111; }
-  li.err { color: var(--text); border-color: var(--bad); } li.err .dot { background: var(--bad); color: #111; }
-  @keyframes pulse { 50% { transform: scale(.86); opacity: .7; } }
-  .bar { height: 6px; margin-top: 8px; border-radius: 999px; background: var(--surface-hover); overflow: hidden; }
-  .bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--accent); transition: width .15s; }
-  #notes { margin-top: 8px; max-height: 120px; overflow: auto; white-space: pre-wrap; font-size: 12px; color: var(--muted); user-select: text; }
-  .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
-  .pill { height: 36px; padding: 0 16px; border-radius: 999px; background: var(--surface); border: 1px solid var(--stroke); color: var(--text); font: inherit; cursor: pointer; }
-  .pill:hover { background: var(--surface-hover); }
-  .pill.primary { background: var(--text); border-color: var(--text); color: #050507; font-weight: 600; }
+  .card { width: min(520px, 100%); background: var(--color-base-200); }
+  .card-actions { justify-content: flex-end; }
   [hidden] { display: none !important; }
+  .steps, .progress { width: 100%; }
+  .step { text-align: start; }
+  .detail { font-size: 12px; opacity: .65; min-height: 17px; user-select: text; }
+  #notes { margin-top: 8px; max-height: 120px; overflow: auto; white-space: pre-wrap; font-size: 12px; opacity: .65; user-select: text; }
+  svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
 </style>
 </head>
 <body>
 <div id="bar" data-tauri-drag-region>
-  <b data-tauri-drag-region>ABI: Merchant Helper</b><span id="ver" data-tauri-drag-region></span>
+  <b data-tauri-drag-region>ABI: Merchant Helper</b><span id="ver" class="badge badge-ghost badge-sm" data-tauri-drag-region></span>
   <span class="grow" data-tauri-drag-region></span>
-  <button class="win" id="min"><svg viewBox="0 0 16 16"><path d="M3 8h10"/></svg></button>
-  <button class="win" id="max"><svg viewBox="0 0 16 16"><rect x="3.5" y="3.5" width="9" height="9" rx="1.5"/></svg></button>
-  <button class="win close" id="close"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+  <button class="btn btn-ghost btn-sm btn-square" id="min"><svg viewBox="0 0 16 16"><path d="M3 8h10"/></svg></button>
+  <button class="btn btn-ghost btn-sm btn-square" id="max"><svg viewBox="0 0 16 16"><rect x="3.5" y="3.5" width="9" height="9" rx="1.5"/></svg></button>
+  <button class="btn btn-ghost btn-sm btn-square" id="close"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
 </div>
 <main>
-  <div class="card">
-    <h1 id="title"></h1>
-    <p class="sub" id="sub"></p>
-    <ol>
-      <li id="s-upd"><span class="dot">1</span><div><div class="name"></div><div class="detail"></div><div class="bar" hidden><i></i></div><div id="notes" hidden></div></div></li>
-      <li id="s-base"><span class="dot">2</span><div><div class="name"></div><div class="detail"></div></div></li>
-      <li id="s-app"><span class="dot">3</span><div><div class="name"></div><div class="detail"></div></div></li>
-    </ol>
-    <div class="actions">
-      <button class="pill" id="again" hidden></button>
-      <button class="pill primary" id="open" hidden></button>
+  <div class="card card-border">
+    <div class="card-body">
+      <h1 class="card-title" id="title"></h1>
+      <p id="sub"></p>
+      <ul class="steps steps-vertical">
+        <li class="step" id="s-upd"><div><div class="name"></div><div class="detail"></div><progress class="progress progress-primary" value="0" max="100" hidden></progress><div id="notes" hidden></div></div></li>
+        <li class="step" id="s-base"><div><div class="name"></div><div class="detail"></div></div></li>
+        <li class="step" id="s-app"><div><div class="name"></div><div class="detail"></div></div></li>
+      </ul>
+      <div class="card-actions">
+        <button class="btn btn-neutral" id="again" hidden></button>
+        <button class="btn btn-primary" id="open" hidden></button>
+      </div>
     </div>
   </div>
 </main>
 <script>
+
 const T = {
   en: { title: 'Getting ready', menu: 'Updates', sub: 'Version {v}', upd: 'App update', base: 'Purchase base', app: 'Start',
     checking: 'Checking…', latest: 'You have the latest version.', found: 'Version {v} found, downloading…', dl: 'Downloading {p}% ({a} of {b} MB)', installing: 'Installing, the app will restart…',
@@ -107,14 +87,14 @@ $('again').onclick = () => location.reload();
 
 function step(id, state, detail) {
   const li = $(id);
-  li.className = state;
+  li.className = 'step ' + ({ run: 'step-primary', ok: 'step-success', err: 'step-error' }[state] || '');
   li.querySelector('.detail').textContent = detail || '';
 }
 
 window.__TAURI__.event.listen('update-progress', e => {
   const { downloaded, total } = e.payload, mb = n => (n / 1048576).toFixed(1);
   const p = total ? Math.round(downloaded / total * 100) : 0;
-  $('s-upd').querySelector('.bar i').style.width = p + '%';
+  $('s-upd').querySelector('progress').value = p;
   step('s-upd', 'run', downloaded >= total && total ? t('installing') : t('dl', { p, a: mb(downloaded), b: total ? mb(total) : '?' }));
 });
 
@@ -128,7 +108,7 @@ async function run() {
     const u = await invoke('check_update');
     if (u.available) {
       step('s-upd', 'run', t('found', { v: u.version }));
-      $('s-upd').querySelector('.bar').hidden = false;
+      $('s-upd').querySelector('progress').hidden = false;
       if (u.notes) { $('notes').textContent = u.notes; $('notes').hidden = false; }
       await invoke('install_update'); // the app restarts when it is done
       return;
