@@ -1,0 +1,61 @@
+name: Release
+
+# A tag v* builds the Windows installer, signs the update and makes a draft release with:
+#   - the installer (*-setup.exe) and latest.json for the in-app updater;
+#   - abi-merchant-helper-bridge.zip: what the updater of the PowerShell versions (2.x) downloads and runs,
+#     it moves the user to the app (see bridge/server.ps1).
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+# Third-party actions are pinned to full commit SHAs. Comments show the version.
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          toolchain: stable
+
+      - uses: swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+        with:
+          workspaces: src-tauri -> target
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+
+      - name: Tests
+        shell: bash
+        run: |
+          node --test worker/worker.test.mjs
+          cd src-tauri && cargo test
+
+      - uses: tauri-apps/tauri-action@84b9d35b5fc46c1e45415bdb6144030364f7ebc5 # action-v0.6.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Signs the update; tauri-action then uploads *.sig and latest.json for the in-app updater.
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ''
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: 'ABI: Merchant Helper ${{ github.ref_name }}'
+          releaseBody: 'See the notes below.'
+          assetNamePattern: 'ABI.Merchant.Helper_[version]_Windows-x64[setup][ext]'
+          releaseDraft: true
+          prerelease: false
+
+      - name: Bridge for the PowerShell versions
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          New-Item -ItemType Directory bridge-zip/abi-merchant-helper | Out-Null
+          Copy-Item bridge/start.bat, bridge/server.ps1, version.json bridge-zip/abi-merchant-helper/
+          Compress-Archive bridge-zip/abi-merchant-helper abi-merchant-helper-bridge.zip
+          gh release upload $env:GITHUB_REF_NAME abi-merchant-helper-bridge.zip --clobber

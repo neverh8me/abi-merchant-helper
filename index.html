@@ -7,11 +7,11 @@
 <title>ABI: Merchant Helper</title>
 <style>
   :root {
-    --bg: #0e141b; --panel: #16202a; --line: #253241; --text: #e3e9f0; --muted: #8796a8;
+    --bg: #050507; --panel: #111116; --line: #1d1d24; --text: #f5f5f7; --muted: #9a9aa6;
     --accent: #f0b429; --ok: #3ecf8e; --bad: #ef4444;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, "Segoe UI", sans-serif; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
   header { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   header h1 { margin: 0; font-size: 18px; }
   header .status { color: var(--muted); }
@@ -22,18 +22,18 @@
   .top .result-col { position: sticky; top: 8px; }
   .map-wrap { max-height: calc(100vh - 150px); overflow: auto; }
   @media (max-width: 960px) { .top { grid-template-columns: 1fr; } .top .result-col { position: static; } }
-  section { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; margin-bottom: 16px; }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 16px; margin-bottom: 16px; }
   section h2 { margin: 0 0 10px; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
-  button { background: #253241; color: var(--text); border: 1px solid #364657; border-radius: 6px; padding: 8px 12px; font: inherit; cursor: pointer; }
-  button:hover { background: #2e3d4e; }
+  button { background: #1d1d24; color: var(--text); border: 1px solid #2c2c36; border-radius: 999px; padding: 8px 16px; font: inherit; cursor: pointer; }
+  button:hover { background: #292932; }
   button.primary { background: var(--accent); color: #111; border-color: var(--accent); font-weight: 600; }
   button.danger { color: var(--bad); }
   button.small { padding: 3px 8px; font-size: 12px; }
   button:disabled { opacity: .45; cursor: default; }
-  select, input[type=text], input[type=number] { background: #0e141b; color: var(--text); border: 1px solid #364657; border-radius: 6px; padding: 6px 8px; font: inherit; min-width: 0; }
+  select, input[type=text], input[type=number] { background: #050507; color: var(--text); border: 1px solid #2c2c36; border-radius: 10px; padding: 6px 8px; font: inherit; min-width: 0; }
   label { color: var(--muted); }
   .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
-  canvas { width: 100%; display: block; background: #0a0f15; border-radius: 6px; }
+  canvas { width: 100%; display: block; background: #0a0a0d; border-radius: 6px; }
   #screen { cursor: crosshair; }
   #map { cursor: pointer; width: auto; max-width: 100%; margin: 0 auto; }
   .muted { color: var(--muted); }
@@ -44,7 +44,7 @@
   /* Steps */
   .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
   .step { border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; color: var(--muted); font-size: 13px; }
-  .step b { display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 50%; background: #253241; margin-right: 6px; }
+  .step b { display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 50%; background: #1d1d24; margin-right: 6px; }
   .step.active { border-color: var(--accent); color: var(--text); }
   .step.active b { background: var(--accent); color: #111; }
   .step.done b { background: var(--ok); color: #111; }
@@ -53,12 +53,12 @@
   .stage .grow { flex: 1; }
 
   /* Result */
-  #result { border-radius: 8px; padding: 16px; background: #0a0f15; border: 1px solid var(--line); min-height: 150px; transition: border-color .15s, background .15s; }
+  #result { border-radius: 8px; padding: 16px; background: #0a0a0d; border: 1px solid var(--line); min-height: 150px; transition: border-color .15s, background .15s; }
   #result .big { font-size: 40px; font-weight: 800; line-height: 1.1; }
   .chance { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border: 1px solid; border-radius: 8px; margin: 12px 0; }
   .chance b { font-size: 18px; }
   .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
-  .tile { background: #16202a; border: 1px solid var(--line); border-radius: 8px; padding: 8px 6px 6px; text-align: center; }
+  .tile { background: #111116; border: 1px solid var(--line); border-radius: 8px; padding: 8px 6px 6px; text-align: center; }
   .tile img { width: 72px; height: 72px; object-fit: contain; display: block; margin: 0 auto; }
   .tile .noimg { height: 72px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--muted); }
   .tile i { display: block; height: 3px; border-radius: 2px; margin: 6px 10px; }
@@ -85,18 +85,18 @@
   .update:hover { background: rgba(59, 130, 246, .15); }
   .update:not([hidden]) + .lang { margin-left: 0; }
   .credits { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 20px 20px; }
-  .map-pop { position: fixed; z-index: 10; width: 340px; background: #121a23; border: 1px solid #364657; border-radius: 10px; padding: 12px; box-shadow: 0 8px 30px #000a; pointer-events: none; }
+  .map-pop { position: fixed; z-index: 10; width: 340px; background: #0f0f13; border: 1px solid #2c2c36; border-radius: 10px; padding: 12px; box-shadow: 0 8px 30px #000a; pointer-events: none; }
   .map-pop .head { color: var(--muted); font-size: 13px; }
   .map-pop .tiles { grid-template-columns: repeat(3, 1fr); }
   .map-pop .tile img { width: 56px; height: 56px; }
   #result .sub { color: var(--muted); margin: 4px 0 12px; }
   .bars div { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
-  .bars .bar { flex: 1; height: 10px; background: #16202a; border-radius: 5px; overflow: hidden; }
+  .bars .bar { flex: 1; height: 10px; background: #111116; border-radius: 5px; overflow: hidden; }
   .bars .bar i { display: block; height: 100%; }
   .bars .name { width: 100px; }
   .bars .val { width: 48px; text-align: right; font-variant-numeric: tabular-nums; }
   .items { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
-  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border-radius: 12px; background: #16202a; border: 1px solid var(--line); font-size: 13px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border-radius: 12px; background: #111116; border: 1px solid var(--line); font-size: 13px; }
   .chip img { width: 28px; height: 28px; object-fit: contain; }
   .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
 
@@ -109,7 +109,7 @@
   .sound .meta { color: var(--muted); font-size: 12px; margin: 4px 0 8px; }
   .item-row { display: flex; align-items: center; gap: 6px; margin: 4px 0; font-size: 13px; }
   .item-row .grow { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .item-row img { width: 24px; height: 24px; object-fit: contain; background: #0a0f15; border-radius: 4px; }
+  .item-row img { width: 24px; height: 24px; object-fit: contain; background: #0a0a0d; border-radius: 4px; }
   .add-item { display: grid; grid-template-columns: 1fr 96px 74px 50px auto; gap: 6px; margin-top: 8px; }
   details summary { cursor: pointer; font-size: 12px; }
   .sizes { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
@@ -120,11 +120,36 @@
   .odds-row .grow { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .odds-row img { width: 24px; height: 24px; object-fit: contain; }
   .odds-row b { width: 44px; text-align: right; font-variant-numeric: tabular-nums; }
+  /* In the app (its own window, no system frame): the header is the title bar */
+  .win-ctrls { display: none; }
+  body.app { height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+  body.app header { flex: none; padding: 8px 8px 8px 20px; user-select: none; }
+  body.app .scroll { flex: 1; overflow: auto; }
+  body.app .win-ctrls { display: flex; gap: 2px; margin-left: 8px; }
+  body.app .map-wrap { max-height: calc(100vh - 210px); }
+  .win-btn { display: grid; place-items: center; width: 40px; height: 32px; padding: 0; border: 0; border-radius: 8px; background: none; color: var(--muted); }
+  .win-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+  .win-btn:hover { background: #ffffff14; color: var(--text); }
+  .win-btn.close:hover { background: #e5173a; color: #fff; }
+  .ver { border: 0; background: none; color: var(--muted); padding: 4px 8px; font-size: 12px; }
 </style>
+<script>
+// In the app the page's storage starts empty (another browser profile). Once, before anything reads it, it is
+// filled from userdata.json: the mirror the browser version kept in its folder, or this app's own after a reinstall.
+if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
+  try {
+    const x = new XMLHttpRequest();
+    x.open('GET', 'userdata.json', false);
+    x.send();
+    if (x.status === 200) for (const [k, v] of Object.entries(JSON.parse(x.responseText).localStorage)) localStorage.setItem(k, v);
+  } catch {}
+  try { localStorage.setItem('abi-mh-imported', '1'); } catch {}
+}
+</script>
 </head>
 <body>
-<header>
-  <h1 data-i18n="app">ABI: Merchant Helper</h1>
+<header data-tauri-drag-region>
+  <h1 data-i18n="app" data-tauri-drag-region>ABI: Merchant Helper</h1>
   <button id="btnStart" class="primary" data-i18n="btn.start">Start catching</button>
   <button id="btnStop" disabled data-i18n="btn.stop">Stop</button>
   <span class="status" id="status" data-i18n="status.idle">Not running</span>
@@ -136,7 +161,14 @@
   <select id="lang" class="lang" title="Мова · Language · Язык">
     <option value="uk">UA</option><option value="en">ENG</option><option value="ru">RU</option>
   </select>
+  <button id="btnUpdates" class="ver" hidden></button>
+  <div class="win-ctrls">
+    <button class="win-btn" id="winMin" data-i18n-title="win.min"><svg viewBox="0 0 16 16"><path d="M3 8h10"/></svg></button>
+    <button class="win-btn" id="winMax" data-i18n-title="win.max"><svg viewBox="0 0 16 16"><rect x="3.5" y="3.5" width="9" height="9" rx="1.5"/></svg></button>
+    <button class="win-btn close" id="winClose" data-i18n-title="win.close"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+  </div>
 </header>
+<div class="scroll">
 
 <div class="top">
   <section class="result-col">
@@ -231,6 +263,7 @@
 
 <video id="video" autoplay muted playsinline hidden></video>
 
+</div>
 <script src="i18n.js"></script>
 <script src="audio.js"></script>
 <script src="library.js"></script>
@@ -330,6 +363,7 @@ const BASE_REMOTE = 'https://raw.githubusercontent.com/neverh8me/abi-merchant-he
 
 // ---------- DOM ----------
 const $ = id => document.getElementById(id);
+const APP = !!window.__ABI_APP__; // inside the app window (not a browser tab)
 const ui = {
   start: $('btnStart'), stop: $('btnStop'), status: $('status'), result: $('result'),
   spec: $('spec'), video: $('video'), log: $('log'), sounds: $('sounds'), newName: $('newName'),
@@ -1927,7 +1961,7 @@ async function loadBase() {
 
 // Own purchases go to a local file (purchases.mine.json via the local server), and from there
 // sync.ps1 sends them to the shared server on the next launch. Without the server (site not via start.bat) this is skipped quietly.
-let syncBusy = false;
+let syncBusy = false, syncAgain = false;
 const SHARE_LABELS = new Set(['', ...Object.values(MYSTERY_TIERS).map(t => t.name), 'Military Items', 'Medical Supplies', 'Computer Parts',
   'Collectibles', 'Instruments', 'Energy Items', 'Household Items', 'Building Materials', 'Electronics', 'Flammables', 'Tools', 'Paper',
   'Rare Collectibles', 'Uncommon Collectibles', 'Rare Medical Supplies', 'Uncommon Military Items']);
@@ -1942,7 +1976,8 @@ function shareable(b) {
 async function syncBase() {
   // before the library is loaded no purchase can be checked (shareable needs the item catalog): writing now
   // would empty the file, so wait — importLibrary calls this again
-  if (syncBusy || !location.protocol.startsWith('http') || !itemById.size) return;
+  if (!location.protocol.startsWith('http') || !itemById.size) return;
+  if (syncBusy) { syncAgain = true; return; } // a purchase during a write (a cart): written right after it
   syncBusy = true;
   // No free text into the shared base: item name from the catalog, label only a known one.
   // This way a nickname or any other piece of a screen line can never get in.
@@ -1952,8 +1987,23 @@ async function syncBase() {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Abi-Merchant-Helper': '1' },
       body: JSON.stringify({ updated: new Date().toISOString(), purchases: mine }, null, 1),
     });
-  } catch {} finally { syncBusy = false; }
+  } catch {} finally { syncBusy = false; if (syncAgain) { syncAgain = false; syncBase(); } }
 }
+
+// Everything the page keeps in the browser (own sounds, profiles, purchases, settings) is mirrored to userdata.json
+// in the app folder: browser storage belongs to this address, and the next app (its own window) reads the file instead.
+let userDataSent = '';
+function mirrorUserData() {
+  if (!location.protocol.startsWith('http')) return;
+  let body;
+  try { body = JSON.stringify({ localStorage: Object.fromEntries(Object.entries(localStorage)) }); } catch { return; }
+  if (body === userDataSent) return;
+  fetch('api/userdata', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Abi-Merchant-Helper': '1' }, body })
+    .then(r => { if (r.ok) userDataSent = body; }).catch(() => {});
+}
+setInterval(mirrorUserData, 30000);
+document.addEventListener('visibilitychange', () => { if (document.hidden) mirrorUserData(); }); // switching to the game
+setTimeout(mirrorUserData, 3000);
 
 function cargoName(key) {
   const rec = cargo.get(key);
@@ -2000,7 +2050,7 @@ function drawMapInner() {
   const H = placed.length ? Math.min(MAP_MAX_ROWS, Math.max(1, maxR - minR)) * MAP_U : 120;
   if (ui.map.width !== W || ui.map.height !== H) { ui.map.width = W; ui.map.height = H; }
   const c = mapCtx;
-  c.fillStyle = '#0a0f15';
+  c.fillStyle = '#0a0a0d';
   c.fillRect(0, 0, W, H);
   if (!placed.length) {
     c.fillStyle = '#8796a8'; c.font = '13px system-ui, sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle';
@@ -2014,7 +2064,7 @@ function drawMapInner() {
   for (const rec of placed) {
     const key = keyOf.get(rec);
     const x = (rec.C - minC) * MAP_U, y = (rec.R - minR) * MAP_U, w = rec.w * MAP_U, h = rec.h * MAP_U;
-    c.fillStyle = '#121a23';
+    c.fillStyle = '#0f0f13';
     c.fillRect(x + 2, y + 2, w - 4, h - 4);
     if (rec.thumb) { c.globalAlpha = 0.35; c.drawImage(rec.thumb, x + 2, y + 2, w - 4, h - 4); c.globalAlpha = 1; }
 
@@ -2023,7 +2073,7 @@ function drawMapInner() {
       c.fillStyle = 'rgba(11,12,15,.7)';
       c.fillRect(x + 2, y + 2, w - 4, h - 4);
       if (rec.bought.img) { c.globalAlpha = 0.6; drawItemIcon(c, rec.bought, x + 8, y + 8, w - 16, h - 16); c.globalAlpha = 1; }
-      c.strokeStyle = '#364657'; c.lineWidth = 1;
+      c.strokeStyle = '#2c2c36'; c.lineWidth = 1;
       c.strokeRect(x + 2.5, y + 2.5, w - 5, h - 5);
       c.fillStyle = '#22c55e'; c.font = 'bold 14px system-ui, sans-serif'; c.textAlign = 'left'; c.textBaseline = 'top';
       c.fillText('✓', x + 6, y + 4);
@@ -2039,7 +2089,7 @@ function drawMapInner() {
         // a category cargo whose pools hold no reds (Tools, Paper…): dimmed
         c.fillStyle = 'rgba(11,12,15,.6)';
         c.fillRect(x + 2, y + 2, w - 4, h - 4);
-        c.strokeStyle = '#253241'; c.lineWidth = 1;
+        c.strokeStyle = '#1d1d24'; c.lineWidth = 1;
         c.strokeRect(x + 2.5, y + 2.5, w - 5, h - 5);
         continue;
       }
@@ -2064,7 +2114,7 @@ function drawMapInner() {
         c.fillStyle = revealed.color;
         c.fillText(qName(revealed), x + w / 2, y + h - 4);
       } else {
-        c.strokeStyle = '#364657'; c.lineWidth = 1;
+        c.strokeStyle = '#2c2c36'; c.lineWidth = 1;
         c.strokeRect(x + 2.5, y + 2.5, w - 5, h - 5);
       }
       c.fillStyle = '#8796a8'; c.font = '12px system-ui, sans-serif'; c.textAlign = 'left'; c.textBaseline = 'top';
@@ -2088,7 +2138,7 @@ function drawMapInner() {
     // If there is one item (or nearly certain), one big picture.
     const cands = itemOdds(sound, size, info).filter(x => x.p >= 0.02);
     const top = cands.slice().sort((a, b) => b.p - a.p)[0];
-    c.fillStyle = red > 0 ? 'rgba(127,29,29,.55)' : '#121a23';
+    c.fillStyle = red > 0 ? 'rgba(127,29,29,.55)' : '#0f0f13';
     c.fillRect(x + 2, y + 2, w - 4, h - 4);
     if (top && (cands.length === 1 || top.p >= 0.995)) {
       drawItemIcon(c, top.it, x + 6, y + 4, w - 12, h - 16);
@@ -2108,7 +2158,7 @@ function drawMapInner() {
         c.fillText(pctFine(p), cx + cw / 2, cy + s + 4);
       });
     }
-    const color = red > 0 ? '#ef4444' : '#364657';
+    const color = red > 0 ? '#ef4444' : '#2c2c36';
     c.strokeStyle = key === lastKey ? '#f0b429' : color; c.lineWidth = key === lastKey || red > 0 ? 3 : 1;
     c.strokeRect(x + 3, y + 3, w - 6, h - 6);
   }
@@ -2373,7 +2423,7 @@ function setRecording(id) {
 function drawLevel(db, trig) {
   const { width: w, height: h } = ui.spec;
   specCtx.drawImage(ui.spec, -1, 0);
-  specCtx.fillStyle = '#0a0f15';
+  specCtx.fillStyle = '#0a0a0d';
   specCtx.fillRect(w - 1, 0, 1, h);
   const v = Math.min(1, Math.max(0, (db + 90) / 80));
   specCtx.fillStyle = `hsl(${200 - v * 160}, 80%, 55%)`;
@@ -2565,10 +2615,15 @@ ui.sens.oninput = ui.thr.oninput = syncLabels;
 // right half (the merchant) is captured, so the overlay never gets in the way of recognition.
 async function openOverlay() {
   if (overlayWin) return;
-  if (!('documentPictureInPicture' in window)) { log(tr('log.noPip')); return; }
   let w;
-  try { w = await documentPictureInPicture.requestWindow({ width: 380, height: 600 }); }
-  catch { log(tr('log.noPip')); return; }
+  if (APP) {
+    w = window.open('about:blank', 'abi-overlay', 'width=380,height=600'); // the app makes it always on top
+    if (!w) { log(tr('log.noPip')); return; }
+  } else {
+    if (!('documentPictureInPicture' in window)) { log(tr('log.noPip')); return; }
+    try { w = await documentPictureInPicture.requestWindow({ width: 380, height: 600 }); }
+    catch { log(tr('log.noPip')); return; }
+  }
   overlayWin = w;
   for (const ss of document.styleSheets) {
     try {
@@ -2639,6 +2694,7 @@ langSelect.onchange = () => {
 
 // A new release on GitHub: the files are replaced by update.ps1 when start.bat runs, here only a hint
 const REPO = 'neverh8me/abi-merchant-helper';
+const UPDATE_SCREEN = 'http://tauri.localhost/index.html?menu=1';
 let latestRelease = null;
 async function checkUpdate() {
   try {
@@ -2656,6 +2712,20 @@ function renderUpdate() {
   a.textContent = tr('update.available', { v: latestRelease.v });
   a.href = latestRelease.url;
   a.hidden = false;
+  if (APP) a.onclick = e => { e.preventDefault(); location.href = UPDATE_SCREEN; };
+}
+
+// The app window: the title bar buttons, and the version that opens the update screen
+if (APP) {
+  document.body.classList.add('app');
+  const win = window.__TAURI__.window.getCurrentWindow();
+  $('winMin').onclick = () => win.minimize();
+  $('winMax').onclick = () => win.toggleMaximize();
+  $('winClose').onclick = () => win.close();
+  const b = $('btnUpdates');
+  b.hidden = false;
+  b.onclick = () => { location.href = UPDATE_SCREEN; };
+  fetch('version.json', { cache: 'no-cache' }).then(r => r.json()).then(v => { b.textContent = 'v' + v.version; }).catch(() => {});
 }
 checkUpdate();
 setInterval(checkUpdate, 6 * 3600e3);

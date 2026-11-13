@@ -6,14 +6,17 @@ The only secret is `GITHUB_TOKEN`: a fine-grained GitHub token limited to this r
 
 ## Deploy
 
-1. In the Cloudflare dashboard, open **Workers & Pages → Create → Create Worker**, name it, and press **Deploy**.
-2. Press **Edit code**, replace everything with `worker.js`, and press **Deploy**.
-3. Open **Settings → Variables and Secrets → Add**. Choose type **Secret**, name `GITHUB_TOKEN`, paste the token, and deploy.
-4. Put the Worker URL with `/submit` into `$WORKER` in `sync.ps1`.
+1. Once: in the Cloudflare dashboard open the Worker, **Settings → Variables and Secrets → Add**, type **Secret**, name `GITHUB_TOKEN`, paste the token.
+2. From this folder: `npx wrangler deploy`. It uploads `worker.js` with the rate limit from `wrangler.toml`. Pasting the code in the dashboard editor leaves the Worker without the rate limit.
+
+## Test
+
+`node --test worker/worker.test.mjs` (from the repository root; no network).
 
 ## Limits
 
 - At most 25 purchases per request and 32 KB per body.
-- At most 12 requests per IP per hour.
-- Entries need a known sound and item pair, and a price within ±28% of a merchant pool that holds the item.
-- Item name and quality come from the catalog. Labels must be from a fixed list.
+- At most 3 requests per IP per minute (Cloudflare Rate Limiting binding `LIMITER`).
+- Entries need a known sound and item pair, or a label, and a price within ±28% of a merchant pool that holds the item.
+- Item name and quality come from the catalog. A label is kept only if a pool with that label holds the item at that price.
+- An unreadable base on GitHub stops the write (502), so the base is never replaced by only the new entries.
