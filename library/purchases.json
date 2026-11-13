@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T15:02:50.797Z",
+ "updated": "2026-11-13T15:07:26.217Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1117,6 +1117,26 @@
    "size": "2x3",
    "label": "Rare Mystery Cargo",
    "price": 550000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1794518070852,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498100003,
+   "item": "Three-Axis Gyro Controller Prototype",
+   "q": "red"
+  },
+  {
+   "t": 1794520648901,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Energy Items",
+   "price": 270000,
    "itemId": 498060001,
    "item": "Space Lab Toybox",
    "q": "gold"
