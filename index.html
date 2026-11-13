@@ -1,20 +1,23 @@
 <!doctype html>
-<html lang="uk">
+<html lang="uk" data-theme="abi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="merchant-helper.ico">
 <title>ABI: Merchant Helper</title>
+<link rel="stylesheet" href="lib/daisyui/daisyui.css">
+<link rel="stylesheet" href="lib/daisyui/abi-theme.css">
 <style>
+  /* Controls are daisyUI components (btn, select, input, checkbox, range, card); below is layout and the app's own parts. */
   :root {
-    --bg: #050507; --panel: #111116; --line: #1d1d24; --text: #f5f5f7; --muted: #9a9aa6;
-    --accent: #f0b429; --ok: #3ecf8e; --bad: #ef4444;
+    --bg: var(--color-base-100); --panel: var(--color-base-200); --line: var(--color-base-300); --text: var(--color-base-content); --muted: #9a9aa6;
+    --accent: var(--color-primary); --ok: var(--color-success); --bad: var(--color-error);
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
   header { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   header h1 { margin: 0; font-size: 18px; }
-  header .status { color: var(--muted); }
+  header .state { color: var(--muted); }
   main { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; padding: 0 20px 16px; }
   @media (max-width: 960px) { main { grid-template-columns: 1fr; } }
   /* top: result on the left (stays in place when scrolling), map on the right in its own box */
@@ -22,15 +25,10 @@
   .top .result-col { position: sticky; top: 8px; }
   .map-wrap { max-height: calc(100vh - 150px); overflow: auto; }
   @media (max-width: 960px) { .top { grid-template-columns: 1fr; } .top .result-col { position: static; } }
-  section { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 16px; margin-bottom: 16px; }
+  section.card { background: var(--panel); padding: 16px; margin-bottom: 16px; display: block; }
   section h2 { margin: 0 0 10px; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
-  button { background: #1d1d24; color: var(--text); border: 1px solid #2c2c36; border-radius: 999px; padding: 8px 16px; font: inherit; cursor: pointer; }
-  button:hover { background: #292932; }
-  button.primary { background: var(--accent); color: #111; border-color: var(--accent); font-weight: 600; }
-  button.danger { color: var(--bad); }
-  button.small { padding: 3px 8px; font-size: 12px; }
-  button:disabled { opacity: .45; cursor: default; }
-  select, input[type=text], input[type=number] { background: #050507; color: var(--text); border: 1px solid #2c2c36; border-radius: 10px; padding: 6px 8px; font: inherit; min-width: 0; }
+  .select, .input { width: auto; }
+  [hidden] { display: none !important; }
   label { color: var(--muted); }
   .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
   canvas { width: 100%; display: block; background: #0a0a0d; border-radius: 6px; }
@@ -38,16 +36,9 @@
   #map { cursor: pointer; width: auto; max-width: 100%; margin: 0 auto; }
   .muted { color: var(--muted); }
   .help li { margin-bottom: 6px; }
-  input[type=range] { width: 140px; }
+  .range { width: 140px; }
   #log { max-height: 180px; overflow: auto; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
-  /* Steps */
-  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
-  .step { border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; color: var(--muted); font-size: 13px; }
-  .step b { display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 50%; background: #1d1d24; margin-right: 6px; }
-  .step.active { border-color: var(--accent); color: var(--text); }
-  .step.active b { background: var(--accent); color: #111; }
-  .step.done b { background: var(--ok); color: #111; }
   .stage { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 10px 12px; border: 1px solid var(--accent); border-radius: 8px; background: #f0b4290f; margin-bottom: 12px; }
   .stage .title { font-size: 18px; font-weight: 700; color: var(--accent); }
   .stage .grow { flex: 1; }
@@ -73,7 +64,7 @@
   #bestBuys .rank { flex: none; width: 26px; text-align: center; border-radius: 10px; background: var(--accent); color: #111; font-weight: 700; }
   #bestBuys h3, #session h3 { margin: 10px 0 4px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
   #session { font-size: 13px; }
-  #session h3 button { margin-left: 8px; padding: 0 8px; font-size: 11px; text-transform: none; letter-spacing: 0; }
+  #session h3 button { margin-left: 8px; text-transform: none; letter-spacing: 0; }
   /* overlay window (one monitor): the result card and the map float above the game */
   .overlay { padding: 8px; }
   .overlay #result { padding: 10px; min-height: 0; }
@@ -81,8 +72,7 @@
   .overlay .tiles { grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 6px; }
   .overlay .tile img { width: 48px; height: 48px; }
   .overlay .map-wrap { max-height: none; margin-top: 8px; }
-  .update { margin-left: auto; padding: 6px 12px; border-radius: 8px; border: 1px solid #3b82f6; color: #93c5fd; text-decoration: none; font-size: 13px; }
-  .update:hover { background: rgba(59, 130, 246, .15); }
+  .update { margin-left: auto; }
   .update:not([hidden]) + .lang { margin-left: 0; }
   .credits { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 20px 20px; }
   .map-pop { position: fixed; z-index: 10; width: 340px; background: #0f0f13; border: 1px solid #2c2c36; border-radius: 10px; padding: 12px; box-shadow: 0 8px 30px #000a; pointer-events: none; }
@@ -127,11 +117,8 @@
   body.app .scroll { flex: 1; overflow: auto; }
   body.app .win-ctrls { display: flex; gap: 2px; margin-left: 8px; }
   body.app .map-wrap { max-height: calc(100vh - 210px); }
-  .win-btn { display: grid; place-items: center; width: 40px; height: 32px; padding: 0; border: 0; border-radius: 8px; background: none; color: var(--muted); }
   .win-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
-  .win-btn:hover { background: #ffffff14; color: var(--text); }
   .win-btn.close:hover { background: #e5173a; color: #fff; }
-  .ver { border: 0; background: none; color: var(--muted); padding: 4px 8px; font-size: 12px; }
 </style>
 <script>
 // In the app the page's storage starts empty (another browser profile). Once, before anything reads it, it is
@@ -150,47 +137,47 @@ if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
 <body>
 <header data-tauri-drag-region>
   <h1 data-i18n="app" data-tauri-drag-region>ABI: Merchant Helper</h1>
-  <button id="btnStart" class="primary" data-i18n="btn.start">Start catching</button>
-  <button id="btnStop" disabled data-i18n="btn.stop">Stop</button>
-  <span class="status" id="status" data-i18n="status.idle">Not running</span>
-  <select id="mode" class="mode" data-i18n-title="mode.title">
+  <button id="btnStart" class="btn btn-sm btn-primary primary" data-i18n="btn.start">Start catching</button>
+  <button class="btn btn-sm btn-neutral" id="btnStop" disabled data-i18n="btn.stop">Stop</button>
+  <span class="state" id="status" data-i18n="status.idle">Not running</span>
+  <select id="mode" class="select select-sm mode" data-i18n-title="mode.title">
     <option value="second" data-i18n="mode.second">Second screen</option><option value="overlay" data-i18n="mode.overlay">Overlay (one monitor)</option>
   </select>
-  <button id="btnOverlay" hidden data-i18n="btn.overlay">Open overlay</button>
-  <a id="update" class="update" target="_blank" rel="noopener" hidden></a>
-  <select id="lang" class="lang" title="Мова · Language · Язык">
+  <button class="btn btn-sm btn-neutral" id="btnOverlay" hidden data-i18n="btn.overlay">Open overlay</button>
+  <a id="update" class="btn btn-info btn-outline btn-sm update" target="_blank" rel="noopener" hidden></a>
+  <select id="lang" class="select select-sm lang" title="Мова · Language · Язык">
     <option value="uk">UA</option><option value="en">ENG</option><option value="ru">RU</option>
   </select>
-  <button id="btnUpdates" class="ver" hidden></button>
+  <button id="btnUpdates" class="btn btn-ghost btn-xs ver" hidden></button>
   <div class="win-ctrls">
-    <button class="win-btn" id="winMin" data-i18n-title="win.min"><svg viewBox="0 0 16 16"><path d="M3 8h10"/></svg></button>
-    <button class="win-btn" id="winMax" data-i18n-title="win.max"><svg viewBox="0 0 16 16"><rect x="3.5" y="3.5" width="9" height="9" rx="1.5"/></svg></button>
-    <button class="win-btn close" id="winClose" data-i18n-title="win.close"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+    <button class="btn btn-ghost btn-sm btn-square win-btn" id="winMin" data-i18n-title="win.min"><svg viewBox="0 0 16 16"><path d="M3 8h10"/></svg></button>
+    <button class="btn btn-ghost btn-sm btn-square win-btn" id="winMax" data-i18n-title="win.max"><svg viewBox="0 0 16 16"><rect x="3.5" y="3.5" width="9" height="9" rx="1.5"/></svg></button>
+    <button class="btn btn-ghost btn-sm btn-square win-btn close" id="winClose" data-i18n-title="win.close"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
   </div>
 </header>
 <div class="scroll">
 
 <div class="top">
-  <section class="result-col">
+  <section class="card card-border result-col">
     <h2 data-i18n="h.result">Result</h2>
     <p id="overlayNote" class="muted" hidden data-i18n="overlay.here"></p>
     <div id="result"><span class="muted" data-i18n="result.wait">Waiting for a sound…</span></div>
   </section>
 
-  <section class="map-col">
+  <section class="card card-border map-col">
     <div class="stage">
       <span class="title" id="stageTitle"></span>
       <span class="grow muted" id="stageHint"></span>
-      <button id="btnDone" class="primary" hidden data-i18n="btn.done">Done</button>
-      <button id="btnRescan" hidden data-i18n="btn.rescan">Scan again</button>
+      <button id="btnDone" class="btn btn-sm btn-primary primary" hidden data-i18n="btn.done">Done</button>
+      <button class="btn btn-sm btn-neutral" id="btnRescan" hidden data-i18n="btn.rescan">Scan again</button>
     </div>
     <div class="map-wrap" id="mapWrap"><canvas id="map" width="360" height="200"></canvas></div>
     <p class="muted" style="margin:8px 0 0" data-i18n="map.hint"></p>
     <div class="row buy-opts">
-      <label><span data-i18n="opt.buys">Purchases per raid</span> <select id="buysPerRaid"><option>2</option><option>3</option><option>4</option></select></label>
-      <label><span data-i18n="opt.value">Value by</span> <select id="valueBasis"><option value="market" data-i18n="value.market">market price</option><option value="trader" data-i18n="value.trader">trader hand-in</option></select></label>
-      <label><input type="checkbox" id="alertOn"> <span data-i18n="opt.alert">Alert on a good cargo</span></label>
-      <label><span data-i18n="opt.gameLang">Game language</span> <select id="gameLang"><option value="auto" data-i18n="gameLang.auto">auto</option><option value="eng">English</option><option value="rus">Русский</option></select></label>
+      <label><span data-i18n="opt.buys">Purchases per raid</span> <select class="select select-sm" id="buysPerRaid"><option>2</option><option>3</option><option>4</option></select></label>
+      <label><span data-i18n="opt.value">Value by</span> <select class="select select-sm" id="valueBasis"><option value="market" data-i18n="value.market">market price</option><option value="trader" data-i18n="value.trader">trader hand-in</option></select></label>
+      <label><input class="checkbox checkbox-sm" type="checkbox" id="alertOn"> <span data-i18n="opt.alert">Alert on a good cargo</span></label>
+      <label><span data-i18n="opt.gameLang">Game language</span> <select class="select select-sm" id="gameLang"><option value="auto" data-i18n="gameLang.auto">auto</option><option value="eng">English</option><option value="rus">Русский</option></select></label>
     </div>
     <div id="bestBuys"></div>
     <div id="session"></div>
@@ -201,48 +188,48 @@ if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
 <main>
   <div>
 
-    <section>
+    <section class="card card-border">
       <h2 data-i18n="h.level">Sound level</h2>
       <canvas id="spec" width="800" height="160"></canvas>
       <div class="row" style="margin-top:10px">
-        <label><span data-i18n="lbl.sens">Sensitivity</span> <input type="range" id="sens" min="4" max="30" value="12"></label>
+        <label><span data-i18n="lbl.sens">Sensitivity</span> <input class="range range-xs" type="range" id="sens" min="4" max="30" value="12"></label>
         <span id="sensVal" class="muted"></span>
-        <label><span data-i18n="lbl.thr">Match threshold</span> <input type="range" id="thr" min="30" max="95" value="50"></label>
+        <label><span data-i18n="lbl.thr">Match threshold</span> <input class="range range-xs" type="range" id="thr" min="30" max="95" value="50"></label>
         <span id="thrVal" class="muted"></span>
-        <label><input type="checkbox" id="beep" checked> <span data-i18n="lbl.beep">Beep</span></label>
+        <label><input class="checkbox checkbox-sm" type="checkbox" id="beep" checked> <span data-i18n="lbl.beep">Beep</span></label>
       </div>
     </section>
 
-    <section>
+    <section class="card card-border">
       <h2 data-i18n="h.log">Log</h2>
       <div id="log"></div>
     </section>
   </div>
 
   <div>
-    <section>
+    <section class="card card-border">
       <h2 data-i18n="h.sounds">Sounds</h2>
       <div class="row">
-        <button id="btnLib" class="primary" data-i18n="btn.lib">Import library</button>
-        <select id="profile" hidden data-i18n-title="tip.profile"></select>
-        <label data-i18n-title="tip.blue"><input type="checkbox" id="blue"> <span data-i18n="lbl.blue">Blue</span></label>
+        <button id="btnLib" class="btn btn-sm btn-primary primary" data-i18n="btn.lib">Import library</button>
+        <select class="select select-sm" id="profile" hidden data-i18n-title="tip.profile"></select>
+        <label data-i18n-title="tip.blue"><input class="checkbox checkbox-sm" type="checkbox" id="blue"> <span data-i18n="lbl.blue">Blue</span></label>
         <input type="file" id="libDir" webkitdirectory hidden>
       </div>
       <div class="row">
-        <input type="text" id="newName" data-i18n-ph="ph.newName" style="flex:1">
-        <button id="btnAdd" data-i18n="btn.add">Add</button>
+        <input class="input input-sm" type="text" id="newName" data-i18n-ph="ph.newName" style="flex:1">
+        <button class="btn btn-sm btn-neutral" id="btnAdd" data-i18n="btn.add">Add</button>
       </div>
       <div id="sounds"></div>
       <div class="row" style="margin-top:12px">
-        <button id="btnExport" data-i18n="btn.export">Export</button>
-        <button id="btnImport" data-i18n="btn.import">Import</button>
-        <button id="btnClear" class="danger" data-i18n="btn.clear">Clear all</button>
+        <button class="btn btn-sm btn-neutral" id="btnExport" data-i18n="btn.export">Export</button>
+        <button class="btn btn-sm btn-neutral" id="btnImport" data-i18n="btn.import">Import</button>
+        <button id="btnClear" class="btn btn-sm btn-error btn-outline danger" data-i18n="btn.clear">Clear all</button>
         <input type="file" id="file" accept=".json" hidden>
         <input type="file" id="imgFile" accept="image/*" hidden>
       </div>
     </section>
 
-    <section>
+    <section class="card card-border">
       <h2 data-i18n="h.help">How to use</h2>
       <ol class="help">
         <li data-i18n-html="help.1"></li>
@@ -971,7 +958,7 @@ function bestBuys() {
 // right away whether a purchase was recorded at all.
 function renderSession() {
   const mine = purchases.filter(b => b.t >= sessionStart);
-  const head = `<h3>${esc(tr('session.title'))}<button id="btnSessionReset">${esc(tr('session.reset'))}</button></h3>`;
+  const head = `<h3>${esc(tr('session.title'))}<button class="btn btn-sm btn-neutral" id="btnSessionReset">${esc(tr('session.reset'))}</button></h3>`;
   if (!mine.length) { $('session').innerHTML = head + `<div class="muted">${esc(tr('session.none'))}</div>`; return; }
   let spentK = 0, value = 0, reds = 0;
   for (const b of mine) {
@@ -2337,9 +2324,9 @@ function renderSounds() {
     el.innerHTML = `
       <div class="sound-head">
         <span class="grow" title="${esc(soundName(s))}">${esc(soundName(s))}</span>
-        <button class="small" data-act="rec">${esc(tr(s.id === recordingId ? 'btn.cancel' : 'btn.record'))}</button>
-        <button class="small" data-act="rename">✎</button>
-        <button class="small danger" data-act="del">✕</button>
+        <button class="btn btn-xs btn-neutral small" data-act="rec">${esc(tr(s.id === recordingId ? 'btn.cancel' : 'btn.record'))}</button>
+        <button class="btn btn-xs btn-neutral small" data-act="rename">✎</button>
+        <button class="btn btn-xs btn-error btn-outline small danger" data-act="del">✕</button>
       </div>
       <div class="meta">${s.lib ? esc(tr('snd.lib')) : ''}${esc(tr('snd.samples', { n: templatesOf(s).up.length }))}${s.waves.length ? ` <a href="#" data-act="clearSamples" class="muted">${esc(tr('snd.reset'))}</a>` : ''}
         · ${s.items.length ? esc(tr('snd.red', { p: pct(odds.red || 0) })) + (redSizes.length ? ` (${redSizes.join(', ')})` : '') : esc(tr('snd.noise'))}
@@ -2352,15 +2339,15 @@ function renderSounds() {
             ${it.img ? `<img src="${it.img}" alt="">` : ''}
             <span class="grow" title="${esc(itemName(it))}">${esc(itemName(it))}</span>
             <span class="muted">${normSize(it.size)}${it.wp ? '' : ` ×${it.w}`}</span>
-            <button class="small" data-act="img" data-i="${i}" title="${esc(tr('tip.img'))}">🖼</button>
-            <button class="small" data-act="delItem" data-i="${i}">✕</button>
+            <button class="btn btn-xs btn-neutral small" data-act="img" data-i="${i}" title="${esc(tr('tip.img'))}">🖼</button>
+            <button class="btn btn-xs btn-neutral small" data-act="delItem" data-i="${i}">✕</button>
           </div>`).join('')}</div>
         <div class="add-item">
-          <input type="text" placeholder="${esc(tr('ph.item'))}" data-f="name">
-          <select data-f="q">${qOptions}</select>
-          <select data-f="size">${sizeOptions}</select>
-          <input type="number" value="1" min="0.1" step="0.1" title="${esc(tr('tip.weight'))}" data-f="w">
-          <button class="small" data-act="addItem">+</button>
+          <input class="input input-sm" type="text" placeholder="${esc(tr('ph.item'))}" data-f="name">
+          <select class="select select-sm" data-f="q">${qOptions}</select>
+          <select class="select select-sm" data-f="size">${sizeOptions}</select>
+          <input class="input input-sm" type="number" value="1" min="0.1" step="0.1" title="${esc(tr('tip.weight'))}" data-f="w">
+          <button class="btn btn-xs btn-neutral small" data-act="addItem">+</button>
         </div>
       </details>`;
 
