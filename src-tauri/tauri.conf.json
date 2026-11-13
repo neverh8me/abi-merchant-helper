@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "ABI Merchant Helper",
+  "mainBinaryName": "abi-merchant-helper",
+  "version": "3.0.0",
+  "identifier": "io.github.neverh8me.abimerchanthelper",
+  "build": {
+    "frontendDist": "./shell"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [],
+    "security": { "csp": null }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDAwQTBFMUFCOEFBNEFDQjgKUldTNHJLU0txK0dnQUs4Qmg4Q1I1d0dGMnJlR2ZrVndxUVZZbjM4VWx0R3hEbjN0b0M4WUxBREEK",
+      "endpoints": ["https://github.com/neverh8me/abi-merchant-helper/releases/latest/download/latest.json"],
+      "windows": { "installMode": "passive" }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "createUpdaterArtifacts": true,
+    "targets": ["nsis"],
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"],
+    "publisher": "neverh8me",
+    "copyright": "GPL-3.0. Unofficial; not affiliated with the game's developers.",
+    "shortDescription": "Field Merchant cargo helper",
+    "longDescription": "Works out what is inside the Field Merchant's mystery cargo in Arena Breakout: Infinite, by the game's sound and the merchant window.",
+    "licenseFile": "../LICENSE",
+    "resources": {
+      "../index.html": "ui/index.html",
+      "../i18n.js": "ui/i18n.js",
+      "../audio.js": "ui/audio.js",
+      "../library.js": "ui/library.js",
+      "../vision.js": "ui/vision.js",
+      "../ocr.js": "ui/ocr.js",
+      "../version.json": "ui/version.json",
+      "../merchant-helper.ico": "ui/merchant-helper.ico",
+      "../lib/": "ui/lib/",
+      "../library/": "ui/library/"
+    },
+    "windows": {
+      "nsis": { "installMode": "currentUser", "installerIcon": "icons/icon.ico" }
+    }
+  }
+}
