@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T16:06:05.094Z",
+ "updated": "2026-11-13T18:48:17.653Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1169,6 +1169,16 @@
    "price": 376000,
    "itemId": 408070016,
    "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1794525108370,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
    "q": "gold"
   },
   {
