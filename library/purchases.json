@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T19:34:32.664Z",
+ "updated": "2026-11-14T22:17:04.772Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1310,6 +1310,16 @@
    "itemId": 408070016,
    "item": "Metal Heart",
    "q": "gold"
+  },
+  {
+   "t": 1794689132657,
+   "soundId": "lib:big_wood",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498080025,
+   "item": "Double-Neck Lute",
+   "q": "red"
   }
  ]
 }
