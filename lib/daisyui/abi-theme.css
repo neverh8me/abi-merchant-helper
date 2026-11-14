@@ -5,6 +5,7 @@
   --color-base-200: #111116;
   --color-base-300: #1d1d24;
   --color-base-content: #f5f5f7;
+  --abi-muted: #9a9aa6; /* secondary text; not a daisyUI token, used by the page and its canvases */
   --color-primary: #f0b429;
   --color-primary-content: #111111;
   --color-secondary: #3b82f6;

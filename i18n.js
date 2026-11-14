@@ -8,7 +8,7 @@ const I18n = (() => {
       'btn.start': 'Почати ловлю', 'btn.stop': 'Зупинити', 'status.idle': 'Не запущено',
       'update.available': 'Вийшла v{v} — натисни, щоб оновитись', 'win.min': 'Згорнути', 'win.max': 'Розгорнути', 'win.close': 'Закрити',
       'h.result': 'Результат', 'result.wait': 'Чекаю на звук…',
-      'btn.done': 'Мапа повна', 'btn.rescan': 'Шукати заново',
+      'act.rename': 'Перейменувати звук', 'act.delSound': 'Видалити звук', 'act.delItem': 'Прибрати предмет', 'act.addItem': 'Додати предмет', 'btn.done': 'Мапа повна', 'btn.rescan': 'Шукати заново',
       'pb.good': 'Вигідно', 'pb.gamble': 'Лотерея', 'pb.bad': 'Не окупиться', 'pb.ev': 'у середньому ~{ev} за {price} ({diff})', 'pb.more': 'шанс окупитися {p}',
       'opt.alert': 'Сигнал на вигідний вантаж', 'opt.gameLang': 'Мова гри', 'gameLang.auto': 'авто', 'log.gameLang': 'Мова гри визначена: {lang}', 'session.title': 'Ця сесія', 'session.reset': 'Скинути', 'session.none': 'Покупок ще немає. Купи вантаж під час ловлі — він зʼявиться тут.', 'session.line': 'Куплено {n} за {spent} · червоних: {red} · вартість ~{value}', 'session.last': 'Остання: {item}', 'log.alert': 'Вигідний вантаж: {cargo} — червоний {red}, окупність {diff}',
       'best.title': 'Найкращі покупки (до {n})', 'opt.buys': 'Покупок за рейд', 'opt.value': 'Рахувати вартість за', 'value.market': 'ринкова', 'value.trader': 'здача торговцю',
@@ -85,7 +85,7 @@ const I18n = (() => {
       'btn.start': 'Start catching', 'btn.stop': 'Stop', 'status.idle': 'Not running',
       'update.available': 'v{v} is out — click to update', 'win.min': 'Minimize', 'win.max': 'Maximize', 'win.close': 'Close',
       'h.result': 'Result', 'result.wait': 'Waiting for a sound…',
-      'btn.done': 'Map is complete', 'btn.rescan': 'Scan again',
+      'act.rename': 'Rename the sound', 'act.delSound': 'Delete the sound', 'act.delItem': 'Remove the item', 'act.addItem': 'Add the item', 'btn.done': 'Map is complete', 'btn.rescan': 'Scan again',
       'pb.good': 'Worth it', 'pb.gamble': 'A gamble', 'pb.bad': 'Won’t pay off', 'pb.ev': 'on average ~{ev} for {price} ({diff})', 'pb.more': 'chance to pay off {p}',
       'opt.alert': 'Alert on a good cargo', 'opt.gameLang': 'Game language', 'gameLang.auto': 'auto', 'log.gameLang': 'Game language detected: {lang}', 'session.title': 'This session', 'session.reset': 'Reset', 'session.none': 'No purchases yet. Buy a cargo while catching and it shows up here.', 'session.line': 'Bought {n} for {spent} · reds: {red} · worth ~{value}', 'session.last': 'Last: {item}', 'log.alert': 'Good cargo: {cargo}, red {red}, payback {diff}',
       'best.title': 'Best buys (up to {n})', 'opt.buys': 'Purchases per raid', 'opt.value': 'Count item value by', 'value.market': 'market price', 'value.trader': 'trader hand-in',
@@ -162,7 +162,7 @@ const I18n = (() => {
       'btn.start': 'Начать ловлю', 'btn.stop': 'Остановить', 'status.idle': 'Не запущено',
       'update.available': 'Вышла v{v} — нажми, чтобы обновиться', 'win.min': 'Свернуть', 'win.max': 'Развернуть', 'win.close': 'Закрыть',
       'h.result': 'Результат', 'result.wait': 'Жду звук…',
-      'btn.done': 'Карта полная', 'btn.rescan': 'Искать заново',
+      'act.rename': 'Переименовать звук', 'act.delSound': 'Удалить звук', 'act.delItem': 'Убрать предмет', 'act.addItem': 'Добавить предмет', 'btn.done': 'Карта полная', 'btn.rescan': 'Искать заново',
       'pb.good': 'Выгодно', 'pb.gamble': 'Лотерея', 'pb.bad': 'Не окупится', 'pb.ev': 'в среднем ~{ev} за {price} ({diff})', 'pb.more': 'шанс окупиться {p}',
       'opt.alert': 'Сигнал на выгодный груз', 'opt.gameLang': 'Язык игры', 'gameLang.auto': 'авто', 'log.gameLang': 'Язык игры определён: {lang}', 'session.title': 'Эта сессия', 'session.reset': 'Сбросить', 'session.none': 'Покупок пока нет. Купи груз во время ловли — он появится здесь.', 'session.line': 'Куплено {n} за {spent} · красных: {red} · стоимость ~{value}', 'session.last': 'Последняя: {item}', 'log.alert': 'Выгодный груз: {cargo} — красный {red}, окупаемость {diff}',
       'best.title': 'Лучшие покупки (до {n})', 'opt.buys': 'Покупок за рейд', 'opt.value': 'Считать стоимость по', 'value.market': 'рыночная', 'value.trader': 'сдача торговцу',
@@ -263,6 +263,7 @@ const I18n = (() => {
     root.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
     root.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
     root.querySelectorAll('[data-i18n-title]').forEach(el => { el.title = t(el.dataset.i18nTitle); });
+    root.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
   }
 
   function setLang(l) {
