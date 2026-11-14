@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T05:06:41.603Z",
+ "updated": "2026-11-14T07:00:56.402Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1197,6 +1197,16 @@
    "size": "2x3",
    "label": "Rare Mystery Cargo",
    "price": 550000,
+   "itemId": 498080001,
+   "item": "Gilded Cage Music Box",
+   "q": "red"
+  },
+  {
+   "t": 1794539598051,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
    "itemId": 498080001,
    "item": "Gilded Cage Music Box",
    "q": "red"
