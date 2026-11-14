@@ -37,6 +37,7 @@
   .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
   canvas { width: 100%; display: block; background: var(--color-base-100); border-radius: var(--radius-box); }
   #screen { cursor: crosshair; }
+  #map:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
   #map { cursor: pointer; width: auto; max-width: 100%; margin: 0 auto; }
   .muted { color: var(--muted); }
   .help li { margin-bottom: 6px; }
@@ -118,6 +119,8 @@
   body.app .scroll { flex: 1; overflow: auto; }
   body.app .win-ctrls { display: flex; gap: 2px; margin-left: 8px; }
   body.app .map-wrap { max-height: calc(100vh - 210px); }
+  #toasts { z-index: 20; }
+  #toasts .alert { max-width: 420px; }
   .ic { width: 16px; height: 16px; flex: none; }
   .win-btn.close:hover { background: var(--color-error); color: var(--color-error-content); }
 </style>
@@ -170,9 +173,10 @@ if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
       <span class="title" id="stageTitle"></span>
       <span class="grow muted" id="stageHint"></span>
       <button id="btnDone" class="btn btn-sm btn-primary primary" hidden data-i18n="btn.done">Done</button>
+      <button class="btn btn-sm btn-ghost" id="btnHow" data-i18n="btn.how"></button>
       <button class="btn btn-sm btn-neutral" id="btnRescan" hidden data-i18n="btn.rescan">Scan again</button>
     </div>
-    <div class="map-wrap" id="mapWrap"><canvas id="map" width="360" height="200"></canvas></div>
+    <div class="map-wrap" id="mapWrap"><canvas id="map" width="360" height="200" tabindex="0" role="application" data-i18n-aria="map.aria"></canvas></div>
     <p class="muted" style="margin:8px 0 0" data-i18n="map.hint"></p>
     <div id="bestBuys"></div>
     <div id="session"></div>
@@ -180,6 +184,7 @@ if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
 </div>
 <div id="mapPop" class="map-pop" hidden></div>
 </div>
+<div id="toasts" class="toast toast-end toast-bottom" aria-live="polite"></div>
 
 
 
@@ -253,7 +258,7 @@ if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
       </div>
     </section>
 
-    <section class="card card-border">
+    <section class="card card-border" id="help">
       <h2 data-i18n="h.help">How to use</h2>
       <ol class="help">
         <li data-i18n-html="help.1"></li>
@@ -423,6 +428,7 @@ let balanceSig = null, feedQueue = [], feedDone = []; // feed lines: waiting for
 let feedBusy = false, feedAt = 0, feedSig = null; // reading of the feed line and the balance
 let libPools = [], itemQ = {}, itemById = new Map(); // merchant pools and items from the library
 let hover = null;            // the cargo just hovered: { key, t }
+let mapFocus = null;         // the cargo chosen on the map from the keyboard
 let cursorHist = [];         // the mouse cursor from the local server, in frame px: [{ x, y, t }] for the last seconds
 let cursorKey = null;        // the cargo under the cursor now
 let hoverBusy = false, hoverSig = ''; // price tooltip reading: busy / which cargo it covers
@@ -629,9 +635,9 @@ function startNativeScreen() {
       // only a message that tells the crop changes it: the black-screen one from older servers has no crop, and
       // reading it as "not cropped" cut the frame in half once more, leaving only the right columns of the list
       if ('crop' in m && !!m.crop !== frameCropped) { frameCropped = !!m.crop; if (P) resetScan(); }
-      if (m.black) log(tr('log.black'));
-      if (m.state === 'nogame') log(tr('log.nogame'));
-      else if (m.state === 'minimized') log(tr('log.minimized'));
+      if (m.black) report('warning', tr('log.black'));
+      if (m.state === 'nogame') report('warning', tr('log.nogame'));
+      else if (m.state === 'minimized') report('warning', tr('log.minimized'));
       else if (m.state === 'game') log(tr('log.gameWin'));
       return;
     }
@@ -642,7 +648,7 @@ function startNativeScreen() {
       .catch(() => {})
       .finally(() => { busy = false; });
   };
-  screenWs.onclose = () => { if (stream) { screenWs = null; log(tr('log.screenClosed')); setTimeout(reconnectScreen, RECONNECT_MS); } };
+  screenWs.onclose = () => { if (stream) { screenWs = null; report('error', tr('log.screenClosed')); setTimeout(reconnectScreen, RECONNECT_MS); } };
 }
 
 function closeScreen() {
@@ -1720,7 +1726,7 @@ function readLabel(rec, x, y, w, h) {
       if (label) { rec.label = label; if (document.visibilityState === 'visible') drawMap(); }
       probeGameLang(lang, !!label);
     })
-    .catch(e => { rec.labelTries = LABEL_TRIES; if (!readLabel.failed) log(tr('log.ocrFail', { msg: e.message || e })); readLabel.failed = true; })
+    .catch(e => { rec.labelTries = LABEL_TRIES; if (!readLabel.failed) report('error', tr('log.ocrFail', { msg: e.message || e })); readLabel.failed = true; })
     .finally(() => { rec.labelBusy = false; });
 }
 
@@ -2041,9 +2047,10 @@ function mapBounds() {
 function updateStage() {
   const count = placedCargo().length;
   ui.rescan.hidden = !(stream && count);
+  $('btnHow').hidden = !!stream;
   ui.done.hidden = !(stream && count && phase === 'scan');
   let title, hint;
-  if (!stream) { title = tr('stage.start'); hint = ''; }
+  if (!stream) { title = tr('stage.start'); hint = tr('stage.startHint'); }
   else if (!count) { title = tr('stage.open'); hint = tr('stage.openHint'); }
   else if (phase === 'scan') {
     title = tr('stage.scan', { n: count });
@@ -2057,7 +2064,7 @@ function updateStage() {
 function drawMap() {
   try { drawMapInner(); }
   catch (e) {
-    if (!drawMap.failed) log(tr('log.mapFail', { msg: e.message }));
+    if (!drawMap.failed) report('error', tr('log.mapFail', { msg: e.message }));
     drawMap.failed = true;
   }
 }
@@ -2209,6 +2216,12 @@ function drawMapInner() {
     c.strokeStyle = THEME.info; c.lineWidth = 3;
     c.strokeRect((r.C - minC) * MAP_U + 1.5, (r.R - minR) * MAP_U + 1.5, r.w * MAP_U - 3, r.h * MAP_U - 3);
   }
+  if (mapFocus && document.activeElement === ui.map && cargo.has(mapFocus)) {
+    const r = cargo.get(mapFocus);
+    c.save(); c.setLineDash([5, 3]); c.strokeStyle = THEME.text; c.lineWidth = 2;
+    c.strokeRect((r.C - minC) * MAP_U + 3, (r.R - minR) * MAP_U + 3, r.w * MAP_U - 6, r.h * MAP_U - 6);
+    c.restore();
+  }
   if (cur && P && viewport && performance.now() - cur.t < CURSOR_KEEP_MS) {
     const mx = ((cur.x - phaseX) / P - minC) * MAP_U, my = ((cur.y + offset) / P - minR) * MAP_U;
     if (mx >= 0 && my >= 0 && mx <= W && my <= H) {
@@ -2228,8 +2241,8 @@ function drawItemIcon(c, it, x, y, w, h) {
 }
 
 // Popup over the map: what is known about the cargo under the mouse
-function showMapPop(e) {
-  const key = mapCargoAt(e);
+function showMapPop(e) { showPopFor(mapCargoAt(e), e.clientX, e.clientY); }
+function showPopFor(key, x, y) {
   const rec = key && cargo.get(key);
   const pop = $('mapPop');
   if (!rec) { pop.hidden = true; return; }
@@ -2249,8 +2262,8 @@ function showMapPop(e) {
   pop.innerHTML = `<div class="head">${esc(cargoHead(rec))}</div>${body}`;
   pop.hidden = false;
   const pw = pop.offsetWidth, ph = pop.offsetHeight;
-  pop.style.left = Math.max(8, Math.min(window.innerWidth - pw - 8, e.clientX - pw - 16)) + 'px';
-  pop.style.top = Math.max(8, Math.min(window.innerHeight - ph - 8, e.clientY - ph / 3)) + 'px';
+  pop.style.left = Math.max(8, Math.min(window.innerWidth - pw - 8, x - pw - 16)) + 'px';
+  pop.style.top = Math.max(8, Math.min(window.innerHeight - ph - 8, y - ph / 3)) + 'px';
 }
 
 const imgCache = new Map();
@@ -2336,7 +2349,7 @@ function loadJson(key, def) {
   try { const v = localStorage.getItem(key); return v === null ? def : JSON.parse(v); } catch { return def; }
 }
 function saveSounds() {
-  try { localStorage.setItem(STORE_KEY, JSON.stringify(sounds)); } catch (e) { log(tr('log.saveFail', { msg: e.message })); }
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(sounds)); } catch (e) { report('error', tr('log.saveFail', { msg: e.message })); }
   renderSounds();
   drawMap();
 }
@@ -2472,7 +2485,7 @@ async function importLibrary(files) {
     setStatus(tr(stream ? 'status.listening' : 'status.libDone'));
     return true;
   } catch (e) {
-    log(tr('log.libFail', { msg: e.message }));
+    report('error', tr('log.libFail', { msg: e.message }));
     setStatus(tr('status.importFail'));
     return false;
   }
@@ -2518,6 +2531,19 @@ function money(x) { return x >= 1e6 ? (x / 1e6).toFixed(1) + 'M' : Math.round(x 
 function redColor(red) { return red >= 0.5 ? '#ef4444' : red > 0 ? '#f0b429' : THEME.muted; }
 function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 function setStatus(s) { ui.status.textContent = s; }
+// A problem the player must see: a short alert in the corner of the window (gone after 8 s), and the log as always
+function report(level, msg) {
+  log(msg);
+  const box = $('toasts');
+  const a = document.createElement('div');
+  a.className = 'alert alert-soft alert-' + level;
+  a.setAttribute('role', level === 'error' ? 'alert' : 'status');
+  a.textContent = msg;
+  box.append(a);
+  while (box.children.length > 3) box.firstElementChild.remove();
+  setTimeout(() => a.remove(), 8000);
+}
+
 function log(s) {
   const d = document.createElement('div');
   d.textContent = new Date().toLocaleTimeString('uk-UA') + '  ' + s;
@@ -2568,7 +2594,7 @@ ui.imgFile.onchange = async e => {
   try {
     imgTarget.sound.items[imgTarget.index].img = await resizeImage(f);
     saveSounds();
-  } catch (err) { log(tr('log.imgFail', { msg: err.message })); }
+  } catch (err) { report('error', tr('log.imgFail', { msg: err.message })); }
   imgTarget = null;
 };
 
@@ -2581,24 +2607,62 @@ function mapCargoAt(e) {
   const hit = placedCargo().find(([, r]) => C >= r.C && C < r.C + r.w && R >= r.R && R < r.R + r.h);
   return hit ? hit[0] : null;
 }
-ui.map.addEventListener('click', e => {
-  const key = mapCargoAt(e);
+function assignSound(key) {
   if (!key || !lastResult) return;
   if (lastKey && results.get(lastKey) === lastResult) results.delete(lastKey);
   results.set(key, lastResult);
   lastKey = key;
   drawMap();
-});
-ui.map.addEventListener('mousemove', showMapPop);
-ui.map.addEventListener('mouseleave', () => { $('mapPop').hidden = true; });
-ui.map.addEventListener('contextmenu', e => {
-  e.preventDefault();
-  const key = mapCargoAt(e);
+}
+function clearSound(key) {
   if (!key) return;
   results.delete(key);
   if (key === lastKey) lastKey = null;
   drawMap();
+}
+ui.map.addEventListener('click', e => assignSound(mapCargoAt(e)));
+ui.map.addEventListener('mousemove', showMapPop);
+ui.map.addEventListener('mouseleave', () => { if (document.activeElement !== ui.map) $('mapPop').hidden = true; });
+ui.map.addEventListener('contextmenu', e => { e.preventDefault(); clearSound(mapCargoAt(e)); });
+
+// Keyboard: arrows choose a cargo (the nearest one that way), Enter gives it the last sound, Delete clears it
+
+function moveMapFocus(dx, dy) {
+  const placed = placedCargo();
+  if (!placed.length) return;
+  const at = mapFocus && cargo.get(mapFocus);
+  const mid = r => [r.C + r.w / 2, r.R + r.h / 2];
+  if (!at) { mapFocus = placed.slice().sort(([, a], [, b]) => a.R - b.R || a.C - b.C)[0][0]; return; }
+  const [x0, y0] = mid(at);
+  let best = null, bestD = Infinity;
+  for (const [key, r] of placed) {
+    const [x, y] = mid(r), ax = (x - x0) * dx, ay = (y - y0) * dy;
+    if (key === mapFocus || (dx ? ax <= 0 : ay <= 0)) continue;
+    const d = Math.hypot(x - x0, y - y0) + (dx ? Math.abs(y - y0) : Math.abs(x - x0)) * 2; // straight ahead first
+    if (d < bestD) { bestD = d; best = key; }
+  }
+  if (best) mapFocus = best;
+}
+function showFocusPop() {
+  const r = mapFocus && cargo.get(mapFocus);
+  if (!r) { $('mapPop').hidden = true; return; }
+  const { minC, minR } = mapBounds(), box = ui.map.getBoundingClientRect();
+  const k = box.width / ui.map.width;
+  showPopFor(mapFocus, box.left + (r.C - minC) * MAP_U * k, box.top + (r.R - minR + r.h / 2) * MAP_U * k);
+}
+ui.map.addEventListener('keydown', e => {
+  const dir = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
+  if (dir) moveMapFocus(...dir);
+  else if (e.key === 'Enter' || e.key === ' ') assignSound(mapFocus);
+  else if (e.key === 'Delete' || e.key === 'Backspace') clearSound(mapFocus);
+  else if (e.key === 'Escape') { $('mapPop').hidden = true; return; }
+  else return;
+  e.preventDefault();
+  drawMap();
+  showFocusPop();
 });
+ui.map.addEventListener('focus', () => { if (!mapFocus) moveMapFocus(0, 0); drawMap(); showFocusPop(); });
+ui.map.addEventListener('blur', () => { $('mapPop').hidden = true; drawMap(); });
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') drawMap(); });
 
 $('btnExport').onclick = () => {
@@ -2618,7 +2682,7 @@ $('file').onchange = async e => {
     for (const s of incoming) { if (ids.has(s.id)) s.id = uid(); sounds.push(s); }
     saveSounds();
     log(tr('log.imported', { n: incoming.length }));
-  } catch (err) { log(tr('log.importFail', { msg: err.message })); }
+  } catch (err) { report('error', tr('log.importFail', { msg: err.message })); }
   e.target.value = '';
 };
 $('btnClear').onclick = () => {
@@ -2636,11 +2700,11 @@ async function openOverlay() {
   let w;
   if (APP) {
     w = window.open('about:blank', 'abi-overlay', 'width=380,height=600'); // the app makes it always on top
-    if (!w) { log(tr('log.noPip')); return; }
+    if (!w) { report('error', tr('log.noPip')); return; }
   } else {
-    if (!('documentPictureInPicture' in window)) { log(tr('log.noPip')); return; }
+    if (!('documentPictureInPicture' in window)) { report('error', tr('log.noPip')); return; }
     try { w = await documentPictureInPicture.requestWindow({ width: 380, height: 600 }); }
-    catch { log(tr('log.noPip')); return; }
+    catch { report('error', tr('log.noPip')); return; }
   }
   overlayWin = w;
   for (const ss of document.styleSheets) {
@@ -2769,6 +2833,8 @@ $('views').addEventListener('keydown', e => {
   $(tab).focus();
 });
 showView(VIEWS.some(([, v]) => v === loadJson(VIEW_KEY, '')) ? loadJson(VIEW_KEY, '') : 'viewCatch');
+
+$('btnHow').onclick = () => { showView('viewSetup'); $('help').scrollIntoView({ block: 'start' }); };
 
 hydrateIcons();
 I18n.apply();
