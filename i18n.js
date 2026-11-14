@@ -15,11 +15,11 @@ const I18n = (() => {
 
       'mode.title': 'Як показувати результат: на другому моніторі чи вікном поверх гри', 'mode.second': 'Другий екран', 'mode.overlay': 'Оверлей (1 монітор)', 'btn.overlay': 'Відкрити оверлей',
       'overlay.here': 'Результат і схема — у вікні оверлея поверх гри.', 'log.overlay': 'Оверлей відкрито: перетягни його на ліву половину екрана (праву, з торговцем, програма сканує).', 'log.noPip': 'Не вдалося відкрити вікно поверх гри.',
-      'help.8': '<b>Один монітор?</b> Вгорі вибери <b>Оверлей</b>: після «Почати ловлю» результат і схема зʼявляться в маленькому вікні поверх гри. Постав його на ліву половину екрана.',
+      'help.8': '<b>Один монітор?</b> У <b>Налаштуваннях → Екран</b> вибери <b>Оверлей</b>: після «Почати ловлю» результат і схема зʼявляться в маленькому вікні поверх гри. Постав його на ліву половину екрана.',
 
       'map.hint': 'Наведи мишку на вантаж на схемі, щоб побачити подробиці. Клік призначає йому останній звук, правий клік очищає.',
       'h.level': 'Рівень звуку', 'lbl.sens': 'Найтихіший звук', 'lbl.thr': 'Впевненість для показу', 'lbl.beep': 'Сигнал', 'unit.db': 'дБ',
-      'h.log': 'Журнал', 'h.sounds': 'Звуки', 'btn.lib': 'Завантажити звуки з папки',
+      'tab.catch': 'Ловля', 'tab.setup': 'Налаштування', 'opt.mode': 'Де показувати', 'opt.uiLang': 'Мова програми', 'set.screen': 'Екран', 'set.screenHint': 'Другий екран: тримай програму на іншому моніторі. Оверлей: результат і мапа в малому вікні поверх гри.', 'set.merchant': 'Торговець', 'set.merchantHint': 'Як рахувати вигоду вантажу і якою мовою читати гру.', 'set.soundHint': 'Тихіший поріг ловить більше звуків, але й більше шуму. Вища впевненість показує менше, але точніше.', 'h.log': 'Журнал', 'h.sounds': 'Звуки', 'btn.lib': 'Завантажити звуки з папки',
       'tip.profile': 'Карта і режим: від них залежать шанси', 'opt.allMaps': 'Усі карти (середнє)',
       'lbl.blue': 'Враховувати сині', 'tip.blue': 'У таблицях abibuilder сині предмети в торговця є, але в грі їх не трапляється',
       'ph.newName': 'Назва звуку, напр. «Скло»', 'btn.add': 'Додати',
@@ -92,11 +92,11 @@ const I18n = (() => {
 
       'mode.title': 'Where to show the result: on a second monitor or in a window over the game', 'mode.second': 'Second screen', 'mode.overlay': 'Overlay (one monitor)', 'btn.overlay': 'Open overlay',
       'overlay.here': 'The result and the map are in the overlay window over the game.', 'log.overlay': 'Overlay opened: drag it to the left half of the screen (the right half, with the merchant, is scanned).', 'log.noPip': 'Could not open the window over the game.',
-      'help.8': '<b>One monitor?</b> Pick <b>Overlay</b> at the top: after "Start catching" the result and the map appear in a small window over the game. Put it on the left half of the screen.',
+      'help.8': '<b>One monitor?</b> In <b>Setup → Screen</b> pick <b>Overlay</b>: after "Start catching" the result and the map appear in a small window over the game. Put it on the left half of the screen.',
 
       'map.hint': 'Hover a cargo on the map for details. Click assigns the last sound to it, right-click clears.',
       'h.level': 'Sound level', 'lbl.sens': 'Quietest sound to catch', 'lbl.thr': 'How sure before showing', 'lbl.beep': 'Beep', 'unit.db': 'dB',
-      'h.log': 'Log', 'h.sounds': 'Sounds', 'btn.lib': 'Load sounds from a folder',
+      'tab.catch': 'Catch', 'tab.setup': 'Setup', 'opt.mode': 'Show on', 'opt.uiLang': 'App language', 'set.screen': 'Screen', 'set.screenHint': 'Second screen: keep the app on another monitor. Overlay: the result and the map in a small window over the game.', 'set.merchant': 'Merchant', 'set.merchantHint': 'How to count a cargo\'s payback, and which language to read the game in.', 'set.soundHint': 'A quieter threshold catches more sounds, and more noise. Higher sureness shows fewer results, but more accurate ones.', 'h.log': 'Log', 'h.sounds': 'Sounds', 'btn.lib': 'Load sounds from a folder',
       'tip.profile': 'Map and mode: odds depend on them', 'opt.allMaps': 'All maps (average)',
       'lbl.blue': 'Count blue items', 'tip.blue': 'abibuilder tables list blue items at the merchant, but they never show up in game',
       'ph.newName': 'Sound name, e.g. "Glass"', 'btn.add': 'Add',
@@ -169,11 +169,11 @@ const I18n = (() => {
 
       'mode.title': 'Как показывать результат: на втором мониторе или окном поверх игры', 'mode.second': 'Второй экран', 'mode.overlay': 'Оверлей (1 монитор)', 'btn.overlay': 'Открыть оверлей',
       'overlay.here': 'Результат и схема — в окне оверлея поверх игры.', 'log.overlay': 'Оверлей открыт: перетащи его на левую половину экрана (правую, с торговцем, программа сканирует).', 'log.noPip': 'Не удалось открыть окно поверх игры.',
-      'help.8': '<b>Один монитор?</b> Вверху выбери <b>Оверлей</b>: после «Начать ловлю» результат и схема появятся в маленьком окне поверх игры. Поставь его на левую половину экрана.',
+      'help.8': '<b>Один монитор?</b> В <b>Настройках → Экран</b> выбери <b>Оверлей</b>: после «Начать ловлю» результат и схема появятся в маленьком окне поверх игры. Поставь его на левую половину экрана.',
 
       'map.hint': 'Наведи мышку на груз на схеме, чтобы увидеть подробности. Клик назначает ему последний звук, правый клик очищает.',
       'h.level': 'Уровень звука', 'lbl.sens': 'Самый тихий звук', 'lbl.thr': 'Уверенность для показа', 'lbl.beep': 'Сигнал', 'unit.db': 'дБ',
-      'h.log': 'Журнал', 'h.sounds': 'Звуки', 'btn.lib': 'Загрузить звуки из папки',
+      'tab.catch': 'Ловля', 'tab.setup': 'Настройки', 'opt.mode': 'Где показывать', 'opt.uiLang': 'Язык программы', 'set.screen': 'Экран', 'set.screenHint': 'Второй экран: держи программу на другом мониторе. Оверлей: результат и карта в маленьком окне поверх игры.', 'set.merchant': 'Торговец', 'set.merchantHint': 'Как считать выгоду груза и на каком языке читать игру.', 'set.soundHint': 'Более тихий порог ловит больше звуков, но и больше шума. Более высокая уверенность показывает меньше, но точнее.', 'h.log': 'Журнал', 'h.sounds': 'Звуки', 'btn.lib': 'Загрузить звуки из папки',
       'tip.profile': 'Карта и режим: от них зависят шансы', 'opt.allMaps': 'Все карты (среднее)',
       'lbl.blue': 'Учитывать синие', 'tip.blue': 'В таблицах abibuilder синие предметы у торговца есть, но в игре они не попадаются',
       'ph.newName': 'Название звука, напр. «Стекло»', 'btn.add': 'Добавить',
