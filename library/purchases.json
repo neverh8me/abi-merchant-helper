@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T18:33:32.713Z",
+ "updated": "2026-11-14T19:34:32.664Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1260,6 +1260,16 @@
    "itemId": 408080014,
    "item": "Porcelain",
    "q": "gold"
+  },
+  {
+   "t": 1794588287285,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498080016,
+   "item": "Amber Heart of Heaven",
+   "q": "red"
   },
   {
    "t": 1794608454356,
