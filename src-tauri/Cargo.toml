@@ -1,6 +1,6 @@
 [package]
 name = "abi-merchant-helper"
-version = "3.0.0"
+version = "3.1.0"
 edition = "2024"
 description = "Field Merchant cargo helper for Arena Breakout: Infinite"
 license = "GPL-3.0-only"
