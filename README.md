@@ -15,6 +15,7 @@ The app listens to the game's sound when you drag a cargo, and it watches the me
 
 ## Features
 
+- **Two views.** **Catch** shows only what you need at the merchant: the result, the map, the best buys and the session. **Setup** holds the rest: screen and language, merchant options, sound level, the log, your sounds and the help.
 - **Sound recognition.** When you drag a cargo, the game plays a pickup sound that depends on the item inside. ABI: Merchant Helper matches that sound against a library of reference game sounds and narrows down the possible items.
 - **Red chance.** The probability combines four inputs: the sound, the cargo size, the cargo label (Common / Uncommon / Rare Mystery Cargo or a category like *Tools*) and the price. Every merchant pool carries the label of its cargo, so the odds come from exactly the pools of that label and price. Reds mostly drop from Mystery Cargo, but also from some rarer category cargo (Rare Collectibles, Rare Medical Supplies, Uncommon Military Items…).
 - **Automatic merchant map.**
@@ -29,20 +30,24 @@ The app listens to the game's sound when you drag a cargo, and it watches the me
   - new purchases are sent to the shared-base server, a Cloudflare Worker (`worker/worker.js`). No nickname is stored.
   - the Worker drops anything invalid: unknown items or sounds, prices that match no merchant pool, impossible dates, oversized batches. It also limits requests per IP and appends the rest to `library/purchases.json` on GitHub. The GitHub token lives only in the Worker's secrets.
 - **Payback and best buys.** For every cargo with a known price the app shows whether it pays off: the expected value of what drops against the price, the chance to get more than you paid, and the likely range. The value can be the market price or the trader hand-in price. The most profitable cargo are marked #1, #2… on the map, and as many are listed under it as you may buy per raid (2 to 4).
-- **Good-cargo alert.** When a hovered cargo pays off or has a 25% or higher red chance, a short chime plays and the log names it. It can be turned off under the map.
+- **Good-cargo alert.** When a hovered cargo pays off or has a 25% or higher red chance, a short chime plays and the log names it. It can be turned off in **Setup → Merchant**.
 - **Session summary.** Under the map: how many cargo you bought this session, for how much, how many reds and what the items are worth. The last recorded purchase is shown too, so you see at once that it was recorded.
 - **Cursor tracking.** The helper knows where the mouse is, so the cargo under it is outlined on the map and its odds are shown even before the game's tooltip appears.
 - **Fewer false sounds.** A sound counts only if it starts sharply, so wind and music no longer trigger it. If the best sound has no item of the cargo's size, a close second that fits is used.
 - **Auto reconnect.** If the sound or the screen feed drops, the page reconnects to the helper by itself.
 - **Item cards.** The result panel, the map cells and the hover popup all show item icons with per-item odds. Red items are listed first.
+- **Problems in sight.** If something goes wrong (no game window, a black screen, the library or text reading fails), a short note appears in the corner of the window, and the log keeps the details.
+- **Map from the keyboard.** Click the map or Tab to it: the arrow keys choose a cargo and show its odds, Enter gives it the last sound, Delete clears it.
 - **Game-only capture.** No screen sharing is used. The app captures:
   - audio from the game process only (WASAPI process loopback);
   - the game window only.
-- **One monitor or two.** Pick **Second screen** to keep the app on another monitor, or **Overlay (one monitor)** to get the result card and the map in a small always-on-top window over the game. Put the overlay on the left half of the screen: only the right half, with the merchant, is captured.
+- **One monitor or two.** In **Setup → Screen** pick **Second screen** to keep the app on another monitor, or **Overlay (one monitor)** to get the result card and the map in a small always-on-top window over the game. Put the overlay on the left half of the screen: only the right half, with the merchant, is captured.
 - **UA / ENG / RU** interface.
-- **English or Russian game.** The game language is detected by itself (or picked under the map), so cargo labels, the purchase line and the balance are read in either.
+- **English or Russian game.** The game language is detected by itself (or picked in **Setup → Merchant**), so cargo labels, the purchase line and the balance are read in either.
 
 ![Hover popup](docs/screenshot-hover.png)
+
+![Setup](docs/screenshot-setup.png)
 
 ## Requirements
 
@@ -56,7 +61,7 @@ No browser, no PowerShell: one app with its own window.
 
 1. Download **`ABI.Merchant.Helper_…_Windows-x64-setup.exe`** from the [latest release](https://github.com/neverh8me/abi-merchant-helper/releases/latest) and run it. It installs for the current user, no admin rights needed. Windows may warn about an unknown publisher: the installer is not code-signed.
 2. Start **ABI: Merchant Helper** from the Start menu or the desktop shortcut. The start screen checks for an update, syncs the purchase base and opens the app (in English by default; your language choice is remembered).
-3. Start the game. Then click **Start catching** on the page.
+3. Start the game. Then click **Start catching** at the top of the app.
 4. Open the Field Merchant, with the cursor outside the grid. Slowly scroll the list to the end and wait for the map to freeze.
 5. Use one of two ways to check a cargo:
    - hover a cargo to see its price-based red chance;
@@ -68,6 +73,8 @@ Close the window to stop the app.
 ## Updating
 
 Every launch checks GitHub for a newer release. If there is one, the start screen downloads it with a progress bar, checks its signature, installs it and restarts the app. Your sounds, profiles and purchases are kept.
+
+![Start screen](docs/screenshot-start.png)
 
 If a new release comes out while the app is running, a banner appears at the top. Click it, or the version number in the title bar, to open the update screen.
 
