@@ -19,7 +19,10 @@
   header { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   header h1 { margin: 0; font-size: var(--fs-l); }
   header .state { color: var(--muted); }
-  main { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; padding: 0 20px 16px; }
+  header .spacer { flex: 1; align-self: stretch; }
+  #viewSetup .fieldset { padding: 0; }
+  #viewSetup .label { white-space: normal; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; padding: 16px 20px; }
   @media (max-width: 960px) { main { grid-template-columns: 1fr; } }
   /* top: result on the left (stays in place when scrolling), map on the right in its own box */
   .top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; padding: 16px 20px 0; align-items: start; }
@@ -56,7 +59,6 @@
   .tile i { display: block; height: 3px; border-radius: var(--radius-box); margin: 6px 10px; }
   .tile b { font-size: var(--fs-m); font-variant-numeric: tabular-nums; }
 
-  .lang { margin-left: auto; }
   /* payback and the best buys */
   .payback { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--radius-box); margin: 0 0 12px; font-size: var(--fs-m); }
   .payback .verdict { font-weight: 700; padding: 1px 8px; border-radius: var(--radius-box); color: var(--color-primary-content); }
@@ -73,9 +75,7 @@
   .overlay .tiles { grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 6px; }
   .overlay .tile img { width: 48px; height: 48px; }
   .overlay .map-wrap { max-height: none; margin-top: 8px; }
-  .update { margin-left: auto; }
-  .update:not([hidden]) + .lang { margin-left: 0; }
-  .credits { text-align: center; color: var(--muted); font-size: var(--fs-s); padding: 8px 20px 20px; }
+  .credits { color: var(--muted); font-size: var(--fs-s); margin: 12px 0 0; }
   .map-pop { position: fixed; z-index: 10; width: 340px; background: var(--color-base-200); border: 1px solid var(--color-neutral); border-radius: var(--radius-box); padding: 12px; box-shadow: 0 8px 30px color-mix(in oklab, var(--color-base-100) 66%, transparent); pointer-events: none; }
   .map-pop .head { color: var(--muted); font-size: var(--fs-s); }
   .map-pop .tiles { grid-template-columns: repeat(3, 1fr); }
@@ -141,14 +141,13 @@ if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
   <button id="btnStart" class="btn btn-sm btn-primary primary" data-i18n="btn.start">Start catching</button>
   <button class="btn btn-sm btn-neutral" id="btnStop" disabled data-i18n="btn.stop">Stop</button>
   <span class="state" id="status" data-i18n="status.idle">Not running</span>
-  <select id="mode" class="select select-sm mode" data-i18n-title="mode.title">
-    <option value="second" data-i18n="mode.second">Second screen</option><option value="overlay" data-i18n="mode.overlay">Overlay (one monitor)</option>
-  </select>
+  <span class="spacer" data-tauri-drag-region></span>
   <button class="btn btn-sm btn-neutral" id="btnOverlay" hidden data-i18n="btn.overlay">Open overlay</button>
   <a id="update" class="btn btn-info btn-outline btn-sm update" target="_blank" rel="noopener" hidden></a>
-  <select id="lang" class="select select-sm lang" title="Мова · Language · Язык">
-    <option value="uk">UA</option><option value="en">ENG</option><option value="ru">RU</option>
-  </select>
+  <div role="tablist" class="tabs tabs-box tabs-sm" id="views">
+    <button role="tab" class="tab" id="tabCatch" aria-controls="viewCatch" data-i18n="tab.catch"></button>
+    <button role="tab" class="tab" id="tabSetup" aria-controls="viewSetup" data-i18n="tab.setup"></button>
+  </div>
   <button id="btnUpdates" class="btn btn-ghost btn-xs ver" hidden></button>
   <div class="win-ctrls">
     <button class="btn btn-ghost btn-sm btn-square win-btn" id="winMin" data-i18n-title="win.min" data-i18n-aria="win.min"><i data-icon="win-min"></i></button>
@@ -158,6 +157,7 @@ if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
 </header>
 <div class="scroll">
 
+<div id="viewCatch" role="tabpanel" aria-labelledby="tabCatch">
 <div class="top">
   <section class="card card-border result-col">
     <h2 data-i18n="h.result">Result</h2>
@@ -174,31 +174,54 @@ if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
     </div>
     <div class="map-wrap" id="mapWrap"><canvas id="map" width="360" height="200"></canvas></div>
     <p class="muted" style="margin:8px 0 0" data-i18n="map.hint"></p>
-    <div class="row buy-opts">
-      <label><span data-i18n="opt.buys">Purchases per raid</span> <select class="select select-sm" id="buysPerRaid"><option>2</option><option>3</option><option>4</option></select></label>
-      <label><span data-i18n="opt.value">Value by</span> <select class="select select-sm" id="valueBasis"><option value="market" data-i18n="value.market">market price</option><option value="trader" data-i18n="value.trader">trader hand-in</option></select></label>
-      <label><input class="checkbox checkbox-sm" type="checkbox" id="alertOn"> <span data-i18n="opt.alert">Alert on a good cargo</span></label>
-      <label><span data-i18n="opt.gameLang">Game language</span> <select class="select select-sm" id="gameLang"><option value="auto" data-i18n="gameLang.auto">auto</option><option value="eng">English</option><option value="rus">Русский</option></select></label>
-    </div>
     <div id="bestBuys"></div>
     <div id="session"></div>
   </section>
 </div>
 <div id="mapPop" class="map-pop" hidden></div>
+</div>
 
-<main>
+
+
+<main id="viewSetup" role="tabpanel" aria-labelledby="tabSetup" hidden>
   <div>
+    <section class="card card-border">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend" data-i18n="set.screen"></legend>
+        <div class="row">
+          <label><span data-i18n="opt.mode"></span> <select id="mode" class="select select-sm mode" data-i18n-title="mode.title"><option value="second" data-i18n="mode.second">Second screen</option><option value="overlay" data-i18n="mode.overlay">Overlay (one monitor)</option></select></label>
+          <label><span data-i18n="opt.uiLang"></span> <select id="lang" class="select select-sm lang" title="Мова · Language · Язык"><option value="uk">UA</option><option value="en">ENG</option><option value="ru">RU</option></select></label>
+        </div>
+        <p class="label" data-i18n="set.screenHint"></p>
+      </fieldset>
+    </section>
 
     <section class="card card-border">
-      <h2 data-i18n="h.level">Sound level</h2>
-      <canvas id="spec" width="800" height="160"></canvas>
-      <div class="row" style="margin-top:10px">
-        <label><span data-i18n="lbl.sens">Sensitivity</span> <input class="range range-xs" type="range" id="sens" min="4" max="30" value="12"></label>
-        <span id="sensVal" class="muted"></span>
-        <label><span data-i18n="lbl.thr">Match threshold</span> <input class="range range-xs" type="range" id="thr" min="30" max="95" value="50"></label>
-        <span id="thrVal" class="muted"></span>
-        <label><input class="checkbox checkbox-sm" type="checkbox" id="beep" checked> <span data-i18n="lbl.beep">Beep</span></label>
-      </div>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend" data-i18n="set.merchant"></legend>
+        <div class="row">
+          <label><span data-i18n="opt.buys">Purchases per raid</span> <select class="select select-sm" id="buysPerRaid"><option>2</option><option>3</option><option>4</option></select></label>
+          <label><span data-i18n="opt.value">Value by</span> <select class="select select-sm" id="valueBasis"><option value="market" data-i18n="value.market">market price</option><option value="trader" data-i18n="value.trader">trader hand-in</option></select></label>
+          <label><span data-i18n="opt.gameLang">Game language</span> <select class="select select-sm" id="gameLang"><option value="auto" data-i18n="gameLang.auto">auto</option><option value="eng">English</option><option value="rus">Русский</option></select></label>
+        </div>
+        <div class="row"><label><input class="checkbox checkbox-sm" type="checkbox" id="alertOn"> <span data-i18n="opt.alert">Alert on a good cargo</span></label></div>
+        <p class="label" data-i18n="set.merchantHint"></p>
+      </fieldset>
+    </section>
+
+    <section class="card card-border">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend" data-i18n="h.level"></legend>
+        <canvas id="spec" width="800" height="160"></canvas>
+        <div class="row" style="margin-top:10px">
+          <label><span data-i18n="lbl.sens">Sensitivity</span> <input class="range range-xs" type="range" id="sens" min="4" max="30" value="12"></label>
+          <span id="sensVal" class="muted"></span>
+          <label><span data-i18n="lbl.thr">Match threshold</span> <input class="range range-xs" type="range" id="thr" min="30" max="95" value="50"></label>
+          <span id="thrVal" class="muted"></span>
+          <label><input class="checkbox checkbox-sm" type="checkbox" id="beep" checked> <span data-i18n="lbl.beep">Beep</span></label>
+        </div>
+        <p class="label" data-i18n="set.soundHint"></p>
+      </fieldset>
     </section>
 
     <section class="card card-border">
@@ -243,11 +266,10 @@ if (window.__ABI_APP__ && !localStorage.getItem('abi-mh-imported')) {
         <li data-i18n-html="help.8"></li>
       </ol>
       <p class="muted" data-i18n="help.note"></p>
+      <p class="credits">Created by neverh8me and Claude Code</p>
     </section>
   </div>
 </main>
-
-<footer class="credits">Created by neverh8me and Claude Code</footer>
 
 <video id="video" autoplay muted playsinline hidden></video>
 
@@ -2725,6 +2747,29 @@ if (APP) {
 }
 checkUpdate();
 setInterval(checkUpdate, 6 * 3600e3);
+// Two views: Catch (at the merchant) and Setup (everything else)
+const VIEW_KEY = 'abi-mh-view-v1';
+const VIEWS = [['tabCatch', 'viewCatch'], ['tabSetup', 'viewSetup']];
+function showView(view) {
+  for (const [tab, panel] of VIEWS) {
+    const on = panel === view;
+    $(tab).classList.toggle('tab-active', on);
+    $(tab).setAttribute('aria-selected', String(on));
+    $(tab).tabIndex = on ? 0 : -1;
+    $(panel).hidden = !on;
+  }
+  try { localStorage.setItem(VIEW_KEY, JSON.stringify(view)); } catch {}
+}
+for (const [tab, panel] of VIEWS) $(tab).onclick = () => showView(panel);
+$('views').addEventListener('keydown', e => {
+  if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+  const i = VIEWS.findIndex(([tab]) => tab === document.activeElement.id);
+  const [tab, panel] = VIEWS[(i + (e.key === 'ArrowRight' ? 1 : VIEWS.length - 1)) % VIEWS.length];
+  showView(panel);
+  $(tab).focus();
+});
+showView(VIEWS.some(([, v]) => v === loadJson(VIEW_KEY, '')) ? loadJson(VIEW_KEY, '') : 'viewCatch');
+
 hydrateIcons();
 I18n.apply();
 syncLabels();
