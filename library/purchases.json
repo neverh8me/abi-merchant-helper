@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T18:48:17.653Z",
+ "updated": "2026-11-14T01:58:52.197Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1190,6 +1190,16 @@
    "itemId": 408090019,
    "item": "Gungnir Blueprint Fragments",
    "q": "gold"
+  },
+  {
+   "t": 1794532501993,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Rare Mystery Cargo",
+   "price": 550000,
+   "itemId": 498080001,
+   "item": "Gilded Cage Music Box",
+   "q": "red"
   },
   {
    "t": 1794543424756,
