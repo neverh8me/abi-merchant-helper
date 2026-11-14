@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T01:58:52.197Z",
+ "updated": "2026-11-14T05:06:41.603Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1219,6 +1219,16 @@
    "price": 100000,
    "itemId": 408060043,
    "item": "Film Stock",
+   "q": "gold"
+  },
+  {
+   "t": 1794586075010,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x2",
+   "label": "Building Materials",
+   "price": 250000,
+   "itemId": 408080014,
+   "item": "Porcelain",
    "q": "gold"
   }
  ]
