@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T15:14:03.768Z",
+ "updated": "2026-11-15T16:30:55.396Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1369,6 +1369,36 @@
    "price": 200000,
    "itemId": 408080028,
    "item": "Gold Cube",
+   "q": "gold"
+  },
+  {
+   "t": 1794757512854,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1794757547452,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408030026,
+   "item": "Studio Monitor",
+   "q": "gold"
+  },
+  {
+   "t": 1794757566613,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 470000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
    "q": "gold"
   }
  ]
