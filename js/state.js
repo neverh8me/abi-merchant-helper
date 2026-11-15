@@ -64,6 +64,8 @@ let lastSbTop = true;        // the scrollbar thumb was at the very top on the l
 let thumbOddLen = 0, thumbOddCount = 0; // a thumb of a different length: which and for how many frames in a row
 let loggedBar = false;       // "scrollbar found" is logged once, not on every rescan
 let frozenP = 0;             // the cell size when the map froze: a ready map keeps to it
+let scaleSamples = [], scrollK = 0; // learned scroll scale and the frames it is learned from (learnScale)
+let parseNo = 0;             // parses that reached the cargo, for the ready-map correction
 let skips = {};              // why parses stopped early since the last diagnostics line: { reason: count }
 let videoReader = null, videoTimer = null;
 let lastScan = 0;

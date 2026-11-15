@@ -65,6 +65,11 @@ if (!DIAG && location.protocol.startsWith('http')) fetch('diag.on', { cache: 'no
 function diag(msg) {
   if (DIAG) fetch('api/diag', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: String(msg) }).catch(() => {});
 }
+// The drawn map as an image next to the frames (diag only): what the app thought the list looks like
+function diagMap() {
+  if (DIAG && ui.map.width > 1) ui.map.toBlob(b => { if (b) fetch('api/diagframe', { method: 'POST', body: b }).catch(() => {}); }, 'image/jpeg', 0.9);
+}
+setInterval(() => { if (stream && phase === 'frozen') diagMap(); }, 60000);
 function diagFrame() {
   if (DIAG && fullCanvas.width) fullCanvas.toBlob(b => { if (b) fetch('api/diagframe', { method: 'POST', body: b }).catch(() => {}); }, 'image/jpeg', 0.85);
 }

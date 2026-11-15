@@ -7,7 +7,7 @@ function resetScan() {
   P = 0; checkFrames = 0; offset = 0; viewport = null; prevSig = null; ring = []; listTopR = null; alerted = new Set();
   cargo = new Map(); results = new Map(); lastKey = null; lastSeen = null; gridSeenAt = 0;
   phase = 'scan'; sawTop = false; sawEnd = false; stableCount = 0;
-  sbKnown = null; noBarCount = 0; frozenPlaced = null; loggedBar = false; frozenP = 0;
+  sbKnown = null; noBarCount = 0; frozenPlaced = null; loggedBar = false; frozenP = 0; scaleSamples = []; scrollK = 0;
   updateStage();
   drawMap();
 }
@@ -21,7 +21,7 @@ function rescan() {
   if (!P || !viewport) { resetScan(); return; }
   cargo = new Map(); results = new Map(); lastKey = null; frozenPlaced = null; hover = null; hoverSig = '';
   phase = 'scan'; sawTop = !sbKnown || lastSbTop; sawEnd = false; stableCount = 0; checkFrames = 0;
-  sbKnown = null; noBarCount = 0; thumbOddCount = 0; frozenP = 0;
+  sbKnown = null; noBarCount = 0; thumbOddCount = 0; frozenP = 0; scaleSamples = []; scrollK = 0;
   updateStage();
   drawMap();
 }
@@ -185,10 +185,12 @@ function analyze(src, rp) {
   const colOf = c => Math.round((grid.x0 + c * P - phaseX) / P);
   let n;
   if (sb) {
-    const scrollPx = (sb.thumbTop - sb.trackTop) * sb.trackLen / sb.thumbLen;
+    if (phase === 'scan') learnScale(sb, grid);
+    const k = scrollK || sb.trackLen / sb.thumbLen;
+    const scrollPx = (sb.thumbTop - sb.trackTop) * k;
     n = Math.round((grid.y0 - sb.trackTop + scrollPx) / P);
     // the list has as many rows as its content length allows; anything else is a recognition error
-    const listRows = Math.ceil(sb.trackLen * sb.trackLen / sb.thumbLen / P) + 2;
+    const listRows = Math.ceil((sb.trackLen + (sb.trackLen - sb.thumbLen) * k) / P) + 2;
     if (n < -grid.rows || n > listRows) { skip('rowRange'); lastSeen = { grid, items }; updateStage(); return; }
     listTopR = 0;
     if (scrollPx < P / 2) sawTop = true;
@@ -208,6 +210,7 @@ function analyze(src, rp) {
 
   // while a cargo is dragged the picture is "dirty": the map and the references are left alone
   const quiet = now - captureOnset > QUIET_MS;
+  parseNo++;
   const seen = new Set(), fresh = [];
   for (const it of items) {
     const C = colOf(it.c), R = n + it.r;
@@ -234,14 +237,24 @@ function analyze(src, rp) {
     const frozenKeys = new Set(frozenPlaced.map(([k]) => k));
     // Filling in: a missing cargo (say, the top row did not get confirmed before freezing)
     // is added once it has been seen confidently several times and overlaps nothing known.
-    // Existing cargo of a ready map never change.
+    // A wrong cargo of the ready map (a shape a price tooltip cut out, or a cargo placed a row off) would block the
+    // real one for good, so a cargo seen again and again, at two or more scroll positions, takes the place of the
+    // ready-map cargo under it that have not been seen for HEAL_STALE parses while it was.
     for (const f of fresh) {
       cargo.set(f.key, { C: f.C, R: f.R, w: f.it.w, h: f.it.h, votes: 0, base: null, thumb: null });
       seen.add(f.key);
     }
     for (const key of seen) {
       const rec = cargo.get(key);
-      if (frozenKeys.has(key) || rec.votes + 1 < MIN_VOTES + 2 || overlapsFrozen(rec)) continue;
+      if (frozenKeys.has(key) || rec.votes + 1 < MIN_VOTES + 2) continue;
+      if (overlapsFrozen(rec)) {
+        const under = frozenPlaced.filter(([, r]) => rec.C < r.C + r.w && r.C < rec.C + rec.w && rec.R < r.R + r.h && r.R < rec.R + rec.h);
+        const solid = rec.votes + 1 >= HEAL_VOTES && rec.rows && rec.rows.size >= 2;
+        if (!solid || under.some(([, r]) => parseNo - (r.seenNo || 0) < HEAL_STALE)) continue;
+        diag(`map corrected: ${under.map(([k]) => k).join(' + ')} -> ${key}`);
+        frozenPlaced = frozenPlaced.filter(e => !under.includes(e));
+        for (const [k] of under) { frozenKeys.delete(k); results.delete(k); if (lastKey === k) lastKey = null; }
+      }
       frozenPlaced.push([key, rec]);
       frozenKeys.add(key);
     }
@@ -252,6 +265,8 @@ function analyze(src, rp) {
     const it = items.find(i => `${colOf(i.c)},${n + i.r},${i.w},${i.h}` === key);
     rec.votes++;
     rec.seen = now;
+    rec.seenNo = parseNo;
+    (rec.rows || (rec.rows = new Set())).add(n); // the scroll positions it was seen at
     if (!quiet && rec.thumb) continue;
     const x = grid.x0 + it.c * P, y = grid.y0 + it.r * P;
     rec.thumb = makeThumb(x, y, it.w * P, it.h * P);
@@ -276,6 +291,39 @@ function analyze(src, rp) {
   if (document.visibilityState === 'visible') drawMap();
 }
 
+// How far the list scrolls per pixel of thumb movement. Not simply track / thumb length (the game's thumb is
+// not proportional): it is the scale with which every frame puts the grid lines on whole rows. Each frame gives
+// the thumb position d and where the grid lines are (f); the right scale makes (k·d − f) / P whole for all of them.
+// Learned during the scan; when it changes, the rows counted so far were off, so the scan starts over.
+function learnScale(sb, grid) {
+  const d = sb.thumbTop - sb.trackTop, f = sb.trackTop - grid.y0;
+  if (d < 4) return; // at the top the thumb tells nothing about the scale
+  if (scaleSamples.some(s => Math.abs(s.d - d) < 2)) return;
+  scaleSamples.push({ d, f });
+  if (scaleSamples.length > 40) scaleSamples.shift();
+  const ds = scaleSamples.map(s => s.d);
+  if (scaleSamples.length < 5 || Math.max(...ds) - Math.min(...ds) < P) return;
+  const base = sb.trackLen / sb.thumbLen;
+  let best = null;
+  for (let k = base * 0.85; k <= base * 1.35; k += base * 0.0005) {
+    let inliers = 0, err = 0;
+    for (const s of scaleSamples) {
+      const r = (k * s.d - s.f) / P, off = Math.abs(r - Math.round(r));
+      if (off < SCALE_FIT) { inliers++; err += off * off; }
+    }
+    if (!best || inliers > best.inliers || (inliers === best.inliers && err < best.err)) best = { k, inliers, err };
+  }
+  // most frames must agree (a cursor on the scrollbar spoils a few), or the old scale stays
+  if (best.inliers < 5 || best.inliers < scaleSamples.length * 0.8) return;
+  const was = scrollK || base;
+  if (Math.abs(best.k - was) < was * 0.005) { scrollK = best.k; return; }
+  scrollK = best.k;
+  diag(`scroll scale ${was.toFixed(3)} -> ${scrollK.toFixed(3)} from ${best.inliers} of ${scaleSamples.length} frames`);
+  if (Math.abs(scrollK - was) > was * 0.02) {
+    cargo = new Map(); results = new Map(); lastKey = null; stableCount = 0; sawTop = sawEnd = false;
+  }
+}
+
 function overlapsFrozen(rec) {
   return frozenPlaced.some(([, r]) => rec.C < r.C + r.w && r.C < rec.C + rec.w && rec.R < r.R + r.h && r.R < rec.R + rec.h);
 }
@@ -286,6 +334,7 @@ function freeze(message) {
   frozenP = P;
   phase = 'frozen';
   log(message);
+  diagMap();
   updateStage();
 }
 
