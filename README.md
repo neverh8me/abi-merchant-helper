@@ -97,7 +97,7 @@ Nothing to do by hand. Run `start.bat` as usual and answer `Y` to the update que
 | Sound library | `library.js`, `library/` | Contains the reference sounds, sound → item groups, Field Merchant pools with weights, and item icons. |
 | Grid vision | `vision.js` | Detects the merchant grid lines and estimates the cell period. It segments cargo (grey) from empty cells (black) and tracks scrolling via the scrollbar. |
 | OCR | `ocr.js`, `lib/tesseract/` | Runs Tesseract.js in the app window. It reads cargo labels and the price from the hover tooltip. |
-| UI | `index.html`, `i18n.js` | Combines all of the above into probabilities. It draws the map and handles translations. |
+| UI | `index.html`, `js/`, `i18n.js` | `index.html` is the markup and styles; `js/` holds the page logic by topic (capture, recognition, odds, screen, purchases, map, sounds, state, main). It combines all of the above into probabilities, draws the map and handles translations. |
 
 ### Red chance
 
