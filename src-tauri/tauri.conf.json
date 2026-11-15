@@ -36,6 +36,7 @@
       "../library.js": "ui/library.js",
       "../vision.js": "ui/vision.js",
       "../ocr.js": "ui/ocr.js",
+      "../js/": "ui/js/",
       "../version.json": "ui/version.json",
       "../merchant-helper.ico": "ui/merchant-helper.ico",
       "../lib/": "ui/lib/",
