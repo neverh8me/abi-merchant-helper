@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T16:49:10.484Z",
+ "updated": "2026-11-15T17:38:56.285Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1379,6 +1379,46 @@
    "price": 200000,
    "itemId": 408080028,
    "item": "Gold Cube",
+   "q": "gold"
+  },
+  {
+   "t": 1794753423140,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408100002,
+   "item": "Air Tightness Tester",
+   "q": "purple"
+  },
+  {
+   "t": 1794753428812,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408010006,
+   "item": "Oil Drum",
+   "q": "purple"
+  },
+  {
+   "t": 1794753460576,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498080018,
+   "item": "\"Destiny\" Gold Clay Tablet",
+   "q": "red"
+  },
+  {
+   "t": 1794755260310,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080004,
+   "item": "Gold Watch",
    "q": "gold"
   },
   {
