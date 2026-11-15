@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T23:06:58.855Z",
+ "updated": "2026-11-15T09:57:20.268Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1299,6 +1299,16 @@
    "price": 200000,
    "itemId": 408090019,
    "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1794661193202,
+   "soundId": "lib:med_comp",
+   "size": "2x2",
+   "label": "Household Items",
+   "price": 100000,
+   "itemId": 408060043,
+   "item": "Film Stock",
    "q": "gold"
   },
   {
