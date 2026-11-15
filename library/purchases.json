@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T19:14:47.708Z",
+ "updated": "2026-11-15T20:53:32.732Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1400,6 +1400,46 @@
    "itemId": 408080028,
    "item": "Gold Cube",
    "q": "gold"
+  },
+  {
+   "t": 1794752218631,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
+   "q": "gold"
+  },
+  {
+   "t": 1794752224829,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1794752244618,
+   "soundId": null,
+   "size": "",
+   "label": "Military Items",
+   "price": 50000,
+   "itemId": 408120005,
+   "item": "Military Canteen",
+   "q": "blue"
+  },
+  {
+   "t": 1794752281866,
+   "soundId": null,
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080029,
+   "item": "Gem Necklace",
+   "q": "red"
   },
   {
    "t": 1794753423140,
