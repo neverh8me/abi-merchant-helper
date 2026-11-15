@@ -373,6 +373,7 @@ const BALANCE_LEFT = 0.4;    // the "Owned" balance is right of this share of th
 const BALANCE_BELOW = 2.6;   // and no lower than this many cells below the list
 const FEED_WAIT_MS = 30000;  // a feed line waits this long for the balance to confirm it
 const FEED_SAME_MS = 60000;  // the same line (price and similar name) within this window is the same purchase
+const SEEN_SAME_MS = 600000; // a seen line with the same price and item within 10 minutes is the same line still on screen
 const FEED_BEST_MS = 4000;   // a purchase line read without a known item waits this long for a better reading
 const BASE_URL = 'library/purchases.json'; // shared base in the app folder
 const BASE_REMOTE = 'https://raw.githubusercontent.com/neverh8me/abi-merchant-helper/main/library/purchases.json'; // and the freshest one on GitHub
@@ -994,7 +995,7 @@ function bestBuys() {
 // Summary of this session's purchases: count, Koen spent, reds and what the items are worth. It also shows
 // right away whether a purchase was recorded at all.
 function renderSession() {
-  const mine = purchases.filter(b => b.t >= sessionStart);
+  const mine = purchases.filter(b => b.t >= sessionStart && !b.seen);
   const head = `<h3>${esc(tr('session.title'))}<button class="btn btn-sm btn-neutral" id="btnSessionReset">${esc(tr('session.reset'))}</button></h3>`;
   if (!mine.length) { $('session').innerHTML = head + `<div class="muted">${esc(tr('session.none'))}</div>`; return; }
   let spentK = 0, value = 0, reds = 0;
@@ -1859,7 +1860,7 @@ function feedItem(text) {
 // names an item is the one recorded; a garbled one is taken only if no better reading comes within a few seconds.
 function processFeed() {
   const now = performance.now();
-  for (const f of feedQueue) if (now - f.at >= FEED_WAIT_MS) diag(`feed line dropped, the balance did not fall by ${f.price}: ${f.item} (spent=${spent})`);
+  for (const f of feedQueue) if (now - f.at >= FEED_WAIT_MS) { diag(`feed line not confirmed as own, the balance did not fall by ${f.price}: ${f.item} (spent=${spent})`); recordSeen(f); }
   feedQueue = feedQueue.filter(f => now - f.at < FEED_WAIT_MS);
   feedDone = feedDone.filter(f => now - f.at < FEED_SAME_MS);
   if (spent && now - spentAt >= FEED_WAIT_MS) { diag(`balance drop of ${spent} matches no purchase line`); spent = 0; }
@@ -1937,6 +1938,28 @@ function dropMismatchedSounds() {
     return { ...b, soundId: null, label: '', size: '' }; // the whole cargo pairing was wrong, not only the sound
   });
   if (changed) { savePurchases(); syncBase(); }
+}
+
+// A purchase line that is not (or cannot be shown to be) own: someone else's, or a cart where only the last line
+// shows. It still tells "a cargo of this label and price gave this item", so it is kept for the odds when the item is
+// known and only one cargo label sells that item at that price. Own session totals leave these out (seen: true).
+let seenRecent = []; // { price, itemId, at }: a line still on screen is read again, it counts once
+function seenLabel(itemId, price) {
+  const dist = p => Math.min(Math.abs(Math.log(price / p)), Math.abs(Math.log(price / (p * PRICE_MARKUP))));
+  const labels = new Set(libPools.filter(pl => pl.label && pl.items.some(([id]) => id === itemId) && dist(pl.price) <= PRICE_MATCH_LOG).map(pl => pl.label));
+  return labels.size === 1 ? [...labels][0] : '';
+}
+function recordSeen(f) {
+  const it = f.it || feedItem(f.item), now = performance.now();
+  seenRecent = seenRecent.filter(s => now - s.at < SEEN_SAME_MS);
+  if (!it || seenRecent.some(s => s.price === f.price && s.itemId === it.id)) return;
+  const label = seenLabel(it.id, f.price);
+  if (!label) { diag(`seen purchase skipped, the cargo label is not certain: ${f.price} ${it.nameEn || it.name}`); return; }
+  seenRecent.push({ price: f.price, itemId: it.id, at: now });
+  purchases.push({ t: Date.now(), soundId: null, size: '', label, price: f.price, itemId: it.id, item: it.nameEn || it.name, q: it.q || '', seen: true });
+  diag(`seen purchase kept: ${label} ${f.price} -> ${it.nameEn || it.name}`);
+  savePurchases();
+  syncBase();
 }
 
 // Records a purchase. itemId if the item is already known, otherwise it is looked up by name.
