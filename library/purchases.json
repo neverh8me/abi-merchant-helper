@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T12:36:27.116Z",
+ "updated": "2026-11-16T13:30:32.762Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1919,6 +1919,16 @@
    "price": 70000,
    "itemId": 498060001,
    "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1794830661874,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 408080049,
+   "item": "Raw Diamond Ore",
    "q": "gold"
   }
  ]
