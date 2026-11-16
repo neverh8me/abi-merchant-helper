@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T13:30:32.762Z",
+ "updated": "2026-11-16T15:54:09.921Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1922,6 +1922,26 @@
    "q": "gold"
   },
   {
+   "t": 1794829689303,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1794829768825,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 408060044,
+   "item": "Handheld Fill Light",
+   "q": "purple"
+  },
+  {
    "t": 1794830661874,
    "soundId": null,
    "size": "",
@@ -1929,6 +1949,56 @@
    "price": 376000,
    "itemId": 408080049,
    "item": "Raw Diamond Ore",
+   "q": "gold"
+  },
+  {
+   "t": 1794831446966,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1794831446966,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 408060044,
+   "item": "Handheld Fill Light",
+   "q": "purple"
+  },
+  {
+   "t": 1794831500005,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
+   "q": "gold"
+  },
+  {
+   "t": 1794831527675,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
+   "q": "gold"
+  },
+  {
+   "t": 1794834897271,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
    "q": "gold"
   }
  ]
