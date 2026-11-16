@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T22:44:20.444Z",
+ "updated": "2026-11-16T22:46:04.317Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -2060,6 +2060,16 @@
    "itemId": 408140022,
    "item": "Video Camera",
    "q": "gold"
+  },
+  {
+   "t": 1794776059835,
+   "soundId": "lib:acc_statue",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408080008,
+   "item": "Gold Lion Statue",
+   "q": "red"
   },
   {
    "t": 1794779035923,
