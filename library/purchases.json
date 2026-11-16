@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T21:57:32.279Z",
+ "updated": "2026-11-16T22:02:59.283Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1899,6 +1899,56 @@
    "price": 250000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1794770784347,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 243000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1794770871605,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 243000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1794770871605,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 243000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
+   "q": "gold"
+  },
+  {
+   "t": 1794770871606,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 189000,
+   "itemId": 408080028,
+   "item": "Gold Cube",
+   "q": "gold"
+  },
+  {
+   "t": 1794771100279,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
    "q": "gold"
   },
   {
