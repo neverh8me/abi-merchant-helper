@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T04:32:17.031Z",
+ "updated": "2026-11-16T07:35:11.434Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1392,6 +1392,56 @@
    "q": "purple"
   },
   {
+   "t": 1794742684309,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1794742727307,
+   "soundId": "lib:small_metal_blunt",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 498100006,
+   "item": "Handheld Calculator",
+   "q": "purple"
+  },
+  {
+   "t": 1794742768654,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408030025,
+   "item": "UPS Unit",
+   "q": "gold"
+  },
+  {
+   "t": 1794748086583,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1794748086586,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408030025,
+   "item": "UPS Unit",
+   "q": "gold"
+  },
+  {
    "t": 1794750928768,
    "soundId": null,
    "size": "",
@@ -1399,6 +1449,16 @@
    "price": 200000,
    "itemId": 408080028,
    "item": "Gold Cube",
+   "q": "gold"
+  },
+  {
+   "t": 1794751824747,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 32000,
+   "itemId": 408080013,
+   "item": "Gold Bracelet",
    "q": "gold"
   },
   {
@@ -1512,6 +1572,16 @@
    "q": "gold"
   },
   {
+   "t": 1794758968001,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
    "t": 1794762239057,
    "soundId": null,
    "size": "",
@@ -1520,6 +1590,16 @@
    "itemId": 498100004,
    "item": "Handheld Receiver",
    "q": "purple"
+  },
+  {
+   "t": 1794766015417,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 32000,
+   "itemId": 498070013,
+   "item": "Mutated Tissue Mass",
+   "q": "gold"
   },
   {
    "t": 1794767668765,
@@ -1540,6 +1620,86 @@
    "itemId": 408060052,
    "item": "Deluxe Tea Set",
    "q": "gold"
+  },
+  {
+   "t": 1794771535091,
+   "soundId": null,
+   "size": "",
+   "label": "Energy Items",
+   "price": 21600,
+   "itemId": 498040001,
+   "item": "Solar Charger",
+   "q": "gold"
+  },
+  {
+   "t": 1794771539798,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 498090001,
+   "item": "Voss' Journal",
+   "q": "gold"
+  },
+  {
+   "t": 1794771543162,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 498080008,
+   "item": "Hefra Egg",
+   "q": "red"
+  },
+  {
+   "t": 1794771549841,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498070011,
+   "item": "Pheromone Test Kit",
+   "q": "gold"
+  },
+  {
+   "t": 1794771553847,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 360000,
+   "itemId": 498070003,
+   "item": "Blood Glucose Meter Set",
+   "q": "gold"
+  },
+  {
+   "t": 1794771567661,
+   "soundId": null,
+   "size": "",
+   "label": "Household Items",
+   "price": 100000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
+   "q": "gold"
+  },
+  {
+   "t": 1794771600251,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 168000,
+   "itemId": 408080050,
+   "item": "Jade Bracelet",
+   "q": "gold"
+  },
+  {
+   "t": 1794771711563,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080003,
+   "item": "Vase",
+   "q": "red"
   },
   {
    "t": 1794779176249,
