@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T18:42:55.273Z",
+ "updated": "2026-11-16T19:55:58.285Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1749,6 +1749,26 @@
    "price": 250000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1794763686376,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1794763773891,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408050039,
+   "item": "Blowtorch",
    "q": "gold"
   },
   {
