@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T18:13:28.729Z",
+ "updated": "2026-11-16T18:42:55.273Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1489,6 +1489,16 @@
    "price": 70000,
    "itemId": 408030025,
    "item": "UPS Unit",
+   "q": "gold"
+  },
+  {
+   "t": 1794748949047,
+   "soundId": "lib:med_glass",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
    "q": "gold"
   },
   {
