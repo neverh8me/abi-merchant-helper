@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T10:32:56.854Z",
+ "updated": "2026-11-16T11:15:28.093Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1489,6 +1489,26 @@
    "price": 70000,
    "itemId": 408030025,
    "item": "UPS Unit",
+   "q": "gold"
+  },
+  {
+   "t": 1794749901818,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080001,
+   "item": "Gold Cheetah Statue",
+   "q": "gold"
+  },
+  {
+   "t": 1794750056813,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408090004,
+   "item": "Folder",
    "q": "gold"
   },
   {
