@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T16:14:01.351Z",
+ "updated": "2026-11-16T16:55:21.975Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1769,6 +1769,36 @@
    "price": 100000,
    "itemId": 408060052,
    "item": "Deluxe Tea Set",
+   "q": "gold"
+  },
+  {
+   "t": 1794770487578,
+   "soundId": null,
+   "size": "",
+   "label": "Paper",
+   "price": 15000,
+   "itemId": 498090001,
+   "item": "Voss' Journal",
+   "q": "gold"
+  },
+  {
+   "t": 1794770493660,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1794770522020,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
    "q": "gold"
   },
   {
