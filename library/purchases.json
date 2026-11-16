@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T21:01:43.638Z",
+ "updated": "2026-11-16T21:13:52.650Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -2132,6 +2132,16 @@
    "q": "gold"
   },
   {
+   "t": 1794803047254,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498100003,
+   "item": "Three-Axis Gyro Controller Prototype",
+   "q": "red"
+  },
+  {
    "t": 1794824351153,
    "soundId": null,
    "size": "",
@@ -2179,6 +2189,16 @@
    "price": 376000,
    "itemId": 408080049,
    "item": "Raw Diamond Ore",
+   "q": "gold"
+  },
+  {
+   "t": 1794831024926,
+   "soundId": null,
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080014,
+   "item": "Porcelain",
    "q": "gold"
   },
   {
