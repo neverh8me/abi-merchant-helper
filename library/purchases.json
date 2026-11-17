@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T14:51:04.319Z",
+ "updated": "2026-11-17T14:53:47.487Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3039,6 +3039,26 @@
    "price": 56000,
    "itemId": 408020019,
    "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1794910335551,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 168000,
+   "itemId": 408080028,
+   "item": "Gold Cube",
+   "q": "gold"
+  },
+  {
+   "t": 1794910354171,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408040004,
+   "item": "Car Battery",
    "q": "gold"
   },
   {
