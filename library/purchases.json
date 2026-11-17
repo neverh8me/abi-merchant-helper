@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T21:45:49.932Z",
+ "updated": "2026-11-17T21:51:40.926Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3172,11 +3172,41 @@
    "q": "gold"
   },
   {
+   "t": 1794896799362,
+   "soundId": "lib:small_metal_blunt",
+   "size": "1x2",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 408080049,
+   "item": "Raw Diamond Ore",
+   "q": "gold"
+  },
+  {
    "t": 1794898893410,
    "soundId": "lib:electronicdevice",
    "size": "1x2",
    "label": "Uncommon Mystery Cargo",
    "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1794902301736,
+   "soundId": null,
+   "size": "",
+   "label": "Household Items",
+   "price": 80000,
+   "itemId": 498060004,
+   "item": "Voice of Civilization Gold Record",
+   "q": "red"
+  },
+  {
+   "t": 1794902301737,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
    "itemId": 408120017,
    "item": "Leveler",
    "q": "gold"
