@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T11:41:30.396Z",
+ "updated": "2026-11-17T11:59:35.966Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -2820,6 +2820,16 @@
    "itemId": 408120017,
    "item": "Leveler",
    "q": "gold"
+  },
+  {
+   "t": 1794861260351,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 470000,
+   "itemId": 498100003,
+   "item": "Three-Axis Gyro Controller Prototype",
+   "q": "red"
   },
   {
    "t": 1794861409654,
