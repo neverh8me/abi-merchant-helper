@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T20:22:18.217Z",
+ "updated": "2026-11-17T20:52:51.745Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -2969,6 +2969,26 @@
    "price": 168000,
    "itemId": 408080028,
    "item": "Gold Cube",
+   "q": "gold"
+  },
+  {
+   "t": 1794853695893,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120008,
+   "item": "Rangefinder Binoculars",
+   "q": "purple"
+  },
+  {
+   "t": 1794853743458,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408050033,
+   "item": "Hydraulic Expander",
    "q": "gold"
   },
   {
