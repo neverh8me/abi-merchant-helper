@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T10:06:16.977Z",
+ "updated": "2026-11-17T10:19:40.574Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -2540,6 +2540,16 @@
    "itemId": 498070009,
    "item": "Infrared Therapy Lamp",
    "q": "gold"
+  },
+  {
+   "t": 1794863803777,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080008,
+   "item": "Gold Lion Statue",
+   "q": "red"
   },
   {
    "t": 1794868244615,
