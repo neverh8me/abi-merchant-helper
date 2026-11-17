@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T09:58:21.007Z",
+ "updated": "2026-11-17T10:06:16.977Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1300,6 +1300,16 @@
    "itemId": 498080016,
    "item": "Amber Heart of Heaven",
    "q": "red"
+  },
+  {
+   "t": 1794595269834,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
   },
   {
    "t": 1794608454356,
