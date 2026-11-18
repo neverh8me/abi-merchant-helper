@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T20:35:08.246Z",
+ "updated": "2026-11-18T21:05:01.656Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3929,6 +3929,36 @@
    "price": 250000,
    "itemId": 498080005,
    "item": "Real Matrix",
+   "q": "red"
+  },
+  {
+   "t": 1795017902176,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 550000,
+   "itemId": 498080018,
+   "item": "\"Destiny\" Gold Clay Tablet",
+   "q": "red"
+  },
+  {
+   "t": 1795017951603,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70600,
+   "itemId": 408040004,
+   "item": "Car Battery",
+   "q": "gold"
+  },
+  {
+   "t": 1795019604730,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 350300,
+   "itemId": 498080018,
+   "item": "\"Destiny\" Gold Clay Tablet",
    "q": "red"
   },
   {
