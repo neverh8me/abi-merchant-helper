@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T14:58:45.575Z",
+ "updated": "2026-11-18T15:03:01.130Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1589,6 +1589,46 @@
    "price": 32000,
    "itemId": 408080013,
    "item": "Gold Bracelet",
+   "q": "gold"
+  },
+  {
+   "t": 1794751880621,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 168000,
+   "itemId": 408080028,
+   "item": "Gold Cube",
+   "q": "gold"
+  },
+  {
+   "t": 1794751889580,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
+   "q": "gold"
+  },
+  {
+   "t": 1794752000939,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 243000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1794752000939,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 243000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
    "q": "gold"
   },
   {
