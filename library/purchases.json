@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T16:55:48.682Z",
+ "updated": "2026-11-18T17:04:13.524Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1673,6 +1673,16 @@
   },
   {
    "t": 1794752314111,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1794752324450,
    "soundId": null,
    "size": "",
    "label": "Uncommon Mystery Cargo",
