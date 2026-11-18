@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T12:51:07.979Z",
+ "updated": "2026-11-18T13:14:26.661Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3519,6 +3519,26 @@
    "price": 200000,
    "itemId": 498100002,
    "item": "K7-L Cipher Machine",
+   "q": "gold"
+  },
+  {
+   "t": 1794927498823,
+   "soundId": "lib:electronicdevice",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408120014,
+   "item": "Radio",
+   "q": "purple"
+  },
+  {
+   "t": 1794927515178,
+   "soundId": "lib:med_metal_crisp",
+   "size": "2x3",
+   "label": "",
+   "price": 56000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
    "q": "gold"
   },
   {
