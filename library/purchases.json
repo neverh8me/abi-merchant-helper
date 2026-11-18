@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T22:55:01.632Z",
+ "updated": "2026-11-18T23:28:59.207Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4190,6 +4190,26 @@
    "itemId": 408120013,
    "item": "TI Module",
    "q": "red"
+  },
+  {
+   "t": 1795043070361,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1795043094956,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408080001,
+   "item": "Gold Cheetah Statue",
+   "q": "gold"
   }
  ]
 }
