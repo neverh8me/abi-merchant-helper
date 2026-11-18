@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T22:03:18.885Z",
+ "updated": "2026-11-18T22:35:50.755Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3882,6 +3882,46 @@
    "q": "gold"
   },
   {
+   "t": 1794968519594,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1794977485128,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408100011,
+   "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1794979863394,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1794979940826,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
    "t": 1794985692205,
    "soundId": null,
    "size": "",
@@ -3912,6 +3952,16 @@
    "q": "gold"
   },
   {
+   "t": 1794992576393,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498100001,
+   "item": "Aerospace Navigator",
+   "q": "red"
+  },
+  {
    "t": 1794999225999,
    "soundId": null,
    "size": "",
@@ -3940,6 +3990,16 @@
    "itemId": 408070016,
    "item": "Metal Heart",
    "q": "gold"
+  },
+  {
+   "t": 1795008215813,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498100001,
+   "item": "Aerospace Navigator",
+   "q": "red"
   },
   {
    "t": 1795008408836,
@@ -3979,6 +4039,16 @@
    "price": 56000,
    "itemId": 408080038,
    "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795012727227,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120014,
+   "item": "Radio",
    "q": "purple"
   },
   {
@@ -4022,6 +4092,16 @@
    "q": "gold"
   },
   {
+   "t": 1795018443364,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 440000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
    "t": 1795019604730,
    "soundId": null,
    "size": "",
@@ -4030,6 +4110,36 @@
    "itemId": 498080018,
    "item": "\"Destiny\" Gold Clay Tablet",
    "q": "red"
+  },
+  {
+   "t": 1795020735857,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408140022,
+   "item": "Video Camera",
+   "q": "gold"
+  },
+  {
+   "t": 1795020859057,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070011,
+   "item": "Pheromone Test Kit",
+   "q": "gold"
+  },
+  {
+   "t": 1795020859059,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120014,
+   "item": "Radio",
+   "q": "purple"
   },
   {
    "t": 1795024250030,
