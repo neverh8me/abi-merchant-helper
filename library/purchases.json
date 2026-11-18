@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T10:51:15.514Z",
+ "updated": "2026-11-18T10:52:41.461Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3319,6 +3319,26 @@
    "price": 56000,
    "itemId": 408040004,
    "item": "Car Battery",
+   "q": "gold"
+  },
+  {
+   "t": 1794911782400,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1794911816280,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408030028,
+   "item": "Vector Processor",
    "q": "gold"
   },
   {
