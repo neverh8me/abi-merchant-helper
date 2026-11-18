@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T17:04:21.175Z",
+ "updated": "2026-11-18T18:19:05.265Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3887,6 +3887,36 @@
    "size": "",
    "label": "Mystery Cargo",
    "price": 56000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795024250030,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1795024331072,
+   "soundId": null,
+   "size": "",
+   "label": "Household Items",
+   "price": 100000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
+   "q": "gold"
+  },
+  {
+   "t": 1795024333470,
+   "soundId": null,
+   "size": "2x3",
+   "label": "Mystery Cargo",
+   "price": 70000,
    "itemId": 408080038,
    "item": "Plaster Sculpture",
    "q": "purple"
