@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T21:52:01.853Z",
+ "updated": "2026-11-18T22:03:18.885Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3922,6 +3922,16 @@
    "q": "gold"
   },
   {
+   "t": 1795001845944,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498100001,
+   "item": "Aerospace Navigator",
+   "q": "red"
+  },
+  {
    "t": 1795004515437,
    "soundId": null,
    "size": "",
@@ -3970,6 +3980,16 @@
    "itemId": 408080038,
    "item": "Plaster Sculpture",
    "q": "purple"
+  },
+  {
+   "t": 1795016367508,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498100001,
+   "item": "Aerospace Navigator",
+   "q": "red"
   },
   {
    "t": 1795016903417,
