@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T17:57:18.061Z",
+ "updated": "2026-11-19T18:05:41.814Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4132,6 +4132,16 @@
    "q": "gold"
   },
   {
+   "t": 1794990376587,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080033,
+   "item": "Vintage Typewriter",
+   "q": "gold"
+  },
+  {
    "t": 1794992576393,
    "soundId": null,
    "size": "",
@@ -4310,6 +4320,16 @@
    "itemId": 498080018,
    "item": "\"Destiny\" Gold Clay Tablet",
    "q": "red"
+  },
+  {
+   "t": 1795019813955,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080033,
+   "item": "Vintage Typewriter",
+   "q": "gold"
   },
   {
    "t": 1795019815160,
