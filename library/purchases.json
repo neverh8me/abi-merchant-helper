@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T13:10:53.043Z",
+ "updated": "2026-11-19T13:26:11.059Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3589,6 +3589,26 @@
    "price": 40000,
    "itemId": 498010003,
    "item": "Magnesium Flint",
+   "q": "gold"
+  },
+  {
+   "t": 1794919419378,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1794919486827,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
    "q": "gold"
   },
   {
