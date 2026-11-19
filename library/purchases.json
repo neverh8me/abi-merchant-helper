@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T17:23:47.659Z",
+ "updated": "2026-11-19T17:39:04.651Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -1740,6 +1740,16 @@
    "itemId": 408080004,
    "item": "Gold Watch",
    "q": "gold"
+  },
+  {
+   "t": 1794756337898,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080008,
+   "item": "Gold Lion Statue",
+   "q": "red"
   },
   {
    "t": 1794757512854,
