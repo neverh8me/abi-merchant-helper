@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T17:53:08.049Z",
+ "updated": "2026-11-19T17:57:18.061Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4560,6 +4560,36 @@
    "itemId": 408020022,
    "item": "Acoustic Panel",
    "q": "blue"
+  },
+  {
+   "t": 1795028537715,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1795028556207,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 210000,
+   "itemId": 408080028,
+   "item": "Gold Cube",
+   "q": "gold"
+  },
+  {
+   "t": 1795028589532,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498080018,
+   "item": "\"Destiny\" Gold Clay Tablet",
+   "q": "red"
   },
   {
    "t": 1795043070361,
