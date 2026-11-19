@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T13:26:11.059Z",
+ "updated": "2026-11-19T13:29:19.396Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4212,6 +4212,26 @@
    "q": "red"
   },
   {
+   "t": 1795019815160,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
+  },
+  {
+   "t": 1795019859555,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408140001,
+   "item": "Game Console",
+   "q": "gold"
+  },
+  {
    "t": 1795020735857,
    "soundId": null,
    "size": "",
@@ -4270,6 +4290,26 @@
    "itemId": 408050019,
    "item": "Blower",
    "q": "purple"
+  },
+  {
+   "t": 1795022415092,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
+  },
+  {
+   "t": 1795022473555,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 498100002,
+   "item": "K7-L Cipher Machine",
+   "q": "gold"
   },
   {
    "t": 1795024250030,
