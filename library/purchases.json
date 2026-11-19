@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T17:07:53.106Z",
+ "updated": "2026-11-19T17:18:48.860Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4500,6 +4500,16 @@
    "itemId": 498070009,
    "item": "Infrared Therapy Lamp",
    "q": "gold"
+  },
+  {
+   "t": 1795107235378,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 498100004,
+   "item": "Handheld Receiver",
+   "q": "purple"
   }
  ]
 }
