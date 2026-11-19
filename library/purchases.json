@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T02:53:03.306Z",
+ "updated": "2026-11-19T05:38:23.677Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4189,6 +4189,36 @@
    "price": 200000,
    "itemId": 408120014,
    "item": "Radio",
+   "q": "purple"
+  },
+  {
+   "t": 1795020990687,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 200000,
+   "itemId": 408060044,
+   "item": "Handheld Fill Light",
+   "q": "purple"
+  },
+  {
+   "t": 1795020990688,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 200000,
+   "itemId": 498100006,
+   "item": "Handheld Calculator",
+   "q": "purple"
+  },
+  {
+   "t": 1795021990180,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408050019,
+   "item": "Blower",
    "q": "purple"
   },
   {
