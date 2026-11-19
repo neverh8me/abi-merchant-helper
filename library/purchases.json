@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T20:49:21.113Z",
+ "updated": "2026-11-19T21:11:23.368Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4642,6 +4642,36 @@
    "q": "gold"
   },
   {
+   "t": 1795037971465,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 40000,
+   "itemId": 498010003,
+   "item": "Magnesium Flint",
+   "q": "gold"
+  },
+  {
+   "t": 1795040484531,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 40000,
+   "itemId": 498010003,
+   "item": "Magnesium Flint",
+   "q": "gold"
+  },
+  {
+   "t": 1795040544941,
+   "soundId": "lib:med_metal_crisp",
+   "size": "2x3",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
    "t": 1795043070361,
    "soundId": "lib:small_metal_crisp",
    "size": "2x2",
@@ -4662,6 +4692,26 @@
    "q": "gold"
   },
   {
+   "t": 1795045526241,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795045616617,
+   "soundId": "lib:electronicdevice",
+   "size": "1x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
    "t": 1795068075570,
    "soundId": null,
    "size": "",
@@ -4679,6 +4729,16 @@
    "price": 250000,
    "itemId": 498070009,
    "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1795101458328,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408060043,
+   "item": "Film Stock",
    "q": "gold"
   },
   {
