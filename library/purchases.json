@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T11:29:04.376Z",
+ "updated": "2026-11-20T11:53:29.208Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4999,6 +4999,16 @@
    "price": 250000,
    "itemId": 498100002,
    "item": "K7-L Cipher Machine",
+   "q": "gold"
+  },
+  {
+   "t": 1795175102976,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408100011,
+   "item": "Antenna",
    "q": "gold"
   }
  ]
