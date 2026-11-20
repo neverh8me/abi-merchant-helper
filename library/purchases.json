@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T13:40:33.588Z",
+ "updated": "2026-11-20T13:47:12.172Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4822,6 +4822,56 @@
    "q": "gold"
   },
   {
+   "t": 1795099281163,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408140001,
+   "item": "Game Console",
+   "q": "gold"
+  },
+  {
+   "t": 1795099311525,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408050033,
+   "item": "Hydraulic Expander",
+   "q": "gold"
+  },
+  {
+   "t": 1795099321497,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
+  },
+  {
+   "t": 1795099327946,
+   "soundId": null,
+   "size": "",
+   "label": "Military Items",
+   "price": 50000,
+   "itemId": 408120014,
+   "item": "Radio",
+   "q": "purple"
+  },
+  {
+   "t": 1795100833938,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408140001,
+   "item": "Game Console",
+   "q": "gold"
+  },
+  {
    "t": 1795101458328,
    "soundId": null,
    "size": "",
@@ -4830,6 +4880,26 @@
    "itemId": 408060043,
    "item": "Film Stock",
    "q": "gold"
+  },
+  {
+   "t": 1795102739550,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408140001,
+   "item": "Game Console",
+   "q": "gold"
+  },
+  {
+   "t": 1795102770660,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498080018,
+   "item": "\"Destiny\" Gold Clay Tablet",
+   "q": "red"
   },
   {
    "t": 1795103257815,
