@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T13:47:12.172Z",
+ "updated": "2026-11-20T13:52:51.995Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4420,6 +4420,36 @@
    "itemId": 498100006,
    "item": "Handheld Calculator",
    "q": "purple"
+  },
+  {
+   "t": 1795020997728,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408090004,
+   "item": "Folder",
+   "q": "gold"
+  },
+  {
+   "t": 1795020997729,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 200000,
+   "itemId": 498070004,
+   "item": "Electronic Stethoscope",
+   "q": "purple"
+  },
+  {
+   "t": 1795021002101,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
   },
   {
    "t": 1795021727019,
