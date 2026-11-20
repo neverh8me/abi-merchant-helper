@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T19:41:34.711Z",
+ "updated": "2026-11-20T20:40:42.065Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5232,6 +5232,16 @@
    "q": "gold"
   },
   {
+   "t": 1795112936001,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 225000,
+   "itemId": 408120009,
+   "item": "Portable Transceiver",
+   "q": "purple"
+  },
+  {
    "t": 1795113953084,
    "soundId": null,
    "size": "",
@@ -5300,6 +5310,26 @@
    "itemId": 498090002,
    "item": "Space Boy Comic",
    "q": "purple"
+  },
+  {
+   "t": 1795125834935,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 63000,
+   "itemId": 408050026,
+   "item": "Hydraulic Wrench",
+   "q": "gold"
+  },
+  {
+   "t": 1795125834938,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 63000,
+   "itemId": 408050033,
+   "item": "Hydraulic Expander",
+   "q": "gold"
   },
   {
    "t": 1795128225604,
