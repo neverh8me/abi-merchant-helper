@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T01:25:47.474Z",
+ "updated": "2026-11-20T02:20:28.728Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4830,6 +4830,36 @@
    "itemId": 408070016,
    "item": "Metal Heart",
    "q": "gold"
+  },
+  {
+   "t": 1795128225604,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1795128290649,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408050019,
+   "item": "Blower",
+   "q": "purple"
+  },
+  {
+   "t": 1795130927524,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498100003,
+   "item": "Three-Axis Gyro Controller Prototype",
+   "q": "red"
   }
  ]
 }
