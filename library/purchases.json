@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T12:02:17.202Z",
+ "updated": "2026-11-20T13:13:40.798Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5029,6 +5029,26 @@
    "price": 70000,
    "itemId": 408100011,
    "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1795176178077,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
+  },
+  {
+   "t": 1795176220495,
+   "soundId": "lib:med_statue",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 63000,
+   "itemId": 408080030,
+   "item": "Gold Cup",
    "q": "gold"
   }
  ]
