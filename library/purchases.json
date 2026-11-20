@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T13:34:41.310Z",
+ "updated": "2026-11-20T13:40:33.588Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5030,6 +5030,16 @@
    "itemId": 408060054,
    "item": "Lute",
    "q": "purple"
+  },
+  {
+   "t": 1795159864976,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
   },
   {
    "t": 1795159866479,
