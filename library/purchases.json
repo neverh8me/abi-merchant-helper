@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T13:20:30.386Z",
+ "updated": "2026-11-20T13:34:41.310Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -4899,6 +4899,36 @@
    "price": 200000,
    "itemId": 408070016,
    "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1795110020244,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795110026412,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795110069522,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 498070003,
+   "item": "Blood Glucose Meter Set",
    "q": "gold"
   },
   {
