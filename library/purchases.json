@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T18:37:35.829Z",
+ "updated": "2026-11-21T19:48:03.677Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5890,6 +5890,16 @@
    "itemId": 408030026,
    "item": "Studio Monitor",
    "q": "gold"
+  },
+  {
+   "t": 1795207580013,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498080018,
+   "item": "\"Destiny\" Gold Clay Tablet",
+   "q": "red"
   },
   {
    "t": 1795214745832,
