@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T17:18:04.113Z",
+ "updated": "2026-11-21T17:33:52.608Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5922,6 +5922,16 @@
    "q": "gold"
   },
   {
+   "t": 1795245593552,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
    "t": 1795246988284,
    "soundId": null,
    "size": "",
@@ -5930,6 +5940,16 @@
    "itemId": 408050006,
    "item": "Toolkit",
    "q": "purple"
+  },
+  {
+   "t": 1795247548368,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070011,
+   "item": "Pheromone Test Kit",
+   "q": "gold"
   },
   {
    "t": 1795248809848,
