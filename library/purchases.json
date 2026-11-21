@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T10:14:58.779Z",
+ "updated": "2026-11-21T10:18:51.781Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5829,6 +5829,16 @@
    "price": 70000,
    "itemId": 408100011,
    "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1795256290590,
+   "soundId": "lib:med_statue",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498100002,
+   "item": "K7-L Cipher Machine",
    "q": "gold"
   }
  ]
