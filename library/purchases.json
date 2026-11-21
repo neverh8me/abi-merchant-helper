@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T14:01:33.478Z",
+ "updated": "2026-11-21T14:25:20.003Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5782,6 +5782,16 @@
    "q": "gold"
   },
   {
+   "t": 1795198580649,
+   "soundId": "lib:acc_statue",
+   "size": "2x3",
+   "label": "Rare Mystery Cargo",
+   "price": 550000,
+   "itemId": 408080008,
+   "item": "Gold Lion Statue",
+   "q": "red"
+  },
+  {
    "t": 1795199405347,
    "soundId": null,
    "size": "",
@@ -5799,6 +5809,16 @@
    "price": 250000,
    "itemId": 498080018,
    "item": "\"Destiny\" Gold Clay Tablet",
+   "q": "red"
+  },
+  {
+   "t": 1795201896282,
+   "soundId": "lib:electronicdevice",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120019,
+   "item": "Target Positioning Module",
    "q": "red"
   },
   {
