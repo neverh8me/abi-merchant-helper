@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T12:49:57.215Z",
+ "updated": "2026-11-21T13:02:27.459Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5769,6 +5769,16 @@
    "price": 250000,
    "itemId": 408060043,
    "item": "Film Stock",
+   "q": "gold"
+  },
+  {
+   "t": 1795198150329,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
    "q": "gold"
   },
   {
