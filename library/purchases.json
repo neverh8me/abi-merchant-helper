@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T13:02:27.459Z",
+ "updated": "2026-11-21T14:01:33.478Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5879,6 +5879,46 @@
    "price": 70000,
    "itemId": 408020019,
    "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1795246988284,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408050006,
+   "item": "Toolkit",
+   "q": "purple"
+  },
+  {
+   "t": 1795248809848,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1795248809859,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408050006,
+   "item": "Toolkit",
+   "q": "purple"
+  },
+  {
+   "t": 1795248899009,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408030028,
+   "item": "Vector Processor",
    "q": "gold"
   },
   {
