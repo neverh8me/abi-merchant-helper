@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T15:58:36.463Z",
+ "updated": "2026-11-21T17:17:59.116Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6049,6 +6049,16 @@
    "price": 70000,
    "itemId": 408020019,
    "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1795275824965,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
    "q": "gold"
   }
  ]
