@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T19:52:47.536Z",
+ "updated": "2026-11-21T23:13:09.461Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6179,6 +6179,56 @@
    "price": 70000,
    "itemId": 408050039,
    "item": "Blowtorch",
+   "q": "gold"
+  },
+  {
+   "t": 1795293720578,
+   "soundId": "lib:small_glass",
+   "size": "2x2",
+   "label": "Household Items",
+   "price": 100000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
+   "q": "gold"
+  },
+  {
+   "t": 1795293720596,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1795293813403,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1795293829496,
+   "soundId": null,
+   "size": "",
+   "label": "Household Items",
+   "price": 100000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
+   "q": "gold"
+  },
+  {
+   "t": 1795293909963,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
    "q": "gold"
   }
  ]
