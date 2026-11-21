@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T10:49:00.308Z",
+ "updated": "2026-11-21T11:01:08.292Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5819,6 +5819,26 @@
    "price": 200000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795231188812,
+   "soundId": "lib:med_metal_crisp",
+   "size": "2x3",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1795231542712,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
    "q": "gold"
   },
   {
