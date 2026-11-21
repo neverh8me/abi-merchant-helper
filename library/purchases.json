@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T03:13:34.354Z",
+ "updated": "2026-11-21T03:27:38.381Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5590,6 +5590,16 @@
    "itemId": 408080030,
    "item": "Gold Cup",
    "q": "gold"
+  },
+  {
+   "t": 1795182258790,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080003,
+   "item": "Vase",
+   "q": "red"
   },
   {
    "t": 1795185009708,
