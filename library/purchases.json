@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T10:18:51.781Z",
+ "updated": "2026-11-21T10:49:00.308Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -3939,6 +3939,16 @@
    "price": 216000,
    "itemId": 408030028,
    "item": "Vector Processor",
+   "q": "gold"
+  },
+  {
+   "t": 1794945491027,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408030025,
+   "item": "UPS Unit",
    "q": "gold"
   },
   {
