@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T03:27:38.381Z",
+ "updated": "2026-11-21T03:57:41.332Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5482,6 +5482,16 @@
    "q": "gold"
   },
   {
+   "t": 1795156592316,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
    "t": 1795156755456,
    "soundId": null,
    "size": "",
@@ -5539,6 +5549,46 @@
    "price": 250000,
    "itemId": 498100002,
    "item": "K7-L Cipher Machine",
+   "q": "gold"
+  },
+  {
+   "t": 1795164434418,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795164434418,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 440000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1795164559732,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 408080049,
+   "item": "Raw Diamond Ore",
+   "q": "gold"
+  },
+  {
+   "t": 1795169111544,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070011,
+   "item": "Pheromone Test Kit",
    "q": "gold"
   },
   {
