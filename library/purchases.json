@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T19:56:44.497Z",
+ "updated": "2026-11-22T20:02:27.245Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6482,6 +6482,26 @@
    "q": "gold"
   },
   {
+   "t": 1795276363927,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408060043,
+   "item": "Film Stock",
+   "q": "gold"
+  },
+  {
+   "t": 1795276375599,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
    "t": 1795277479872,
    "soundId": null,
    "size": "",
@@ -6512,6 +6532,56 @@
    "q": "gold"
   },
   {
+   "t": 1795280872636,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1795280872636,
+   "soundId": null,
+   "size": "",
+   "label": "Household Items",
+   "price": 100000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
+   "q": "gold"
+  },
+  {
+   "t": 1795280872637,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795280872637,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1795280887522,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080001,
+   "item": "Gold Cheetah Statue",
+   "q": "gold"
+  },
+  {
    "t": 1795281585781,
    "soundId": "lib:big_blunt",
    "size": "1x2",
@@ -6519,6 +6589,16 @@
    "price": 70000,
    "itemId": 408050039,
    "item": "Blowtorch",
+   "q": "gold"
+  },
+  {
+   "t": 1795283556347,
+   "soundId": "lib:med_comp",
+   "size": "2x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408060043,
+   "item": "Film Stock",
    "q": "gold"
   },
   {
