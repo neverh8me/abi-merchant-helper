@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T10:59:22.511Z",
+ "updated": "2026-11-22T11:07:45.979Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6140,6 +6140,16 @@
    "itemId": 408070016,
    "item": "Metal Heart",
    "q": "gold"
+  },
+  {
+   "t": 1795264145015,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498140003,
+   "item": "Capsule TV",
+   "q": "red"
   },
   {
    "t": 1795268792887,
