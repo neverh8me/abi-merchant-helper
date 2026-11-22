@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T18:48:06.129Z",
+ "updated": "2026-11-22T18:58:40.797Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6802,6 +6802,26 @@
    "q": "blue"
   },
   {
+   "t": 1795344532785,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1795344588824,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080003,
+   "item": "Vase",
+   "q": "red"
+  },
+  {
    "t": 1795346121586,
    "soundId": null,
    "size": "",
@@ -6809,6 +6829,26 @@
    "price": 70000,
    "itemId": 408100011,
    "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1795348820418,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080003,
+   "item": "Vase",
+   "q": "red"
+  },
+  {
+   "t": 1795348870568,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 470000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
    "q": "gold"
   },
   {
