@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T21:56:36.711Z",
+ "updated": "2026-11-22T22:02:04.079Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6092,6 +6092,16 @@
    "q": "gold"
   },
   {
+   "t": 1795213488651,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120009,
+   "item": "Portable Transceiver",
+   "q": "purple"
+  },
+  {
    "t": 1795214745832,
    "soundId": null,
    "size": "",
@@ -6150,6 +6160,76 @@
    "itemId": 408080049,
    "item": "Raw Diamond Ore",
    "q": "gold"
+  },
+  {
+   "t": 1795218270050,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795218293516,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408050033,
+   "item": "Hydraulic Expander",
+   "q": "gold"
+  },
+  {
+   "t": 1795218357112,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1795218381569,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
+   "q": "gold"
+  },
+  {
+   "t": 1795218403678,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080019,
+   "item": "Record Player",
+   "q": "gold"
+  },
+  {
+   "t": 1795218439807,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408040004,
+   "item": "Car Battery",
+   "q": "gold"
+  },
+  {
+   "t": 1795218505335,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408120009,
+   "item": "Portable Transceiver",
+   "q": "purple"
   },
   {
    "t": 1795220853661,
