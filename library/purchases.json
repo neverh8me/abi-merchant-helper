@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T05:58:52.290Z",
+ "updated": "2026-11-22T06:06:51.892Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5750,6 +5750,56 @@
    "itemId": 408080030,
    "item": "Gold Cup",
    "q": "gold"
+  },
+  {
+   "t": 1795181772092,
+   "soundId": "lib:med_statue",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795181780533,
+   "soundId": "lib:med_statue",
+   "size": "2x3",
+   "label": "",
+   "price": 56000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795181863797,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795181873177,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795181878594,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 168000,
+   "itemId": 408060037,
+   "item": "Hearing Aid",
+   "q": "purple"
   },
   {
    "t": 1795182258790,
