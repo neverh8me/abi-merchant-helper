@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T17:45:12.619Z",
+ "updated": "2026-11-22T18:48:06.129Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6052,6 +6052,46 @@
    "q": "red"
   },
   {
+   "t": 1795209238710,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498140003,
+   "item": "Capsule TV",
+   "q": "red"
+  },
+  {
+   "t": 1795209242072,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795209248184,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 200000,
+   "itemId": 498140004,
+   "item": "Personal Digital Assistant",
+   "q": "purple"
+  },
+  {
+   "t": 1795209250725,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
    "t": 1795214745832,
    "soundId": null,
    "size": "",
@@ -6069,6 +6109,46 @@
    "price": 200000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795217073855,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795217082488,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 168000,
+   "itemId": 408080026,
+   "item": "Brooch",
+   "q": "gold"
+  },
+  {
+   "t": 1795217149215,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 498140001,
+   "item": "Prototype Calculation Module",
+   "q": "red"
+  },
+  {
+   "t": 1795217159796,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 408080049,
+   "item": "Raw Diamond Ore",
    "q": "gold"
   },
   {
