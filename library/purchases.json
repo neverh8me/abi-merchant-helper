@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T05:07:11.007Z",
+ "updated": "2026-11-22T05:58:52.290Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6189,6 +6189,46 @@
    "price": 70000,
    "itemId": 408050039,
    "item": "Blowtorch",
+   "q": "gold"
+  },
+  {
+   "t": 1795283985893,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 360000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
+  },
+  {
+   "t": 1795287558348,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 498120003,
+   "item": "T-147 Individual Communication Device",
+   "q": "gold"
+  },
+  {
+   "t": 1795287558349,
+   "soundId": null,
+   "size": "",
+   "label": "Paper",
+   "price": 12000,
+   "itemId": 498090002,
+   "item": "Space Boy Comic",
+   "q": "purple"
+  },
+  {
+   "t": 1795287558349,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408060052,
+   "item": "Deluxe Tea Set",
    "q": "gold"
   },
   {
