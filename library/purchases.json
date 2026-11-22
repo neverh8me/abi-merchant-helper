@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T12:31:22.570Z",
+ "updated": "2026-11-22T12:47:14.092Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6390,6 +6390,16 @@
    "itemId": 408060052,
    "item": "Deluxe Tea Set",
    "q": "gold"
+  },
+  {
+   "t": 1795288993640,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
   },
   {
    "t": 1795289923589,
