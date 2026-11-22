@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T12:19:04.634Z",
+ "updated": "2026-11-22T12:31:22.570Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6029,6 +6029,16 @@
    "price": 70000,
    "itemId": 408020019,
    "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1795240846180,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
    "q": "gold"
   },
   {
