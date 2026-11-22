@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T22:13:01.465Z",
+ "updated": "2026-11-22T23:09:25.553Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6989,6 +6989,16 @@
    "price": 250000,
    "itemId": 408060043,
    "item": "Film Stock",
+   "q": "gold"
+  },
+  {
+   "t": 1795338830396,
+   "soundId": "lib:med_statue",
+   "size": "2x2",
+   "label": "Rare Mystery Cargo",
+   "price": 550000,
+   "itemId": 498100002,
+   "item": "K7-L Cipher Machine",
    "q": "gold"
   },
   {
