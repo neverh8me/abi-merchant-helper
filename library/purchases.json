@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T15:21:08.382Z",
+ "updated": "2026-11-22T15:51:51.947Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6650,6 +6650,76 @@
    "itemId": 408050039,
    "item": "Blowtorch",
    "q": "gold"
+  },
+  {
+   "t": 1795356709983,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080001,
+   "item": "Gold Cheetah Statue",
+   "q": "gold"
+  },
+  {
+   "t": 1795356714193,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408050039,
+   "item": "Blowtorch",
+   "q": "gold"
+  },
+  {
+   "t": 1795356722496,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408050019,
+   "item": "Blower",
+   "q": "purple"
+  },
+  {
+   "t": 1795360770153,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080001,
+   "item": "Gold Cheetah Statue",
+   "q": "gold"
+  },
+  {
+   "t": 1795360770155,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408050039,
+   "item": "Blowtorch",
+   "q": "gold"
+  },
+  {
+   "t": 1795360770156,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795360834467,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498100003,
+   "item": "Three-Axis Gyro Controller Prototype",
+   "q": "red"
   }
  ]
 }
