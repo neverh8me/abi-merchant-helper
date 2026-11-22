@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T22:02:04.079Z",
+ "updated": "2026-11-22T22:13:01.465Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7299,6 +7299,16 @@
    "price": 270000,
    "itemId": 498060001,
    "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1795377268676,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 243000,
+   "itemId": 498070011,
+   "item": "Pheromone Test Kit",
    "q": "gold"
   },
   {
