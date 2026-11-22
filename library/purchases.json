@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T21:18:36.722Z",
+ "updated": "2026-11-22T21:56:36.711Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6920,6 +6920,26 @@
    "itemId": 408120017,
    "item": "Leveler",
    "q": "gold"
+  },
+  {
+   "t": 1795342219949,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 168000,
+   "itemId": 408080028,
+   "item": "Gold Cube",
+   "q": "gold"
+  },
+  {
+   "t": 1795342226690,
+   "soundId": null,
+   "size": "",
+   "label": "Paper",
+   "price": 12000,
+   "itemId": 498090002,
+   "item": "Space Boy Comic",
+   "q": "purple"
   },
   {
    "t": 1795344039974,
