@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T03:19:58.538Z",
+ "updated": "2026-11-22T05:07:11.007Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6192,6 +6192,16 @@
    "q": "gold"
   },
   {
+   "t": 1795289923589,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 200000,
+   "itemId": 498100004,
+   "item": "Handheld Receiver",
+   "q": "purple"
+  },
+  {
    "t": 1795293720578,
    "soundId": "lib:small_glass",
    "size": "2x2",
@@ -6260,6 +6270,16 @@
    "itemId": 408090019,
    "item": "Gungnir Blueprint Fragments",
    "q": "gold"
+  },
+  {
+   "t": 1795294733791,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498080006,
+   "item": "Ancient Golden Mask Replica",
+   "q": "red"
   }
  ]
 }
