@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T03:17:42.370Z",
+ "updated": "2026-11-23T04:20:04.179Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7439,6 +7439,16 @@
    "price": 250000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795398645844,
+   "soundId": null,
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080001,
+   "item": "Gold Cheetah Statue",
    "q": "gold"
   }
  ]
