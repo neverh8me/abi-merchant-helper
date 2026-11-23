@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T16:39:23.355Z",
+ "updated": "2026-11-23T16:42:20.971Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6059,6 +6059,36 @@
    "price": 70000,
    "itemId": 408030026,
    "item": "Studio Monitor",
+   "q": "gold"
+  },
+  {
+   "t": 1795203751571,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 408050030,
+   "item": "Pipe Cleaning Kit",
+   "q": "purple"
+  },
+  {
+   "t": 1795203752688,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408050006,
+   "item": "Toolkit",
+   "q": "purple"
+  },
+  {
+   "t": 1795203811349,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 210000,
+   "itemId": 408080028,
+   "item": "Gold Cube",
    "q": "gold"
   },
   {
