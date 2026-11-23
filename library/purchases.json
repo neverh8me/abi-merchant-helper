@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T09:55:34.579Z",
+ "updated": "2026-11-23T11:17:20.164Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7559,6 +7559,16 @@
    "price": 270000,
    "itemId": 498060001,
    "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1795422108477,
+   "soundId": "lib:med_statue",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498100002,
+   "item": "K7-L Cipher Machine",
    "q": "gold"
   }
  ]
