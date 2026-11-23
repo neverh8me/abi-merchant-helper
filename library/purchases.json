@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T20:09:57.067Z",
+ "updated": "2026-11-23T20:20:34.682Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7719,6 +7719,56 @@
    "price": 200000,
    "itemId": 408140001,
    "item": "Game Console",
+   "q": "gold"
+  },
+  {
+   "t": 1795385348259,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795385351695,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 470000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
+  },
+  {
+   "t": 1795385394428,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080014,
+   "item": "Porcelain",
+   "q": "gold"
+  },
+  {
+   "t": 1795385457074,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 280000,
+   "itemId": 408080014,
+   "item": "Porcelain",
+   "q": "gold"
+  },
+  {
+   "t": 1795385622950,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080014,
+   "item": "Porcelain",
    "q": "gold"
   },
   {
