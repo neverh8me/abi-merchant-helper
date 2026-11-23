@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T14:06:59.470Z",
+ "updated": "2026-11-23T14:09:27.957Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7522,6 +7522,16 @@
    "q": "purple"
   },
   {
+   "t": 1795390189615,
+   "soundId": "lib:small_metal_blunt",
+   "size": "1x2",
+   "label": "",
+   "price": 470000,
+   "itemId": 408080049,
+   "item": "Raw Diamond Ore",
+   "q": "gold"
+  },
+  {
    "t": 1795390730552,
    "soundId": null,
    "size": "",
@@ -7539,6 +7549,16 @@
    "price": 100000,
    "itemId": 408060043,
    "item": "Film Stock",
+   "q": "gold"
+  },
+  {
+   "t": 1795393212049,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 470000,
+   "itemId": 408080049,
+   "item": "Raw Diamond Ore",
    "q": "gold"
   },
   {
