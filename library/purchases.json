@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T20:40:53.033Z",
+ "updated": "2026-11-23T20:47:29.525Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7550,6 +7550,26 @@
    "itemId": 498060001,
    "item": "Space Lab Toybox",
    "q": "gold"
+  },
+  {
+   "t": 1795375264009,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 243000,
+   "itemId": 498090002,
+   "item": "Space Boy Comic",
+   "q": "purple"
+  },
+  {
+   "t": 1795375294677,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
   },
   {
    "t": 1795375465598,
