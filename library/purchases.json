@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T13:35:23.786Z",
+ "updated": "2026-11-23T13:37:53.093Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7580,6 +7580,26 @@
    "itemId": 408120017,
    "item": "Leveler",
    "q": "gold"
+  },
+  {
+   "t": 1795412566805,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795412592267,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 280000,
+   "itemId": 498140001,
+   "item": "Prototype Calculation Module",
+   "q": "red"
   },
   {
    "t": 1795415099515,
