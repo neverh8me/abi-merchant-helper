@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T20:47:29.525Z",
+ "updated": "2026-11-23T22:09:13.226Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8109,6 +8109,86 @@
    "price": 200000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795467791410,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408080008,
+   "item": "Gold Lion Statue",
+   "q": "red"
+  },
+  {
+   "t": 1795469818825,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 280000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1795469886268,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 498080002,
+   "item": "Phaethon's Clock",
+   "q": "red"
+  },
+  {
+   "t": 1795469923601,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120014,
+   "item": "Radio",
+   "q": "purple"
+  },
+  {
+   "t": 1795469934736,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080014,
+   "item": "Porcelain",
+   "q": "gold"
+  },
+  {
+   "t": 1795471544132,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120014,
+   "item": "Radio",
+   "q": "purple"
+  },
+  {
+   "t": 1795471544133,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080014,
+   "item": "Porcelain",
+   "q": "gold"
+  },
+  {
+   "t": 1795471616537,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070011,
+   "item": "Pheromone Test Kit",
    "q": "gold"
   }
  ]
