@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T07:48:24.877Z",
+ "updated": "2026-11-23T08:21:13.340Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7519,6 +7519,26 @@
    "price": 70000,
    "itemId": 408080030,
    "item": "Gold Cup",
+   "q": "gold"
+  },
+  {
+   "t": 1795420634359,
+   "soundId": null,
+   "size": "",
+   "label": "Household Items",
+   "price": 100000,
+   "itemId": 498060005,
+   "item": "Northern Stars Amber Drink",
+   "q": "red"
+  },
+  {
+   "t": 1795420637324,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
    "q": "gold"
   }
  ]
