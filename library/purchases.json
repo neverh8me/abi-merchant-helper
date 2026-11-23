@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T08:40:43.143Z",
+ "updated": "2026-11-23T09:55:34.579Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7469,6 +7469,16 @@
    "price": 250000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795384662944,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 200000,
+   "itemId": 408140001,
+   "item": "Game Console",
    "q": "gold"
   },
   {
