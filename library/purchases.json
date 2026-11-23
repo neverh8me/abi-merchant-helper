@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T11:24:13.530Z",
+ "updated": "2026-11-23T11:31:56.923Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -5950,6 +5950,16 @@
    "itemId": 408080014,
    "item": "Porcelain",
    "q": "gold"
+  },
+  {
+   "t": 1795189014976,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498080018,
+   "item": "\"Destiny\" Gold Clay Tablet",
+   "q": "red"
   },
   {
    "t": 1795193016685,
