@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T17:53:24.385Z",
+ "updated": "2026-11-24T18:21:48.058Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8757,6 +8757,16 @@
    "size": "",
    "label": "Mystery Cargo",
    "price": 70000,
+   "itemId": 408100011,
+   "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1795522161315,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
    "itemId": 408100011,
    "item": "Antenna",
    "q": "gold"
