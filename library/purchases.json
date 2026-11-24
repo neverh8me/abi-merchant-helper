@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T08:21:29.239Z",
+ "updated": "2026-11-24T10:48:42.443Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8179,6 +8179,26 @@
    "price": 270000,
    "itemId": 498060001,
    "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1795458442482,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498080018,
+   "item": "\"Destiny\" Gold Clay Tablet",
+   "q": "red"
+  },
+  {
+   "t": 1795463472186,
+   "soundId": "lib:electronicdevice",
+   "size": "2x2",
+   "label": "",
+   "price": 350000,
+   "itemId": 408100011,
+   "item": "Antenna",
    "q": "gold"
   },
   {
