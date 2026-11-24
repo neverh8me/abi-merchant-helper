@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T16:56:34.071Z",
+ "updated": "2026-11-24T17:15:20.227Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8412,6 +8412,16 @@
    "q": "purple"
   },
   {
+   "t": 1795456864153,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
+   "q": "gold"
+  },
+  {
    "t": 1795458442482,
    "soundId": null,
    "size": "",
@@ -8499,6 +8509,16 @@
    "price": 350000,
    "itemId": 408100011,
    "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1795464509627,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 32000,
+   "itemId": 498010003,
+   "item": "Magnesium Flint",
    "q": "gold"
   },
   {
