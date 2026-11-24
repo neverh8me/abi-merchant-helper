@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T18:32:04.009Z",
+ "updated": "2026-11-24T18:45:42.905Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8549,6 +8549,16 @@
    "price": 350000,
    "itemId": 408100011,
    "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1795463750419,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
    "q": "gold"
   },
   {
