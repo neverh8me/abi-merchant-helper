@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T02:20:31.476Z",
+ "updated": "2026-11-24T02:26:31.502Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8239,6 +8239,26 @@
    "price": 216000,
    "itemId": 498070011,
    "item": "Pheromone Test Kit",
+   "q": "gold"
+  },
+  {
+   "t": 1795481892608,
+   "soundId": null,
+   "size": "",
+   "label": "Collectibles",
+   "price": 70000,
+   "itemId": 408080026,
+   "item": "Brooch",
+   "q": "gold"
+  },
+  {
+   "t": 1795481938533,
+   "soundId": "lib:electronicdevice",
+   "size": "2x2",
+   "label": "Uncommon Military Items",
+   "price": 250000,
+   "itemId": 408120020,
+   "item": "Laser Pointer Module",
    "q": "gold"
   }
  ]
