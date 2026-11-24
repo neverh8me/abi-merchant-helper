@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T12:59:40.943Z",
+ "updated": "2026-11-24T13:17:40.635Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7402,6 +7402,26 @@
    "q": "purple"
   },
   {
+   "t": 1795357170273,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 408080049,
+   "item": "Raw Diamond Ore",
+   "q": "gold"
+  },
+  {
+   "t": 1795357170274,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
    "t": 1795358267010,
    "soundId": null,
    "size": "2x3",
@@ -7409,6 +7429,16 @@
    "price": 270000,
    "itemId": 498060001,
    "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1795358710696,
+   "soundId": "lib:electronicdevice",
+   "size": "1x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
    "q": "gold"
   },
   {
