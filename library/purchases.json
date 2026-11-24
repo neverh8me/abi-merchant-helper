@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T13:17:40.635Z",
+ "updated": "2026-11-24T14:00:06.877Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7002,6 +7002,56 @@
    "q": "purple"
   },
   {
+   "t": 1795303432562,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080003,
+   "item": "Vase",
+   "q": "red"
+  },
+  {
+   "t": 1795303528892,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 225000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1795303566123,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 220000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1795303593346,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 550000,
+   "itemId": 498080003,
+   "item": "\"Dawn\"",
+   "q": "red"
+  },
+  {
+   "t": 1795303638258,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 580000,
+   "itemId": 498080003,
+   "item": "\"Dawn\"",
+   "q": "red"
+  },
+  {
    "t": 1795304902164,
    "soundId": null,
    "size": "",
@@ -7500,6 +7550,26 @@
    "itemId": 498100003,
    "item": "Three-Axis Gyro Controller Prototype",
    "q": "red"
+  },
+  {
+   "t": 1795361605039,
+   "soundId": "lib:med_statue",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498100002,
+   "item": "K7-L Cipher Machine",
+   "q": "gold"
+  },
+  {
+   "t": 1795361614553,
+   "soundId": "lib:small_metal_crisp",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 498040003,
+   "item": "Capacitance Analyzer",
+   "q": "purple"
   },
   {
    "t": 1795363113117,
