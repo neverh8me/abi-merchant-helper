@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T19:01:49.176Z",
+ "updated": "2026-11-24T19:06:31.466Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8612,6 +8612,16 @@
    "q": "gold"
   },
   {
+   "t": 1795467202480,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 350000,
+   "itemId": 408080003,
+   "item": "Vase",
+   "q": "red"
+  },
+  {
    "t": 1795467497952,
    "soundId": null,
    "size": "",
@@ -8632,6 +8642,16 @@
    "q": "gold"
   },
   {
+   "t": 1795467540706,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 350000,
+   "itemId": 408140024,
+   "item": "Laptop Computer",
+   "q": "gold"
+  },
+  {
    "t": 1795467791410,
    "soundId": null,
    "size": "",
@@ -8640,6 +8660,56 @@
    "itemId": 408080008,
    "item": "Gold Lion Statue",
    "q": "red"
+  },
+  {
+   "t": 1795469518531,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 350000,
+   "itemId": 408140024,
+   "item": "Laptop Computer",
+   "q": "gold"
+  },
+  {
+   "t": 1795469518532,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 350000,
+   "itemId": 408080003,
+   "item": "Vase",
+   "q": "red"
+  },
+  {
+   "t": 1795469518533,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
+  },
+  {
+   "t": 1795469562998,
+   "soundId": "lib:med_statue",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795469651294,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
   },
   {
    "t": 1795469818825,
