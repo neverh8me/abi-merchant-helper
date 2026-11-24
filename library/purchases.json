@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T11:39:12.702Z",
+ "updated": "2026-11-24T12:03:20.044Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8182,6 +8182,26 @@
    "q": "gold"
   },
   {
+   "t": 1795442502101,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795443817374,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408050006,
+   "item": "Toolkit",
+   "q": "purple"
+  },
+  {
    "t": 1795458442482,
    "soundId": null,
    "size": "",
@@ -8190,6 +8210,26 @@
    "itemId": 498080018,
    "item": "\"Destiny\" Gold Clay Tablet",
    "q": "red"
+  },
+  {
+   "t": 1795458494951,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408050006,
+   "item": "Toolkit",
+   "q": "purple"
+  },
+  {
+   "t": 1795458529122,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
   },
   {
    "t": 1795463472186,
