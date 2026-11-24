@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T18:22:45.605Z",
+ "updated": "2026-11-24T18:27:09.129Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8779,6 +8779,16 @@
    "price": 216000,
    "itemId": 498070010,
    "item": "Mutant Heart Sample",
+   "q": "gold"
+  },
+  {
+   "t": 1795518424633,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080019,
+   "item": "Record Player",
    "q": "gold"
   },
   {
