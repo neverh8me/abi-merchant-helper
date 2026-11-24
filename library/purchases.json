@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T23:59:39.016Z",
+ "updated": "2026-11-24T00:07:21.403Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6670,6 +6670,16 @@
    "itemId": 408080013,
    "item": "Gold Bracelet",
    "q": "gold"
+  },
+  {
+   "t": 1795280629162,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070002,
+   "item": "EEG",
+   "q": "red"
   },
   {
    "t": 1795280872636,
