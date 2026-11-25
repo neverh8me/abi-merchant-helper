@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T20:49:19.485Z",
+ "updated": "2026-11-25T21:00:05.318Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8850,6 +8850,26 @@
    "itemId": 408080003,
    "item": "Vase",
    "q": "red"
+  },
+  {
+   "t": 1795467267520,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408050039,
+   "item": "Blowtorch",
+   "q": "gold"
+  },
+  {
+   "t": 1795467320587,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 498090001,
+   "item": "Voss' Journal",
+   "q": "gold"
   },
   {
    "t": 1795467497952,
