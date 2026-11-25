@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T04:22:20.264Z",
+ "updated": "2026-11-25T05:11:13.444Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9110,6 +9110,26 @@
    "itemId": 408100011,
    "item": "Antenna",
    "q": "gold"
+  },
+  {
+   "t": 1795577761400,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1795577767400,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498080001,
+   "item": "Gilded Cage Music Box",
+   "q": "red"
   }
  ]
 }
