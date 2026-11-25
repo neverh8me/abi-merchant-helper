@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T11:27:33.308Z",
+ "updated": "2026-11-25T12:02:11.186Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9072,6 +9072,16 @@
    "q": "gold"
   },
   {
+   "t": 1795521833181,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080014,
+   "item": "Porcelain",
+   "q": "gold"
+  },
+  {
    "t": 1795522161315,
    "soundId": null,
    "size": "",
@@ -9100,6 +9110,16 @@
    "itemId": 408030025,
    "item": "UPS Unit",
    "q": "gold"
+  },
+  {
+   "t": 1795529789596,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 470000,
+   "itemId": 498080003,
+   "item": "\"Dawn\"",
+   "q": "red"
   },
   {
    "t": 1795530648830,
