@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T08:38:30.337Z",
+ "updated": "2026-11-25T08:54:39.824Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9260,6 +9260,26 @@
    "itemId": 498060001,
    "item": "Space Lab Toybox",
    "q": "gold"
+  },
+  {
+   "t": 1795592081012,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1795592172309,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498080006,
+   "item": "Ancient Golden Mask Replica",
+   "q": "red"
   }
  ]
 }
