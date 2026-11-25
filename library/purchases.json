@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T20:02:55.716Z",
+ "updated": "2026-11-25T20:31:19.079Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9729,6 +9729,26 @@
    "price": 250000,
    "itemId": 408080003,
    "item": "Vase",
+   "q": "red"
+  },
+  {
+   "t": 1795628054779,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 243000,
+   "itemId": 408010009,
+   "item": "Fuel Tank",
+   "q": "gold"
+  },
+  {
+   "t": 1795628068753,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 225000,
+   "itemId": 498080018,
+   "item": "\"Destiny\" Gold Clay Tablet",
    "q": "red"
   },
   {
