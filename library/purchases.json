@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T09:50:37.029Z",
+ "updated": "2026-11-25T10:25:14.907Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -2542,6 +2542,36 @@
    "q": "purple"
   },
   {
+   "t": 1794819375548,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120014,
+   "item": "Radio",
+   "q": "purple"
+  },
+  {
+   "t": 1794819379808,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 168000,
+   "itemId": 408060039,
+   "item": "Watch",
+   "q": "purple"
+  },
+  {
+   "t": 1794819384784,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 408080049,
+   "item": "Raw Diamond Ore",
+   "q": "gold"
+  },
+  {
    "t": 1794822403796,
    "soundId": null,
    "size": "",
@@ -2562,6 +2592,26 @@
    "q": "gold"
   },
   {
+   "t": 1794822910995,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120014,
+   "item": "Radio",
+   "q": "purple"
+  },
+  {
+   "t": 1794822910999,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 168000,
+   "itemId": 408060039,
+   "item": "Watch",
+   "q": "purple"
+  },
+  {
    "t": 1794822973638,
    "soundId": null,
    "size": "",
@@ -2569,6 +2619,16 @@
    "price": 270000,
    "itemId": 498070010,
    "item": "Mutant Heart Sample",
+   "q": "gold"
+  },
+  {
+   "t": 1794822995650,
+   "soundId": "lib:med_statue",
+   "size": "1x2",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 408080030,
+   "item": "Gold Cup",
    "q": "gold"
   },
   {
