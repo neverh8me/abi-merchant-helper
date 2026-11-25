@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T19:07:51.486Z",
+ "updated": "2026-11-25T20:02:55.716Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -6042,6 +6042,26 @@
    "q": "gold"
   },
   {
+   "t": 1795193172270,
+   "soundId": "lib:med_statue",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080030,
+   "item": "Gold Cup",
+   "q": "gold"
+  },
+  {
+   "t": 1795193177839,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
    "t": 1795194089698,
    "soundId": "lib:small_metal_crisp",
    "size": "2x3",
@@ -6100,6 +6120,86 @@
    "itemId": 498080018,
    "item": "\"Destiny\" Gold Clay Tablet",
    "q": "red"
+  },
+  {
+   "t": 1795200272601,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795200304943,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
+  },
+  {
+   "t": 1795200310258,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795200317425,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070011,
+   "item": "Pheromone Test Kit",
+   "q": "gold"
+  },
+  {
+   "t": 1795200325242,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408030026,
+   "item": "Studio Monitor",
+   "q": "gold"
+  },
+  {
+   "t": 1795200357115,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1795200635769,
+   "soundId": null,
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120019,
+   "item": "Target Positioning Module",
+   "q": "red"
+  },
+  {
+   "t": 1795200652364,
+   "soundId": null,
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080014,
+   "item": "Porcelain",
+   "q": "gold"
   },
   {
    "t": 1795201896282,
