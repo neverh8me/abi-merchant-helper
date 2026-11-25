@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T13:53:12.979Z",
+ "updated": "2026-11-25T14:04:05.823Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9440,6 +9440,26 @@
    "itemId": 408100011,
    "item": "Antenna",
    "q": "gold"
+  },
+  {
+   "t": 1795611417370,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408050019,
+   "item": "Blower",
+   "q": "purple"
+  },
+  {
+   "t": 1795611422209,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 243000,
+   "itemId": 498080025,
+   "item": "Double-Neck Lute",
+   "q": "red"
   },
   {
    "t": 1795612133124,
