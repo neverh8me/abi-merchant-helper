@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T10:25:58.385Z",
+ "updated": "2026-11-25T11:27:33.308Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9370,6 +9370,26 @@
    "itemId": 498080006,
    "item": "Ancient Golden Mask Replica",
    "q": "red"
+  },
+  {
+   "t": 1795600309969,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080029,
+   "item": "Gem Necklace",
+   "q": "red"
+  },
+  {
+   "t": 1795600338041,
+   "soundId": "lib:electronicdevice",
+   "size": "2x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408100011,
+   "item": "Antenna",
+   "q": "gold"
   }
  ]
 }
