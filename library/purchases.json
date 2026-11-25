@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T21:13:34.549Z",
+ "updated": "2026-11-25T21:32:57.447Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9040,6 +9040,36 @@
    "itemId": 498070011,
    "item": "Pheromone Test Kit",
    "q": "gold"
+  },
+  {
+   "t": 1795471788738,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070011,
+   "item": "Pheromone Test Kit",
+   "q": "gold"
+  },
+  {
+   "t": 1795471790928,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408090004,
+   "item": "Folder",
+   "q": "gold"
+  },
+  {
+   "t": 1795471967730,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498060003,
+   "item": "Quantum 2000 Toy Robot",
+   "q": "red"
   },
   {
    "t": 1795477581522,
