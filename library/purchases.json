@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T23:54:47.904Z",
+ "updated": "2026-11-25T02:02:47.899Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -7879,6 +7879,26 @@
    "price": 243000,
    "itemId": 498070011,
    "item": "Pheromone Test Kit",
+   "q": "gold"
+  },
+  {
+   "t": 1795377439127,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 498090001,
+   "item": "Voss' Journal",
+   "q": "gold"
+  },
+  {
+   "t": 1795377440428,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 470000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
    "q": "gold"
   },
   {
