@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T15:11:21.153Z",
+ "updated": "2026-11-25T15:41:13.624Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9479,6 +9479,56 @@
    "price": 70000,
    "itemId": 408100011,
    "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1795601859315,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1795605275231,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795608971305,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408100011,
+   "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1795610694650,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408100011,
+   "item": "Antenna",
+   "q": "gold"
+  },
+  {
+   "t": 1795610837478,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 498120003,
+   "item": "T-147 Individual Communication Device",
    "q": "gold"
   },
   {
