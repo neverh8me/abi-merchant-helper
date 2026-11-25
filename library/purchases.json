@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T21:32:57.447Z",
+ "updated": "2026-11-25T21:45:10.625Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9929,6 +9929,16 @@
    "price": 250000,
    "itemId": 498100002,
    "item": "K7-L Cipher Machine",
+   "q": "gold"
+  },
+  {
+   "t": 1795639052187,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
    "q": "gold"
   }
  ]
