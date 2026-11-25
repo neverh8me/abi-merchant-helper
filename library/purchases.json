@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T06:03:41.412Z",
+ "updated": "2026-11-25T07:26:17.679Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9200,6 +9200,16 @@
    "itemId": 498080001,
    "item": "Gilded Cage Music Box",
    "q": "red"
+  },
+  {
+   "t": 1795589162011,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408020019,
+   "item": "Titanium Alloy Plate",
+   "q": "gold"
   }
  ]
 }
