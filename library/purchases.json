@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T20:31:19.079Z",
+ "updated": "2026-11-25T20:33:36.484Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9730,6 +9730,26 @@
    "itemId": 408080003,
    "item": "Vase",
    "q": "red"
+  },
+  {
+   "t": 1795623034939,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1795623034940,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 376000,
+   "itemId": 408080049,
+   "item": "Raw Diamond Ore",
+   "q": "gold"
   },
   {
    "t": 1795628054779,
