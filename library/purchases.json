@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T03:34:59.047Z",
+ "updated": "2026-11-25T04:04:26.118Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9079,6 +9079,16 @@
    "price": 200000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795562967165,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408140024,
+   "item": "Laptop Computer",
    "q": "gold"
   },
   {
