@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T15:51:35.158Z",
+ "updated": "2026-11-26T16:30:42.011Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10460,6 +10460,16 @@
    "itemId": 408030016,
    "item": "RAM",
    "q": "purple"
+  },
+  {
+   "t": 1795707524397,
+   "soundId": "lib:med_statue",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080030,
+   "item": "Gold Cup",
+   "q": "gold"
   }
  ]
 }
