@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T16:35:18.934Z",
+ "updated": "2026-11-26T16:35:22.176Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9522,6 +9522,36 @@
    "q": "gold"
   },
   {
+   "t": 1795546348650,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 408060044,
+   "item": "Handheld Fill Light",
+   "q": "purple"
+  },
+  {
+   "t": 1795546350993,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 498100006,
+   "item": "Handheld Calculator",
+   "q": "purple"
+  },
+  {
+   "t": 1795546384251,
+   "soundId": null,
+   "size": "",
+   "label": "Paper",
+   "price": 15000,
+   "itemId": 498090002,
+   "item": "Space Boy Comic",
+   "q": "purple"
+  },
+  {
    "t": 1795546986771,
    "soundId": null,
    "size": "",
@@ -9539,6 +9569,36 @@
    "price": 70000,
    "itemId": 408050039,
    "item": "Blowtorch",
+   "q": "gold"
+  },
+  {
+   "t": 1795547787871,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 498100006,
+   "item": "Handheld Calculator",
+   "q": "purple"
+  },
+  {
+   "t": 1795547787872,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 408060044,
+   "item": "Handheld Fill Light",
+   "q": "purple"
+  },
+  {
+   "t": 1795547927269,
+   "soundId": "lib:med_statue",
+   "size": "1x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080030,
+   "item": "Gold Cup",
    "q": "gold"
   },
   {
