@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T06:33:23.776Z",
+ "updated": "2026-11-26T06:38:21.104Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10020,6 +10020,16 @@
    "itemId": 408070016,
    "item": "Metal Heart",
    "q": "gold"
+  },
+  {
+   "t": 1795645241599,
+   "soundId": null,
+   "size": "",
+   "label": "Paper",
+   "price": 15000,
+   "itemId": 408090002,
+   "item": "Hardcover",
+   "q": "blue"
   }
  ]
 }
