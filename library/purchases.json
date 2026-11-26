@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T09:48:45.252Z",
+ "updated": "2026-11-26T10:34:57.460Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10070,6 +10070,16 @@
    "itemId": 408090002,
    "item": "Hardcover",
    "q": "blue"
+  },
+  {
+   "t": 1795680228384,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
   }
  ]
 }
