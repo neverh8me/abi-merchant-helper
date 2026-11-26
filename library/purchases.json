@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:18:30.801Z",
+ "updated": "2026-11-26T19:28:14.447Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10682,6 +10682,26 @@
    "q": "purple"
   },
   {
+   "t": 1795700126671,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 250000,
+   "itemId": 498100006,
+   "item": "Handheld Calculator",
+   "q": "purple"
+  },
+  {
+   "t": 1795700147735,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
    "t": 1795703343633,
    "soundId": "lib:electronicdevice",
    "size": "1x1",
@@ -10692,6 +10712,26 @@
    "q": "purple"
   },
   {
+   "t": 1795706528681,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408040004,
+   "item": "Car Battery",
+   "q": "gold"
+  },
+  {
+   "t": 1795707507016,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 498100002,
+   "item": "K7-L Cipher Machine",
+   "q": "gold"
+  },
+  {
    "t": 1795707524397,
    "soundId": "lib:med_statue",
    "size": "1x2",
@@ -10700,6 +10740,16 @@
    "itemId": 408080030,
    "item": "Gold Cup",
    "q": "gold"
+  },
+  {
+   "t": 1795707554921,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
   },
   {
    "t": 1795709238656,
