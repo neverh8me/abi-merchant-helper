@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T18:23:10.630Z",
+ "updated": "2026-11-26T18:23:15.529Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9519,6 +9519,16 @@
    "price": 70000,
    "itemId": 498070003,
    "item": "Blood Glucose Meter Set",
+   "q": "gold"
+  },
+  {
+   "t": 1795545979845,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
    "q": "gold"
   },
   {
