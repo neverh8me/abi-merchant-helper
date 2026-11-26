@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T05:54:11.078Z",
+ "updated": "2026-11-26T06:33:23.776Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9959,6 +9959,16 @@
    "price": 376000,
    "itemId": 408080049,
    "item": "Raw Diamond Ore",
+   "q": "gold"
+  },
+  {
+   "t": 1795624724889,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
    "q": "gold"
   },
   {
