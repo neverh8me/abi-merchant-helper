@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T15:00:04.848Z",
+ "updated": "2026-11-26T15:36:45.928Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10419,6 +10419,16 @@
    "price": 200000,
    "itemId": 408120014,
    "item": "Radio",
+   "q": "purple"
+  },
+  {
+   "t": 1795703343633,
+   "soundId": "lib:electronicdevice",
+   "size": "1x1",
+   "label": "",
+   "price": 210000,
+   "itemId": 408030016,
+   "item": "RAM",
    "q": "purple"
   }
  ]
