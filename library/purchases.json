@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T18:23:15.529Z",
+ "updated": "2026-11-26T18:34:22.894Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10539,6 +10539,16 @@
    "price": 200000,
    "itemId": 408120017,
    "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795664132580,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408030025,
+   "item": "UPS Unit",
    "q": "gold"
   },
   {
