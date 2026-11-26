@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T22:18:00.322Z",
+ "updated": "2026-11-26T23:56:17.230Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10770,6 +10770,16 @@
    "itemId": 408120014,
    "item": "Radio",
    "q": "purple"
+  },
+  {
+   "t": 1795690220375,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
   },
   {
    "t": 1795698575250,
