@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T06:38:21.104Z",
+ "updated": "2026-11-26T06:45:18.402Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10010,6 +10010,16 @@
    "itemId": 498100002,
    "item": "K7-L Cipher Machine",
    "q": "gold"
+  },
+  {
+   "t": 1795638519754,
+   "soundId": null,
+   "size": "",
+   "label": "Rare Mystery Cargo",
+   "price": 440000,
+   "itemId": 498080006,
+   "item": "Ancient Golden Mask Replica",
+   "q": "red"
   },
   {
    "t": 1795639052187,
