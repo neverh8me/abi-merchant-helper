@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T09:23:52.190Z",
+ "updated": "2026-11-26T09:48:45.252Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -9130,6 +9130,16 @@
    "itemId": 408100011,
    "item": "Antenna",
    "q": "gold"
+  },
+  {
+   "t": 1795492723108,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498080006,
+   "item": "Ancient Golden Mask Replica",
+   "q": "red"
   },
   {
    "t": 1795494459969,
