@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T10:51:13.842Z",
+ "updated": "2026-11-26T12:01:17.686Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -8610,6 +8610,46 @@
    "itemId": 408080003,
    "item": "Vase",
    "q": "red"
+  },
+  {
+   "t": 1795435023976,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498080003,
+   "item": "\"Dawn\"",
+   "q": "red"
+  },
+  {
+   "t": 1795435025128,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408120017,
+   "item": "Leveler",
+   "q": "gold"
+  },
+  {
+   "t": 1795435074850,
+   "soundId": null,
+   "size": "1x2",
+   "label": "Paper",
+   "price": 15000,
+   "itemId": 498090001,
+   "item": "Voss' Journal",
+   "q": "gold"
+  },
+  {
+   "t": 1795435139209,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070012,
+   "item": "Blocker Injector",
+   "q": "gold"
   },
   {
    "t": 1795437315758,
