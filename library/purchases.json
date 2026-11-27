@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T00:50:42.704Z",
+ "updated": "2026-11-27T00:58:43.640Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10940,6 +10940,26 @@
    "itemId": 498080016,
    "item": "Amber Heart of Heaven",
    "q": "red"
+  },
+  {
+   "t": 1795731567405,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408080029,
+   "item": "Gem Necklace",
+   "q": "red"
+  },
+  {
+   "t": 1795731567407,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
   },
   {
    "t": 1795743385853,
