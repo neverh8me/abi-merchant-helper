@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T18:20:46.318Z",
+ "updated": "2026-11-27T18:22:38.334Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11109,6 +11109,16 @@
    "price": 250000,
    "itemId": 408080041,
    "item": "Gold Snake",
+   "q": "red"
+  },
+  {
+   "t": 1795720003525,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498080003,
+   "item": "\"Dawn\"",
    "q": "red"
   },
   {
