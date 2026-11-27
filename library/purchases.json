@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:51:35.015Z",
+ "updated": "2026-11-27T09:57:33.322Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10919,6 +10919,16 @@
    "price": 216000,
    "itemId": 408040004,
    "item": "Car Battery",
+   "q": "gold"
+  },
+  {
+   "t": 1795706774848,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
    "q": "gold"
   },
   {
