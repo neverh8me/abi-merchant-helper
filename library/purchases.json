@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T02:04:31.361Z",
+ "updated": "2026-11-27T04:21:18.398Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10662,6 +10662,26 @@
    "q": "blue"
   },
   {
+   "t": 1795645539386,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1795645540942,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
    "t": 1795647777476,
    "soundId": null,
    "size": "",
@@ -10679,6 +10699,26 @@
    "price": 200000,
    "itemId": 408140024,
    "item": "Laptop Computer",
+   "q": "gold"
+  },
+  {
+   "t": 1795655907174,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
+   "q": "gold"
+  },
+  {
+   "t": 1795655977227,
+   "soundId": "lib:small_metal_crisp",
+   "size": "2x2",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408070016,
+   "item": "Metal Heart",
    "q": "gold"
   },
   {
