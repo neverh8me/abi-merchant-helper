@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T19:35:24.838Z",
+ "updated": "2026-11-27T19:38:50.896Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11450,6 +11450,36 @@
    "itemId": 498080002,
    "item": "Phaethon's Clock",
    "q": "red"
+  },
+  {
+   "t": 1795798367536,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795800177293,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795800262769,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060001,
+   "item": "Space Lab Toybox",
+   "q": "gold"
   }
  ]
 }
