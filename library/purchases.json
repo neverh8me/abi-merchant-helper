@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T18:22:38.334Z",
+ "updated": "2026-11-27T18:27:00.318Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11320,6 +11320,36 @@
    "itemId": 498060001,
    "item": "Space Lab Toybox",
    "q": "gold"
+  },
+  {
+   "t": 1795787598463,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 56000,
+   "itemId": 408140024,
+   "item": "Laptop Computer",
+   "q": "gold"
+  },
+  {
+   "t": 1795787653871,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080019,
+   "item": "Record Player",
+   "q": "gold"
+  },
+  {
+   "t": 1795792835991,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498080016,
+   "item": "Amber Heart of Heaven",
+   "q": "red"
   },
   {
    "t": 1795794287776,
