@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T20:11:43.300Z",
+ "updated": "2026-11-27T20:54:11.041Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -10529,6 +10529,26 @@
    "price": 250000,
    "itemId": 498100002,
    "item": "K7-L Cipher Machine",
+   "q": "gold"
+  },
+  {
+   "t": 1795632867279,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498060003,
+   "item": "Quantum 2000 Toy Robot",
+   "q": "red"
+  },
+  {
+   "t": 1795632874571,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
    "q": "gold"
   },
   {
