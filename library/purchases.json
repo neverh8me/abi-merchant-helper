@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T18:56:18.566Z",
+ "updated": "2026-11-27T19:35:24.838Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11210,6 +11210,16 @@
    "itemId": 408120013,
    "item": "TI Module",
    "q": "red"
+  },
+  {
+   "t": 1795729391124,
+   "soundId": "lib:med_statue",
+   "size": "1x2",
+   "label": "Rare Mystery Cargo",
+   "price": 470000,
+   "itemId": 408080030,
+   "item": "Gold Cup",
+   "q": "gold"
   },
   {
    "t": 1795730732416,
