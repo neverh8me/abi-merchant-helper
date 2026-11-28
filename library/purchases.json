@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:44:52.299Z",
+ "updated": "2026-11-28T08:51:37.100Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11820,6 +11820,46 @@
    "itemId": 498140003,
    "item": "Capsule TV",
    "q": "red"
+  },
+  {
+   "t": 1795831845547,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 200000,
+   "itemId": 498100006,
+   "item": "Handheld Calculator",
+   "q": "purple"
+  },
+  {
+   "t": 1795831852079,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
+   "q": "gold"
+  },
+  {
+   "t": 1795831898503,
+   "soundId": null,
+   "size": "",
+   "label": "Mystery Cargo",
+   "price": 70000,
+   "itemId": 408080038,
+   "item": "Plaster Sculpture",
+   "q": "purple"
+  },
+  {
+   "t": 1795831898504,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
   },
   {
    "t": 1795843254841,
