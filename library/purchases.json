@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:02:55.075Z",
+ "updated": "2026-11-28T04:42:50.378Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11729,6 +11729,16 @@
    "price": 200000,
    "itemId": 408120013,
    "item": "TI Module",
+   "q": "red"
+  },
+  {
+   "t": 1795828888754,
+   "soundId": "lib:small_metal_blunt",
+   "size": "2x3",
+   "label": "Uncommon Mystery Cargo",
+   "price": 270000,
+   "itemId": 498140003,
+   "item": "Capsule TV",
    "q": "red"
   }
  ]
