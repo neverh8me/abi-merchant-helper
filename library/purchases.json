@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T23:54:19.721Z",
+ "updated": "2026-11-28T02:49:57.128Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11670,6 +11670,26 @@
    "itemId": 498070009,
    "item": "Infrared Therapy Lamp",
    "q": "gold"
+  },
+  {
+   "t": 1795817758689,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 498070009,
+   "item": "Infrared Therapy Lamp",
+   "q": "gold"
+  },
+  {
+   "t": 1795819861545,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408120013,
+   "item": "TI Module",
+   "q": "red"
   }
  ]
 }
