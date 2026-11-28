@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:32:00.357Z",
+ "updated": "2026-11-28T08:40:53.836Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11729,6 +11729,46 @@
    "price": 270000,
    "itemId": 498060001,
    "item": "Space Lab Toybox",
+   "q": "gold"
+  },
+  {
+   "t": 1795805819464,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1795805820504,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
+   "q": "gold"
+  },
+  {
+   "t": 1795807502175,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1795807502176,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 216000,
+   "itemId": 498070010,
+   "item": "Mutant Heart Sample",
    "q": "gold"
   },
   {
