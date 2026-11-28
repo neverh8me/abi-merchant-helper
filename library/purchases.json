@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:49:57.128Z",
+ "updated": "2026-11-28T02:56:07.381Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11569,6 +11569,26 @@
    "price": 200000,
    "itemId": 408080019,
    "item": "Record Player",
+   "q": "gold"
+  },
+  {
+   "t": 1795788255833,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1795789239743,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 250000,
+   "itemId": 408090019,
+   "item": "Gungnir Blueprint Fragments",
    "q": "gold"
   },
   {
