@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:50:00.507Z",
+ "updated": "2026-11-28T10:01:20.796Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11879,6 +11879,16 @@
    "price": 270000,
    "itemId": 408090019,
    "item": "Gungnir Blueprint Fragments",
+   "q": "gold"
+  },
+  {
+   "t": 1795834621521,
+   "soundId": "lib:electronicdevice",
+   "size": "2x2",
+   "label": "Uncommon Military Items",
+   "price": 250000,
+   "itemId": 408120020,
+   "item": "Laser Pointer Module",
    "q": "gold"
   },
   {
