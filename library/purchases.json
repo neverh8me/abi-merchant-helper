@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:40:53.836Z",
+ "updated": "2026-11-28T08:44:52.299Z",
  "purchases": [
   {
    "t": 1793053488470,
@@ -11730,6 +11730,16 @@
    "itemId": 498060001,
    "item": "Space Lab Toybox",
    "q": "gold"
+  },
+  {
+   "t": 1795801264550,
+   "soundId": null,
+   "size": "",
+   "label": "Uncommon Mystery Cargo",
+   "price": 200000,
+   "itemId": 408080029,
+   "item": "Gem Necklace",
+   "q": "red"
   },
   {
    "t": 1795805819464,
